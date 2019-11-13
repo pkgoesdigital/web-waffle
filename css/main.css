@@ -26,11 +26,13 @@
   background-color: #c05850;
   border-radius: 200px;
   position: relative;
+  margin: 20px;
+  display: inline-flex
 }
 
 .clocklabel {
   width: fit-content;
-  position: relative;
+  display: inline-flex;
 }
 
 .hand.hour {
@@ -67,6 +69,25 @@
 }
 /* ends clock styling stuff  */
 
+.navbar {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1rem;
+  text-align: right;
+  text-transform: lowercase;
+  /* background-color: #3a353f; */
+  padding: 1rem;
+  /* overflow: hidden; */
+  margin: 2rem;
+}
+
+.navbar a:hover {
+  opacity: 10%;
+}
+
+.projects {
+  display: inline-flex;
+}
+
 body {
   background-color: #505668;
 }
@@ -82,19 +103,16 @@ a:link{
 
 a:visited {
   color: white;
-  text-decoration: underline;
   text-decoration-color: white;
 }
 
 a:hover {
-  text-decoration: underline;
   color: white;
   text-decoration-color: #c05850;
 }
 
 a:active {
   color: #c05850;
-  text-decoration: underline;
   text-decoration-color: #c05850
 }
 
@@ -124,6 +142,8 @@ code {
   color: #3a353f;
   background-color: #f1ece1;
   padding: 1%;
+  text-align: left;
+  display: grid;
 }
 
 figcaption {
@@ -139,20 +159,22 @@ figcaption {
 
 header {
   font-family: 'Raleway', sans-serif;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  background-color: #505668;
-  background-size: cover;
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  text-align: center;
+  font-size: 3rem;
+  text-transform: lowercase;
+  background-color: #f1ece1;
+  /* position: fixed; */
+  top: 5%;
+  padding: 10px;
+  border: 10px;
+  border-radius: 20px;
+  margin: 10px;
+  text-align: left;
+  /* makes it above other elements, z-index is ordering  */
   z-index: 1;
 }
 
 .social-icons {
-  text-align: center;
+  text-align: left;
 }
 .social-icons li {
   display: inline-flex;
@@ -211,12 +233,10 @@ h2 {
   font-family: 'Raleway', sans-serif;
   font-size: 1.5rem;
   color: #f1ece1;
-  font-weight: lighter;
   text-align: center;
-  background-size: cover;
   margin: 1rem;
-  padding: 1%;
-  /* border: 1px solid black; */
+  padding: 1rem;
+  display: grid;
 }
 
 h3 {
@@ -258,24 +278,12 @@ nav {
   font-size: 1rem;
   text-align: center;
   text-transform: uppercase;
-  background-color: #3a353f;
+  /* background-color: #3a353f; */
   font-weight: lighter;
   padding: 1%;
   overflow: hidden;
   margin: 1rem;
   /* border: 1px solid black; */
-}
-
-.navbar {
-  font-family: 'Raleway', sans-serif;
-  font-size: 1rem;
-  text-align: center;
-  text-transform: uppercase;
-  background-color: #3a353f;
-  font-weight: lighter;
-  padding: 1rem;
-  overflow: hidden;
-  margin: 1rem;
 }
 
 ol {
