@@ -162,7 +162,7 @@ header {
   font-size: 3rem;
   text-transform: lowercase;
   background-color: #f1ece1;
-  /* position: fixed; */
+  position: fixed;
   top: 5%;
   padding: 10px;
   border: 10px;
@@ -174,7 +174,7 @@ header {
 }
 
 .social-icons {
-  text-align: left;
+  text-align: center;
 }
 .social-icons li {
   display: inline-flex;
@@ -182,9 +182,9 @@ header {
   -webkit-user-select: none;
   -moz-user-select: none;
 }
-.social-icons li a {
+/* .social-icons li a {
   border-bottom: none;
-}
+} */
 .social-icons li img {
   width: 40px;
 }
