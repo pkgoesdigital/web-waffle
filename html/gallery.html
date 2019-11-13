@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/project02/css/klimas-reset.css" />
+    <link rel="stylesheet" href="/project02/css/main.css" />
+    <link rel="stylesheet" href="/project02/css/clickable.css">
+    <title>pkgoesdigital: gallery</title>
+  </head>
+
+  <body>
+    <header>pkgoesdigital</header>
+
+    <nav class="navbar">
+      <a href="index.html">home</a>
+      <a href="coffee.html">coffee</a>
+      <a href="contact.html">contact</a>
+      <a href="gallery.html">gallery</a>
+      <a href="increasedConnectivity.html">Podcast</a>
+      <a href="nonsense.html" target="_blank">nonsense</a>
+    </nav>
+
+    <h2>gallery</h2>
+
+   <h3>click anywhere for content</h3>
+
+    <script>
+      // for clickable images showing on gallery page
+      const images = [
+        "../img/Website - 1 of 19.jpeg",
+        "../img/Website - 3 of 19.jpeg",
+        // "../img/Website - 4 of 19.jpeg",
+        "../img/Website - 5 of 19.jpeg",
+        // "../img/Website - 6 of 19.jpeg",
+        "../img/Website - 7 of 19.jpeg",
+        "../img/Website - 8 of 19.jpeg",
+        "../img/Website - 9 of 19.jpeg",
+        "../img/Website - 10 of 19.jpeg",
+        "../img/Website - 11 of 19.jpeg",
+        "../img/Website - 12 of 19.jpeg",
+        "../img/Website - 13 of 19.jpeg",
+        "../img/Website - 15 of 19.jpeg",
+        "../img/Website - 16 of 19.jpeg",
+        "../img/Website - 17 of 19.jpeg",
+        "../img/Website - 18 of 19.jpeg",
+        "../img/Website - 19 of 19.jpeg",
+        "../img/Website - 14 of 19.jpeg",
+      ];
+
+      var i = 0;
+
+      // places an image where we want it to be placed
+      function placeImage(x, y) {
+        const nextImage = images[i];
+
+        // adds an image element to page
+        // makes a tag in javascript and adds to page
+        const create = document.createElement("img")
+
+        create.setAttribute("src", nextImage);
+        create.style.left = x + "px";
+        create.style.top = y + "px";
+        if(i % 2 == 0) {
+          create.style.transform = "translate(-50%, -50%) scale(0.75) rotate(" + (Math.random() * 20) + "deg)"
+        } else {
+          create.style.transform = "translate(-50%, -50%) scale(0.75) rotate(" + -(Math.random() * 20) + "deg)"
+        }
+
+        // add image to document
+        document.body.appendChild(create);
+
+        i = i + 1;
+
+        if (i >= images.length) {
+          i = 0
+        }
+      }
+
+      // works only in browsers
+      document.addEventListener("click", function(event) {
+        // stops default thing from happening
+        event.preventDefault();
+
+        // supposed to allow functionality back to using navigation, but not quite working 
+        var target = event.target;
+        if(target.tagName == 'A') {
+          return false;
+          document.removeEventListener("click")
+        } else {
+        //   puts the image wherever the user clicks using pageX and pageY
+        placeImage(event.pageX, event.pageY);
+        }
+      }, false);
+
+      // for mobile - unable to test without having a server
+      document.addEventListener("touchend", function(event) {
+        event.preventDefault();
+        placeImage(event.pageX, event.pageY);
+      })
+    </script>
+
+  </body>
+</html>

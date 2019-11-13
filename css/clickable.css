@@ -1,0 +1,22 @@
+
+@keyframes fadein {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* /* used for images showing on gallery page * */
+img {
+  /* border: #f1ece1 dashed 1px; */
+  position: absolute;
+  top: 500px;
+  left: 400px;
+  width: 400px;
+  transform: translate(-50%, -50%) scale(0.5);
+  animation: fadein 0.5s;
+}
+
+img:hover {
+    z-index: 1;
+}
+
+
