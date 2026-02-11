@@ -1,0 +1,464 @@
+/* Legacy styles migrated from static site */
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+p,
+blockquote,
+pre,
+a,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strong,
+sub,
+sup,
+b,
+u,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+figure,
+figcaption,
+footer,
+header,
+nav,
+output,
+section,
+time,
+mark,
+audio,
+video,
+input,
+textarea,
+select {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  /* inherits the browser's font properties: font-size 16px */
+  font: inherit;
+  /*  specifies the vertical alignment of an inline element */
+  vertical-align: baseline;
+
+  box-sizing: border-box;
+
+  /*  specifies the height of line boxes within the element. */
+  line-height: 2;
+
+  border-radius: 0;
+
+  /* no outline around anything */
+  outline: none;
+
+  /* inherit the color value of the parent */
+  color: inherit;
+}
+
+ol,
+ul {
+  /* no bullets in lists */
+  list-style: none;
+}
+
+a {
+  /* no underline */
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  background-color: transparent;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+table {
+  /* no spacing between cells*/
+  border-spacing: 0;
+  /*borders are collapsed - adjacent table cells share borders */
+  border-collapse: collapse;
+}
+
+input,
+select,
+progress {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+svg {
+  width: 2rem;
+  height: 2rem;
+  fill: currentColor;
+}
+
+/* all my clock styling stuff  */
+.clock {
+  width: 400px;
+  height: 400px;
+  background-color: #c05850;
+  border-radius: 200px;
+  position: relative;
+  margin: 20px;
+  display: inline-flex;
+}
+
+.clocklabel {
+  width: fit-content;
+  display: inline-flex;
+}
+
+.hand.hour {
+  position: absolute;
+  width: 4px;
+  height: 90px;
+  background-color: #111118;
+  bottom: 198px;
+  left: 198px;
+  transform: rotate(90deg);
+  transform-origin: 50% 100%;
+}
+
+.hand.minute {
+  position: absolute;
+  width: 4px;
+  height: 140px;
+  background-color: white;
+  bottom: 198px;
+  left: 198px;
+  transform: rotate(90deg);
+  transform-origin: 50% 100%;
+}
+
+.hand.second {
+  position: absolute;
+  width: 4px;
+  height: 180px;
+  background-color: #505668;
+  bottom: 198px;
+  left: 198px;
+  transform: rotate(90deg);
+  transform-origin: 50% 100%;
+}
+/* ends clock styling stuff  */
+
+.navbar {
+  font-family: "Raleway", sans-serif;
+  font-size: 2rem;
+  text-align: right;
+  text-transform: lowercase;
+  background-color: #3a353f;
+  padding: 1rem;
+  overflow: hidden;
+  margin: 2rem;
+}
+
+.navbar a:hover {
+  opacity: 90%;
+}
+
+.projects {
+  display: inline-flex;
+}
+
+body {
+  background-color: #505668;
+}
+
+/* link, visited, hover, active LVHA always this order */
+a {
+  color: #c05850;
+}
+
+a:link {
+  color: white;
+}
+
+a:visited {
+  color: white;
+  text-decoration-color: white;
+}
+
+a:hover {
+  color: white;
+  text-decoration-color: #c05850;
+}
+
+a:active {
+  color: #c05850;
+  text-decoration-color: #c05850;
+}
+
+article {
+  font-family: "Raleway", sans-serif;
+  color: #f1ece1;
+  font-size: 1rem;
+  text-indent: 1rem;
+  padding: 1rem;
+  margin: 1rem;
+  border: 1px;
+  max-width: 75%;
+  border: 1px solid black;
+}
+
+div {
+  font-family: "Raleway", sans-serif;
+  color: #f1ece1;
+  font-size: 1rem;
+  font-weight: 200;
+}
+
+code {
+  font-family: monospace;
+  /* border: 1px solid black; */
+  color: #3a353f;
+  background-color: #f1ece1;
+  padding: 1%;
+  text-align: left;
+  display: grid;
+}
+
+figcaption {
+  font-family: "Raleway", sans-serif;
+  font-size: 0.75rem;
+  text-indent: 1rem;
+  font-weight: lighter;
+  padding: 1%;
+  display: inline-block;
+  text-align: left;
+  border: 1px solid black;
+}
+
+header {
+  font-family: "Raleway", sans-serif;
+  font-size: 3rem;
+  position: static;
+  padding: 6px;
+  border: 6px solid pink;
+  background-color: #3a353f;
+  margin: 6px;
+  display: flex;
+  justify-content: space-between;
+  /* makes it above other elements, z-index is ordering  */
+  z-index: 1;
+}
+
+.social-icons {
+  text-align: center;
+}
+.social-icons li {
+  display: inline-flex;
+  align-content: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
+.social-icons li img {
+  width: 60px;
+}
+
+h1 {
+  font-family: "Raleway", sans-serif;
+  font-size: 36px;
+  color: #f1ece1;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 12px;
+  text-align: center;
+  /* border: 1px solid black; */
+  margin: 12px;
+  padding: 12px;
+  /* text-shadow: 2px, 5px, 10px, #ffdab9; */
+}
+
+h2 {
+  font-family: "Raleway", sans-serif;
+  font-size: 32px;
+  color: #f1ece1;
+  text-align: left;
+  margin: 1rem;
+  padding: 1rem;
+  display: grid;
+}
+
+h3 {
+  font-family: "Raleway", sans-serif;
+  font-size: 24px;
+  color: #f1ece1;
+  line-height: 35px;
+  text-align: center;
+  text-indent: 1rem;
+  margin: 0.75rem;
+}
+
+h4 {
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  line-height: 36px;
+  max-width: 550px;
+  text-indent: 1rem;
+  margin: 0.5rem;
+}
+
+h5 {
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 32px;
+  max-width: 550px;
+  text-indent: 1rem;
+  margin: 0.5rem;
+  /* border: 1px solid black; */
+}
+
+nav {
+  font-family: "Raleway", sans-serif;
+  font-size: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: lighter;
+  padding: 1%;
+  overflow: hidden;
+  margin: 1rem;
+}
+
+ol {
+  font-family: "Raleway", sans-serif;
+  border: 1px solid black;
+}
+
+ul {
+  font-family: "Raleway", sans-serif;
+  margin: 12px;
+  padding: 12px;
+  border: 1px solid pink;
+}
+
+li {
+  font-family: "Raleway", sans-serif;
+  font-size: 1rem;
+}
+
+p {
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  color: #f1ece1;
+  text-indent: 1rem;
+  margin: 12px;
+  padding: 12px;
+  border: 1px;
+  background-color: #48404f;
+}
+
+.footer-links {
+  font-size: 1rem;
+  color: black;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+table {
+  border: 3px solid #f7f7f0;
+  display: flex;
+  align-content: center;
+  padding: 1rem;
+  margin: 3rem;
+}
+
+td {
+  border: 1px solid black;
+  overflow: hidden;
+  white-space: pre-wrap;
+  padding: 1%;
+}
+
+aside {
+  font-family: "Raleway", sans-serif;
+  font-size: 1rem;
+  text-indent: 1rem;
+  font-weight: lighter;
+  display: flex;
+  padding: 1rem;
+  margin: 1rem;
+  border: 1px solid black;
+}
+
+footer {
+  font-family: "Raleway", sans-serif;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  background-color: #505668;
+  background-size: cover;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+  border: 1px solid black;
+}
+
+form {
+  font-family: "Raleway", sans-serif;
+  font-size: 1rem;
+  text-align: left;
+  font-weight: lighter;
+  padding: 2rem;
+  margin: 1rem;
+  /* border: 2px solid #c05850; */
+}
+
+form label {
+  color: #f1ece1;
+}
+
+form input {
+  margin-bottom: 1rem;
+}
+
+form button {
+  background-color: #f1ece1;
+  padding: 1%;
+  margin-bottom: 1%;
+  color: #c05850;
+  border-radius: 0.5rem;
+}

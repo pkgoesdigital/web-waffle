@@ -1,0 +1,191 @@
+{
+  "pages": {
+    "about": {
+      "id": "6",
+      "title": "About",
+      "slug": "about",
+      "date": "2023-02-12 12:33:04",
+      "status": "publish"
+    },
+    "lessons-in-product-management": {
+      "id": "13",
+      "title": "Lessons in Product Management",
+      "slug": "lessons-in-product-management",
+      "date": "2026-02-10 15:35:33",
+      "contentHtml": "<h4 class=\"wp-block-heading\">2 years in, a retrospective</h4>\n\n\n\n<p></p>",
+      "status": "publish"
+    },
+    "lessons-in-mental-health": {
+      "id": "41",
+      "title": "Lessons in Mental Health",
+      "slug": "lessons-in-mental-health",
+      "date": "2026-02-10 15:35:23",
+      "contentHtml": "<h3 class=\"wp-block-heading\">Lessons learned, and learned, and re-learned</h3>\n\n\n\n<p></p>",
+      "status": "publish"
+    },
+    "writing": {
+      "id": "47",
+      "title": "Writing",
+      "slug": "writing",
+      "date": "2026-01-21 10:44:23",
+      "contentHtml": "",
+      "status": "publish"
+    },
+    "contact": {
+      "id": "49",
+      "title": "Contact",
+      "slug": "contact",
+      "date": "2026-01-21 10:44:55",
+      "contentHtml": "",
+      "status": "publish"
+    },
+    "portfolio": {
+      "id": "52",
+      "title": "Portfolio",
+      "slug": "portfolio",
+      "date": "2026-01-21 10:47:20",
+      "contentHtml": "",
+      "status": "publish"
+    }
+  },
+  "posts": [
+    {
+      "id": "37",
+      "title": "ERP: Financial System of Record",
+      "slug": "erp-financial-system-of-record",
+      "date": "2026-01-20 08:14:50",
+      "contentHtml": "<h3 class=\"wp-block-heading\">The critical nature of getting an ERP transition right; including the heartache and headache of doing so</h3>\n\n\n\n<p></p>",
+      "excerptHtml": "",
+      "status": "draft",
+      "categories": ["Uncategorized"],
+      "tags": []
+    },
+    {
+      "id": "35",
+      "title": "The Case for Hybrid Work",
+      "slug": "the-case-for-hybrid-work",
+      "date": "2026-01-19 11:01:32",
+      "contentHtml": "<h3 class=\"wp-block-heading\">Experiences in working full-time in office, full-time remote, and the case for the in-between</h3>",
+      "excerptHtml": "",
+      "status": "draft",
+      "categories": ["Uncategorized"],
+      "tags": []
+    },
+    {
+      "id": "33",
+      "title": "SaaS Vendor Management",
+      "slug": "saas-vendor-management",
+      "date": "2026-01-19 10:09:43",
+      "contentHtml": "<h3 class=\"wp-block-heading\">Lessons learned from a failed ERP Implementation</h3>",
+      "excerptHtml": "",
+      "status": "draft",
+      "categories": ["Uncategorized"],
+      "tags": []
+    },
+    {
+      "id": "30",
+      "title": "When to Pull Back a Product",
+      "slug": "when-to-pull-back-a-product",
+      "date": "2026-01-19 10:09:09",
+      "contentHtml": "<h3 class=\"wp-block-heading\">Identifying when the issues of a build outweigh the benefits</h3>\n\n\n\n<p></p>",
+      "excerptHtml": "",
+      "status": "draft",
+      "categories": ["Uncategorized"],
+      "tags": []
+    },
+    {
+      "id": "27",
+      "title": "Transforming a Manufacturing Company to a Product Operating Model",
+      "slug": "transforming-a-manufacturing-company-to-a-product-operating-model",
+      "date": "2026-01-19 09:58:42",
+      "contentHtml": "<h3 class=\"wp-block-heading\">Discovering the intersection between technology, strategy, and business</h3>\n\n\n\n<p></p>",
+      "excerptHtml": "",
+      "status": "draft",
+      "categories": ["Uncategorized"],
+      "tags": []
+    },
+    {
+      "id": "25",
+      "title": "Building Authentic Networks",
+      "slug": "building-authentic-networks",
+      "date": "2026-01-19 09:57:16",
+      "contentHtml": "<h3 class=\"wp-block-heading\">How to make Networking less icky</h3>",
+      "excerptHtml": "",
+      "status": "draft",
+      "categories": ["Uncategorized"],
+      "tags": []
+    },
+    {
+      "id": "23",
+      "title": "Getting Fired and Finding your Identity",
+      "slug": "getting-fired-and-finding-your-identity",
+      "date": "2026-01-19 09:56:13",
+      "contentHtml": "<h3 class=\"wp-block-heading\">A strategy for becoming your own job placement expert</h3>",
+      "excerptHtml": "",
+      "status": "draft",
+      "categories": ["Uncategorized"],
+      "tags": []
+    },
+    {
+      "id": "20",
+      "title": "Job Hunting in the Age of AI",
+      "slug": "job-hunting-in-the-age-of-ai",
+      "date": "2026-01-19 09:55:07",
+      "contentHtml": "<h3 class=\"wp-block-heading\">How to stay organized, keep your sanity, and cut through the noise</h3>\n\n\n\n<p></p>",
+      "excerptHtml": "",
+      "status": "draft",
+      "categories": ["Uncategorized"],
+      "tags": []
+    },
+    {
+      "id": "16",
+      "title": "Lessons in Product Management",
+      "slug": "lessons-in-product-management",
+      "date": "2026-01-19 09:53:36",
+      "contentHtml": "<h4 class=\"wp-block-heading\">2 years in, a retrospective</h4>\n\n\n\n<p></p>",
+      "excerptHtml": "",
+      "status": "draft",
+      "categories": ["Uncategorized"],
+      "tags": []
+    },
+    {
+      "id": "4",
+      "title": "I miss the 90\u2019s",
+      "slug": "i-miss-the-90s__trashed",
+      "date": "2023-02-12 12:33:06",
+      "contentHtml": "<p>\"He must beat something,\" thought Regina, and remembered that she herself was itching to torment any one or anything. On rainy days\u2014frequent and tedious\u2014she became depressed, even to hypochondria. Only one thought comforted her\u2014that of the return to her home. She counted the days and the hours. Strange, childish recollections, distant fancies, passed through her mind like clouds across a sad sky. Details of her past life waked in her melting tenderness; she remembered vividly even the humblest persons of the place, the most secret nooks in the house or in the wood; with strange insistence she thought of certain little things which never before had greatly struck her. </p>\n\n\n\n<p>For instance, there was an old millstone, belonging to a ruined mill, which lay in the grass by the river-side. The remembrance of that old grey millstone, resting after its labour beside the very stream with which it&nbsp;had so long wrestled, moved Regina almost to tears. Often she tried to analyse her nostalgia, asking herself why she thought of the millstone, of the old blind chimney sweep, of the&nbsp;<em>portiner</em>&nbsp;(ferryman), who had enormous hairy hands and was getting on for a hundred; of the clean-limbed children by the green ditch, intent on making straw ropes; of the little snails crawling among the leaves of the plane-trees.</p>",
+      "excerptHtml": "",
+      "status": "trash",
+      "categories": ["Uncategorized"],
+      "tags": []
+    },
+    {
+      "id": "5",
+      "title": "Fatally realising that it's been thirty years since 1992",
+      "slug": "hello-world-2__trashed",
+      "date": "2023-02-12 12:33:05",
+      "contentHtml": "<p>\"I cannot believe that the nineties were thirty years ago. <a href=\"https://en.wikipedia.org/wiki/Home_Alone_2:_Lost_in_New_York\">It seems like it was yesterday that I was watching Home Alone</a>.\"</p>\n\n\n\n<p>With the coming on of the hot days Regina's nostalgia, nervousness and melancholy increased. At night she tossed and turned, and sometimes groaned softly. At last she confessed to Antonio that her heart troubled her.</p>\n\n\n\n<figure class=\"wp-block-pullquote pixl-shadow has-border-color has-primary-border-color\" style=\"border-width:2px;font-size:1.25rem;font-style:normal;font-weight:400;letter-spacing:-0.02em;line-height:1.4\"><blockquote><p>\"I cannot believe that the nineties were thirty years ago. It seems like it was yesterday that I was watching Home Alone.\"</p><cite>Regina</cite></blockquote></figure>\n\n\n\n<p>Now she had arrived, now she was in the place of her nostalgia, in the dreamed-of harbour of refuge, it was strange that her soul was still lost to her. Just as at one time she had seemed to herself to have taken only her outward person to Rome, leaving her soul like a wandering firefly on the banks of the Po, so now it was only her suffering and tired body which she had&nbsp;brought back to the river-side. Her soul had escaped\u2014flown back to Rome. What was Antonio doing at this hour? Was he very miserable? Was he conscious of his wife's soul pressing him tighter than ever her arms had pressed him? Had he written to her? Antonio! Antonio! Burning tears filled her eyes, and she suddenly fell silent, her thoughts wandering and lost in a sorrowful far-away.</p>",
+      "excerptHtml": "",
+      "status": "trash",
+      "categories": ["Uncategorized"],
+      "tags": []
+    }
+  ],
+  "socialLinks": [
+    {
+      "href": "https://www.instagram.com/pkgoesdigital/",
+      "img": "/img/Instagram.svg",
+      "label": "https://www.instagram.com/pkgoesdigital/"
+    },
+    {
+      "href": "https://github.com/pkgoesdigital",
+      "img": "/img/Github.svg",
+      "label": "https://github.com/pkgoesdigital"
+    },
+    {
+      "href": "https://www.linkedin.com/in/paulaklimas-compsci/",
+      "img": "/img/Linkedin.svg",
+      "label": "https://www.linkedin.com/in/paulaklimas-compsci/"
+    }
+  ]
+}
