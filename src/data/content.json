@@ -1,0 +1,152 @@
+{
+  "pages": {
+    "about": {
+      "id": "6",
+      "title": "About",
+      "slug": "about",
+      "date": "2023-02-12",
+      "subtitle": "Full Stack Builder, Product Manager, Writer, Activist",
+      "content": "I believe better software can inspire better humans. I believe in failure and conflict — they make things more interesting and provide opportunities for growth. I believe in listening to those who differ from ourselves.\n\nI believe in process, even when it's messy and untamed. I believe in the space between humans and technology, and I believe we can make it better.",
+      "status": "publish"
+    },
+    "lessons-in-product-management": {
+      "id": "13",
+      "title": "Lessons in Product Management",
+      "slug": "lessons-in-product-management",
+      "date": "2026-02-10",
+      "subtitle": "2 years in, a retrospective",
+      "status": "publish"
+    },
+    "lessons-in-mental-health": {
+      "id": "41",
+      "title": "Lessons in Mental Health",
+      "slug": "lessons-in-mental-health",
+      "date": "2026-02-10",
+      "subtitle": "Lessons learned, and learned, and re-learned",
+      "status": "publish"
+    },
+    "contact": {
+      "id": "49",
+      "title": "Contact",
+      "slug": "contact",
+      "date": "2026-01-21",
+      "status": "publish"
+    },
+    "portfolio": {
+      "id": "52",
+      "title": "Portfolio",
+      "slug": "portfolio",
+      "date": "2026-01-21",
+      "status": "publish"
+    }
+  },
+  "posts": [
+    {
+      "id": "37",
+      "title": "ERP: Financial System of Record",
+      "slug": "erp-financial-system-of-record",
+      "date": "2026-01-20",
+      "subtitle": "The critical nature of getting an ERP transition right; including the heartache and headache of doing so",
+      "status": "draft",
+      "categories": [],
+      "tags": []
+    },
+    {
+      "id": "35",
+      "title": "The Case for Hybrid Work",
+      "slug": "the-case-for-hybrid-work",
+      "date": "2026-01-19",
+      "subtitle": "Experiences in working full-time in office, full-time remote, and the case for the in-between",
+      "status": "draft",
+      "categories": [],
+      "tags": []
+    },
+    {
+      "id": "33",
+      "title": "SaaS Vendor Management",
+      "slug": "saas-vendor-management",
+      "date": "2026-01-19",
+      "subtitle": "Lessons learned from a failed ERP Implementation",
+      "status": "draft",
+      "categories": [],
+      "tags": []
+    },
+    {
+      "id": "30",
+      "title": "When to Pull Back a Product",
+      "slug": "when-to-pull-back-a-product",
+      "date": "2026-01-19",
+      "subtitle": "Identifying when the issues of a build outweigh the benefits",
+      "status": "draft",
+      "categories": [],
+      "tags": []
+    },
+    {
+      "id": "27",
+      "title": "Transforming a Manufacturing Company to a Product Operating Model",
+      "slug": "transforming-a-manufacturing-company-to-a-product-operating-model",
+      "date": "2026-01-19",
+      "subtitle": "Discovering the intersection between technology, strategy, and business",
+      "status": "draft",
+      "categories": [],
+      "tags": []
+    },
+    {
+      "id": "25",
+      "title": "Building Authentic Networks",
+      "slug": "building-authentic-networks",
+      "date": "2026-01-19",
+      "subtitle": "How to make Networking less icky",
+      "status": "draft",
+      "categories": [],
+      "tags": []
+    },
+    {
+      "id": "23",
+      "title": "Getting Fired and Finding your Identity",
+      "slug": "getting-fired-and-finding-your-identity",
+      "date": "2026-01-19",
+      "subtitle": "A strategy for becoming your own job placement expert",
+      "status": "draft",
+      "categories": [],
+      "tags": []
+    },
+    {
+      "id": "20",
+      "title": "Job Hunting in the Age of AI",
+      "slug": "job-hunting-in-the-age-of-ai",
+      "date": "2026-01-19",
+      "subtitle": "How to stay organized, keep your sanity, and cut through the noise",
+      "status": "draft",
+      "categories": [],
+      "tags": []
+    },
+    {
+      "id": "16",
+      "title": "Lessons in Product Management",
+      "slug": "lessons-in-product-management-post",
+      "date": "2026-01-19",
+      "subtitle": "2 years in, a retrospective",
+      "status": "draft",
+      "categories": [],
+      "tags": []
+    }
+  ],
+  "socialLinks": [
+    {
+      "href": "https://www.instagram.com/pkgoesdigital/",
+      "img": "/img/Instagram.svg",
+      "label": "Instagram"
+    },
+    {
+      "href": "https://github.com/pkgoesdigital",
+      "img": "/img/Github.svg",
+      "label": "GitHub"
+    },
+    {
+      "href": "https://www.linkedin.com/in/paulaklimas-compsci/",
+      "img": "/img/Linkedin.svg",
+      "label": "LinkedIn"
+    }
+  ]
+}

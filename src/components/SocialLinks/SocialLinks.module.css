@@ -1,0 +1,26 @@
+.list {
+  display: flex;
+  gap: var(--space-4);
+  align-items: center;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--color-bg);
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.link:hover {
+  background: var(--color-border);
+  transform: translateY(-2px);
+}
+
+.link img {
+  width: 20px;
+  height: 20px;
+}
