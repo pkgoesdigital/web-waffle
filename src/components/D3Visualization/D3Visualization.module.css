@@ -1,0 +1,25 @@
+.container {
+  width: 100%;
+  position: relative;
+  min-height: 200px;
+}
+
+.svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.loading {
+  text-align: center;
+  color: var(--color-text-muted);
+  padding: var(--space-8);
+  font-size: var(--text-sm);
+}
+
+.error {
+  text-align: center;
+  color: var(--color-accent);
+  padding: var(--space-8);
+  font-size: var(--text-sm);
+}
