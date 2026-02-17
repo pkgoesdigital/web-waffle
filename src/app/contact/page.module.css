@@ -1,0 +1,10 @@
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+}
