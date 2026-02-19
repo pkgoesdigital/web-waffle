@@ -22,14 +22,3 @@ npm run dev
 npm run build
 npm run preview
 ```
-
-## Update content
-
-Re-run the WordPress export conversion (or manually edit) by updating:
-
-- `src/content/wpContent.json`
-
-If you want posts/pages to render differently, adjust:
-
-- `src/pages/Writing.tsx`
-- `src/pages/WritingPost.tsx`
