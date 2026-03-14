@@ -1,9 +1,9 @@
-import Image from 'next/image'
-import type { SocialLink } from '@/lib/types'
-import styles from './SocialLinks.module.css'
+import Image from "next/image";
+import type { SocialLink } from "@/lib/types";
+import styles from "./SocialLinks.module.css";
 
 export default function SocialLinks({ links }: { links: SocialLink[] }) {
-  if (!links?.length) return null
+  if (!links?.length) return null;
 
   return (
     <ul className={styles.list}>
@@ -19,7 +19,7 @@ export default function SocialLinks({ links }: { links: SocialLink[] }) {
             {link.img ? (
               <Image
                 src={link.img}
-                alt={link.label ?? ''}
+                alt={link.label ?? ""}
                 width={24}
                 height={24}
                 unoptimized
@@ -31,5 +31,5 @@ export default function SocialLinks({ links }: { links: SocialLink[] }) {
         </li>
       ))}
     </ul>
-  )
+  );
 }
