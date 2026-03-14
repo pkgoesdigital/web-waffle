@@ -1,0 +1,17 @@
+[
+  {
+    "href": "https://www.instagram.com/pkgoesdigital/",
+    "img": "/img/Instagram.svg",
+    "label": "Instagram"
+  },
+  {
+    "href": "https://github.com/pkgoesdigital",
+    "img": "/img/Github.svg",
+    "label": "GitHub"
+  },
+  {
+    "href": "https://www.linkedin.com/in/paulaklimas-compsci/",
+    "img": "/img/Linkedin.svg",
+    "label": "LinkedIn"
+  }
+]

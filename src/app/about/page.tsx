@@ -1,11 +1,13 @@
 import type { Metadata } from 'next'
 import { getPage } from '@/lib/content'
+import { markdownToHtml } from '@/lib/markdown'
 import styles from './page.module.css'
 
 export const metadata: Metadata = { title: 'About' }
 
-export default function AboutPage() {
-  const page = getPage('about')
+export default async function AboutPage() {
+  const page = await getPage('about')
+  const html = page?.content ? await markdownToHtml(page.content) : ''
 
   return (
     <div className={styles.container}>
@@ -18,25 +20,10 @@ export default function AboutPage() {
         </p>
       </div>
 
-      <div className="prose">
-        {page?.content?.split('\n\n').map((paragraph, i) => (
-          <p key={i}>{paragraph}</p>
-        )) ?? (
-          <>
-            <p>
-              I believe better software can inspire better humans. I believe in
-              failure and conflict — they make things more interesting and
-              provide opportunities for growth. I believe in listening to those
-              who differ from ourselves.
-            </p>
-            <p>
-              I believe in process, even when it&apos;s messy and untamed. I
-              believe in the space between humans and technology, and I believe
-              we can make it better.
-            </p>
-          </>
-        )}
-      </div>
+      <div
+        className="prose"
+        dangerouslySetInnerHTML={{ __html: html }}
+      />
     </div>
   )
 }

@@ -1,9 +1,6 @@
 import type { Metadata } from 'next'
 import { getAllPosts, getFeaturedPages } from '@/lib/content'
-import { formatDate } from '@/lib/format'
-import ContentCard from '@/components/ContentCard/ContentCard'
-import CardGrid from '@/components/CardGrid/CardGrid'
-import styles from './page.module.css'
+import PostList from '@/components/PostList/PostList'
 
 export const metadata: Metadata = { title: 'Writing' }
 
@@ -21,40 +18,7 @@ export default function WritingPage() {
         </p>
       </div>
 
-      {featured.length > 0 && (
-        <section className="section">
-          <h2 className="section-title">Highlights</h2>
-          <CardGrid>
-            {featured.map((page, i) => (
-              <ContentCard
-                key={page.slug}
-                href={`/writing/${page.slug}`}
-                title={page.title}
-                subtitle={page.subtitle}
-                date={formatDate(page.date)}
-                index={i}
-              />
-            ))}
-          </CardGrid>
-        </section>
-      )}
-
-      <section className="section">
-        <h2 className="section-title">All Posts</h2>
-        <CardGrid>
-          {posts.map((post, i) => (
-            <ContentCard
-              key={post.id}
-              href={`/writing/${post.slug}`}
-              title={post.title}
-              subtitle={post.subtitle}
-              date={formatDate(post.date)}
-              index={i + featured.length}
-              status={post.status}
-            />
-          ))}
-        </CardGrid>
-      </section>
+      <PostList posts={posts} featured={featured} />
     </div>
   )
 }

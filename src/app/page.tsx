@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { getAllPosts, getFeaturedPages } from '@/lib/content'
 import { formatDate } from '@/lib/format'
 import ContentCard from '@/components/ContentCard/ContentCard'
@@ -6,7 +7,7 @@ import styles from './page.module.css'
 
 export default function Home() {
   const featured = getFeaturedPages()
-  const posts = getAllPosts()
+  const posts = getAllPosts().slice(0, 6)
 
   return (
     <div>
@@ -51,6 +52,9 @@ export default function Home() {
             />
           ))}
         </CardGrid>
+        <div className={styles.viewAll}>
+          <Link href="/writing">View all writing &rarr;</Link>
+        </div>
       </section>
     </div>
   )

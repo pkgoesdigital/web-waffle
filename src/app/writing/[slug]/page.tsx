@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { getPageOrPost, getAllPosts, getFeaturedPages } from '@/lib/content'
+import { markdownToHtml } from '@/lib/markdown'
 import { formatDate } from '@/lib/format'
 import styles from './page.module.css'
 
@@ -18,15 +19,17 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
-  const item = getPageOrPost(slug)
+  const item = await getPageOrPost(slug)
   return { title: item?.title ?? 'Not Found' }
 }
 
 export default async function WritingPostPage({ params }: Props) {
   const { slug } = await params
-  const item = getPageOrPost(slug)
+  const item = await getPageOrPost(slug)
 
   if (!item) notFound()
+
+  const html = item.content ? await markdownToHtml(item.content) : ''
 
   return (
     <article className={styles.article}>
@@ -46,8 +49,9 @@ export default async function WritingPostPage({ params }: Props) {
 
       <div className="prose">
         {item.subtitle && <p className={styles.subtitle}>{item.subtitle}</p>}
-        {item.content && <p>{item.content}</p>}
-        {!item.subtitle && !item.content && (
+        {html ? (
+          <div dangerouslySetInnerHTML={{ __html: html }} />
+        ) : (
           <p className={styles.placeholder}>
             Content coming soon. Check back later.
           </p>

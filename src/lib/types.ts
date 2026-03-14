@@ -4,30 +4,49 @@ export type SocialLink = {
   label?: string
 }
 
-export type Page = {
+// ── Page types ──────────────────────────────────────────────────────────────
+
+/** Page metadata — no content body. Used in listings and the index cache. */
+export type PageMeta = {
   id: string
   title: string
   slug: string
   date: string
   subtitle?: string
-  content?: string
   status: string
+  featured: boolean
 }
 
-export type Post = {
+/** Full page — includes rendered markdown content. */
+export type Page = PageMeta & {
+  content: string
+}
+
+// ── Post types ──────────────────────────────────────────────────────────────
+
+/** Post metadata — no content body. Used in listings and the index cache. */
+export type PostMeta = {
   id: string
   title: string
   slug: string
   date: string
   subtitle?: string
-  content?: string
   status: 'publish' | 'draft' | 'trash'
   categories: string[]
   tags: string[]
 }
 
-export type SiteContent = {
-  pages: Record<string, Page>
-  posts: Post[]
-  socialLinks: SocialLink[]
+/** Full post — includes rendered markdown content. */
+export type Post = PostMeta & {
+  content: string
+}
+
+// ── Pagination ───────────────────────────────────────────────────────────────
+
+export type PaginatedResult<T> = {
+  items: T[]
+  total: number
+  page: number
+  limit: number
+  hasMore: boolean
 }
