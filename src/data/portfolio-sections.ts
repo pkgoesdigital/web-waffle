@@ -47,6 +47,20 @@ export const portfolioSections: PortfolioSection[] = [
     period: 'Jan 2024 – May 2024',
     description:
       'Technical project management for multiple web application builds, establishing process, scope, and requirements across data-driven engagements.',
+    children: [
+      {
+        slug: 'advance-nc',
+        title: 'Advance NC',
+        description:
+          'Interactive web content and SCORM-packaged online courses for workforce development, covering Advanced Materials and Biotech sector spotlights.',
+      },
+      {
+        slug: 'birthday-stats',
+        title: 'Birthday Stats',
+        description:
+          'The same application concept built three ways — Vite + React, Next.js, and a full-featured configurator with i18n, Docker, Azure Pipelines, and Kubernetes deployment.',
+      },
+    ],
   },
   {
     slug: 'tuff-shed',
@@ -64,22 +78,10 @@ export const portfolioSections: PortfolioSection[] = [
     ],
   },
   {
-    slug: 'advance-nc',
-    title: 'Advance NC',
-    description:
-      'Interactive web content and SCORM-packaged online courses for workforce development, covering Advanced Materials and Biotech sector spotlights.',
-  },
-  {
     slug: 'personal-website',
     title: 'Personal Website',
     description:
       'This site — Next.js 15 App Router, markdown-driven content, D3.js visualizations, and CSS Modules. Designed to be lightweight, content-first, and easy to extend.',
-  },
-  {
-    slug: 'birthday-stats',
-    title: 'Birthday Stats',
-    description:
-      'The same application concept built three ways — Vite + React, Next.js, and a full-featured configurator with i18n, Docker, Azure Pipelines, and Kubernetes deployment.',
   },
   {
     slug: 'technical-summary',

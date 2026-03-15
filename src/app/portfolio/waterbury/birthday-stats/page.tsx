@@ -3,9 +3,11 @@ import PortfolioPage from '@/components/PortfolioPage/PortfolioPage'
 
 export const metadata: Metadata = { title: 'Birthday Stats — Portfolio' }
 
+const parent = { slug: 'waterbury', title: 'The Waterbury Group' }
+
 export default function BirthdayStatsPage() {
   return (
-    <PortfolioPage slug="birthday-stats">
+    <PortfolioPage slug="birthday-stats" parent={parent}>
       <p>
         This is a project where I built the same application concept — a birthday
         statistics and sports league tracker — using three different frontend

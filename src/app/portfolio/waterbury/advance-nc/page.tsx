@@ -3,9 +3,11 @@ import PortfolioPage from '@/components/PortfolioPage/PortfolioPage'
 
 export const metadata: Metadata = { title: 'Advance NC — Portfolio' }
 
+const parent = { slug: 'waterbury', title: 'The Waterbury Group' }
+
 export default function AdvanceNcPage() {
   return (
-    <PortfolioPage slug="advance-nc">
+    <PortfolioPage slug="advance-nc" parent={parent}>
       <p>
         For Advance NC, I developed interactive web content including custom
         Elementor widgets for WordPress — career sliders, county filter
