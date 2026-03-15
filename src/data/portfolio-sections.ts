@@ -1,8 +1,15 @@
+export type ChildSection = {
+  slug: string
+  title: string
+  description: string
+}
+
 export type PortfolioSection = {
   slug: string
   title: string
   period?: string
   description: string
+  children?: ChildSection[]
 }
 
 export const portfolioSections: PortfolioSection[] = [
@@ -19,6 +26,20 @@ export const portfolioSections: PortfolioSection[] = [
     period: 'Nov 2021 – Dec 2023',
     description:
       'Full stack web and mobile engineering across a range of clients — from private equity dashboards to non-profit mobile apps and marketing integrations.',
+    children: [
+      {
+        slug: 'kula',
+        title: 'Kula App',
+        description:
+          'Cross-platform React Native mobile app with authentication, activity tracking, push notifications, and Redux-powered offline storage. Built for a non-profit client.',
+      },
+      {
+        slug: 'angular-todo',
+        title: 'Angular Todo App',
+        description:
+          'A task management SPA built with Angular 11, TypeScript, and RxJS as a coding challenge. Led directly to the consulting role at Tonic.',
+      },
+    ],
   },
   {
     slug: 'waterbury',
@@ -33,19 +54,14 @@ export const portfolioSections: PortfolioSection[] = [
     period: 'Apr 2024 – Present',
     description:
       'Technical product manager on an enterprise Next.js monorepo powering tuffshed.com, a Home Depot partnership site, checkout, analytics, and product configurators.',
-  },
-  {
-    slug: 'tuff-shed-scripts',
-    title: 'Tuff Shed Scripts',
-    period: 'Apr 2024 – Present',
-    description:
-      'Internal Python automation tooling including a semantic document classifier and an early-stage Claude-powered AI agent project built on accumulated product context.',
-  },
-  {
-    slug: 'kula',
-    title: 'Kula App',
-    description:
-      'Cross-platform React Native mobile app with authentication, activity tracking, push notifications, and Redux-powered offline storage. Built for a non-profit client.',
+    children: [
+      {
+        slug: 'tuff-shed-scripts',
+        title: 'Tuff Shed Scripts',
+        description:
+          'Internal Python automation tooling including a semantic document classifier and an early-stage Claude-powered AI agent project built on accumulated product context.',
+      },
+    ],
   },
   {
     slug: 'advance-nc',
@@ -64,12 +80,6 @@ export const portfolioSections: PortfolioSection[] = [
     title: 'Birthday Stats',
     description:
       'The same application concept built three ways — Vite + React, Next.js, and a full-featured configurator with i18n, Docker, Azure Pipelines, and Kubernetes deployment.',
-  },
-  {
-    slug: 'angular-todo',
-    title: 'Angular Todo App',
-    description:
-      'A task management SPA built with Angular 11, TypeScript, and RxJS as a coding challenge. Led directly to the consulting role at Tonic.',
   },
   {
     slug: 'technical-summary',

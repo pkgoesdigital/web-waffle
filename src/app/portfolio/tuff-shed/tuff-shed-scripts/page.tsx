@@ -3,9 +3,11 @@ import PortfolioPage from '@/components/PortfolioPage/PortfolioPage'
 
 export const metadata: Metadata = { title: 'Tuff Shed Scripts — Portfolio' }
 
+const parent = { slug: 'tuff-shed', title: 'Tuff Shed' }
+
 export default function TuffShedScriptsPage() {
   return (
-    <PortfolioPage slug="tuff-shed-scripts">
+    <PortfolioPage slug="tuff-shed-scripts" parent={parent}>
       <p>
         Alongside the main Tuff Shed platform, the team built a set of Python
         scripts for internal automation. Two projects stand out.

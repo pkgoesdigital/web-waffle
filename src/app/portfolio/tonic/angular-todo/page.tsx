@@ -3,9 +3,11 @@ import PortfolioPage from '@/components/PortfolioPage/PortfolioPage'
 
 export const metadata: Metadata = { title: 'Angular Todo App — Portfolio' }
 
+const parent = { slug: 'tonic', title: 'Tonic Inc. Digital Consulting' }
+
 export default function AngularTodoPage() {
   return (
-    <PortfolioPage slug="angular-todo">
+    <PortfolioPage slug="angular-todo" parent={parent}>
       <p>
         A task management SPA built with Angular 11, TypeScript, Bootstrap 5,
         and NgBootstrap. Built as a coding challenge, it demonstrates

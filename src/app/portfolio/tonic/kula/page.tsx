@@ -3,9 +3,11 @@ import PortfolioPage from '@/components/PortfolioPage/PortfolioPage'
 
 export const metadata: Metadata = { title: 'Kula App — Portfolio' }
 
+const parent = { slug: 'tonic', title: 'Tonic Inc. Digital Consulting' }
+
 export default function KulaPage() {
   return (
-    <PortfolioPage slug="kula">
+    <PortfolioPage slug="kula" parent={parent}>
       <p>
         Kula is a cross-platform mobile app built in React Native targeting both
         iOS and Android. It features user authentication, child profile

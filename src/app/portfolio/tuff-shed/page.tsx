@@ -1,9 +1,14 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import PortfolioPage from '@/components/PortfolioPage/PortfolioPage'
+import { portfolioSections } from '@/data/portfolio-sections'
+import styles from './page.module.css'
 
 export const metadata: Metadata = { title: 'Tuff Shed — Portfolio' }
 
 export default function TuffShedPage() {
+  const section = portfolioSections.find((s) => s.slug === 'tuff-shed')
+
   return (
     <PortfolioPage slug="tuff-shed">
       <p>
@@ -94,6 +99,22 @@ export default function TuffShedPage() {
         conciseness, memory efficiency, and scalability — including pure
         functional approaches using fold/aggregate patterns.
       </p>
+
+      {section?.children && section.children.length > 0 && (
+        <div className={styles.projects}>
+          <h2>Projects</h2>
+          <ul className={styles.projectList}>
+            {section.children.map((child) => (
+              <li key={child.slug}>
+                <Link href={`/portfolio/tuff-shed/${child.slug}`} className={styles.projectLink}>
+                  <span className={styles.projectTitle}>{child.title}</span>
+                  <span className={styles.projectDescription}>{child.description}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </PortfolioPage>
   )
 }
