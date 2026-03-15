@@ -114,8 +114,15 @@ If a rebase produces conflicts that aren't trivially resolvable, stop and surfac
 
 ### Commit discipline
 - One logical concern per commit — do not bundle unrelated changes.
+- Commit after completing each task — don't batch multiple completed tasks into one commit.
 - Run `npm run build` before committing to confirm the project is in a valid state.
 - Commit messages: short imperative subject line (`Add`, `Fix`, `Refactor`, not `Added`), with a body when the "why" isn't obvious.
+
+## Code Style Rules
+
+- Don't add comments unless the code is genuinely non-obvious.
+- Don't refactor code that wasn't part of the requested task.
+- Don't uncomment test blocks unless explicitly asked to.
 
 ### PR as the merge gate
 - Open a PR from the `claude/*` branch targeting `master` when a unit of work is complete.
