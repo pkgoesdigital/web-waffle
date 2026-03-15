@@ -1,28 +1,28 @@
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import Header from '@/components/Header/Header'
-import Footer from '@/components/Footer/Footer'
-import './globals.css'
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import Header from "@/components/Header/Header";
+import Footer from "@/components/Footer/Footer";
+import "./globals.css";
 
 const inter = Inter({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-inter',
-})
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+});
 
 export const metadata: Metadata = {
   title: {
-    default: 'Paula Klimas',
-    template: '%s | Paula Klimas',
+    default: "Paula Klimas",
+    template: "%s | Paula Klimas",
   },
   description:
-    'Thoughts on product, technology, and the human side of building software.',
-}
+    "Thoughts on product, technology, and the human side of building software.",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en" className={inter.variable}>
@@ -32,5 +32,5 @@ export default function RootLayout({
         <Footer />
       </body>
     </html>
-  )
+  );
 }
