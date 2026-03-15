@@ -1,13 +1,13 @@
-import Link from 'next/link'
-import { getAllPosts, getFeaturedPages } from '@/lib/content'
-import { formatDate } from '@/lib/format'
-import ContentCard from '@/components/ContentCard/ContentCard'
-import CardGrid from '@/components/CardGrid/CardGrid'
-import styles from './page.module.css'
+import Link from "next/link";
+import { getAllPosts, getFeaturedPages } from "@/lib/content";
+import { formatDate } from "@/lib/format";
+import ContentCard from "@/components/ContentCard/ContentCard";
+import CardGrid from "@/components/CardGrid/CardGrid";
+import styles from "./page.module.css";
 
 export default function Home() {
-  const featured = getFeaturedPages()
-  const posts = getAllPosts().slice(0, 6)
+  const featured = getFeaturedPages();
+  const posts = getAllPosts().slice(0, 6);
 
   return (
     <div>
@@ -57,5 +57,5 @@ export default function Home() {
         </div>
       </section>
     </div>
-  )
+  );
 }
