@@ -14,30 +14,17 @@ export type PortfolioSection = {
 
 export const portfolioSections: PortfolioSection[] = [
   {
-    slug: 'nextworld',
-    title: 'Nextworld',
-    period: 'Jun 2019 – Nov 2021',
+    slug: 'tuff-shed',
+    title: 'Tuff Shed',
+    period: 'Apr 2024 – Present',
     description:
-      'Enterprise reporting and analytics engineering on a SaaS ERP platform. First professional role — promoted from Associate to Software Engineer within three months.',
-  },
-  {
-    slug: 'tonic',
-    title: 'Tonic Inc. Digital Consulting',
-    period: 'Nov 2021 – Dec 2023',
-    description:
-      'Full stack web and mobile engineering across a range of clients — from private equity dashboards to non-profit mobile apps and marketing integrations.',
+      'Technical product manager on an enterprise Next.js monorepo powering tuffshed.com, a Home Depot partnership site, checkout, analytics, and product configurators.',
     children: [
       {
-        slug: 'kula',
-        title: 'Kula App',
+        slug: 'tuff-shed-scripts',
+        title: 'Tuff Shed Scripts',
         description:
-          'Cross-platform React Native mobile app with authentication, activity tracking, push notifications, and Redux-powered offline storage. Built for a non-profit client.',
-      },
-      {
-        slug: 'angular-todo',
-        title: 'Angular Todo App',
-        description:
-          'A task management SPA built with Angular 11, TypeScript, and RxJS as a coding challenge. Led directly to the consulting role at Tonic.',
+          'Internal Python automation tooling including a semantic document classifier and an early-stage Claude-powered AI agent project built on accumulated product context.',
       },
     ],
   },
@@ -63,19 +50,32 @@ export const portfolioSections: PortfolioSection[] = [
     ],
   },
   {
-    slug: 'tuff-shed',
-    title: 'Tuff Shed',
-    period: 'Apr 2024 – Present',
+    slug: 'tonic',
+    title: 'Tonic Inc. Digital Consulting',
+    period: 'Nov 2021 – Dec 2023',
     description:
-      'Technical product manager on an enterprise Next.js monorepo powering tuffshed.com, a Home Depot partnership site, checkout, analytics, and product configurators.',
+      'Full stack web and mobile engineering across a range of clients — from private equity dashboards to non-profit mobile apps and marketing integrations.',
     children: [
       {
-        slug: 'tuff-shed-scripts',
-        title: 'Tuff Shed Scripts',
+        slug: 'kula',
+        title: 'Kula App',
         description:
-          'Internal Python automation tooling including a semantic document classifier and an early-stage Claude-powered AI agent project built on accumulated product context.',
+          'Cross-platform React Native mobile app with authentication, activity tracking, push notifications, and Redux-powered offline storage. Built for a non-profit client.',
+      },
+      {
+        slug: 'angular-todo',
+        title: 'Angular Todo App',
+        description:
+          'A task management SPA built with Angular 11, TypeScript, and RxJS as a coding challenge. Led directly to the consulting role at Tonic.',
       },
     ],
+  },
+  {
+    slug: 'nextworld',
+    title: 'Nextworld',
+    period: 'Jun 2019 – Nov 2021',
+    description:
+      'Enterprise reporting and analytics engineering on a SaaS ERP platform. First professional role — promoted from Associate to Software Engineer within three months.',
   },
   {
     slug: 'personal-website',
