@@ -1,32 +1,65 @@
 import type { Metadata } from 'next'
-import WatchmakerClock from '@/components/WatchmakerClock/WatchmakerClock'
-import D3Visualization from '@/components/D3Visualization/D3Visualization'
+import Link from 'next/link'
+import { portfolioSections } from '@/data/portfolio-sections'
 import styles from './page.module.css'
 
-export const metadata: Metadata = { title: 'Portfolio' }
+export const metadata: Metadata = {
+  title: 'Portfolio',
+  description:
+    'A detailed look at the projects and roles that shaped my career as a full-stack developer and technical product manager.',
+}
 
-export default function PortfolioPage() {
+export default function PortfolioHomePage() {
   return (
-    <div className={styles.container}>
+    <div className="page-container">
       <div className="page-header">
         <h1>Portfolio</h1>
-        <p>Interactive demos and data visualizations.</p>
+        <p>
+          A frontend-focused full-stack developer who enjoys building products
+          that people actually use. My work spans React, React Native, Next.js,
+          TypeScript, and Python — from enterprise ERP platforms to personal
+          utilities and mobile apps.
+        </p>
       </div>
 
-      <section className={styles.vizSection}>
-        <h2 className={styles.vizTitle}>The Watchmaker</h2>
-        <p className={styles.vizDescription}>
-          An analog clock built with JavaScript and requestAnimationFrame.
-        </p>
-        <WatchmakerClock />
-      </section>
+      <nav className={styles.toc} aria-label="Portfolio sections">
+        <h2 className={styles.tocTitle}>Contents</h2>
+        <ol className={styles.tocList}>
+          {portfolioSections.map((section, i) => (
+            <li key={section.slug} className={styles.tocItem}>
+              <Link href={`/portfolio/${section.slug}`} className={styles.tocLink}>
+                <span className={styles.tocNumber}>
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+                <span className={styles.tocText}>
+                  <span className={styles.tocSectionTitle}>{section.title}</span>
+                  {section.period && (
+                    <span className={styles.tocPeriod}>{section.period}</span>
+                  )}
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ol>
+      </nav>
 
-      <section className={styles.vizSection}>
-        <h2 className={styles.vizTitle}>Sample Visualization</h2>
-        <p className={styles.vizDescription}>
-          A responsive bar chart rendered with D3.js, served from an API route.
-        </p>
-        <D3Visualization dataUrl="/api/viz?dataset=sample" />
+      <section className={styles.grid}>
+        {portfolioSections.map((section, i) => (
+          <Link
+            key={section.slug}
+            href={`/portfolio/${section.slug}`}
+            className={styles.card}
+          >
+            <span className={styles.cardNumber}>
+              {String(i + 1).padStart(2, '0')}
+            </span>
+            <h3 className={styles.cardTitle}>{section.title}</h3>
+            {section.period && (
+              <p className={styles.cardPeriod}>{section.period}</p>
+            )}
+            <p className={styles.cardDescription}>{section.description}</p>
+          </Link>
+        ))}
       </section>
     </div>
   )
