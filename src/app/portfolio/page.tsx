@@ -1,13 +1,13 @@
-import type { Metadata } from 'next'
-import Link from 'next/link'
-import { portfolioSections } from '@/data/portfolio-sections'
-import styles from './page.module.css'
+import type { Metadata } from "next";
+import Link from "next/link";
+import { portfolioSections } from "@/data/portfolio-sections";
+import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: 'Portfolio',
+  title: "Portfolio",
   description:
-    'A detailed look at the projects and roles that shaped my career as a full-stack developer and technical product manager.',
-}
+    "A detailed look at the projects and roles that shaped my career as a full-stack developer and technical product manager.",
+};
 
 export default function PortfolioHomePage() {
   return (
@@ -27,12 +27,17 @@ export default function PortfolioHomePage() {
         <ol className={styles.tocList}>
           {portfolioSections.map((section, i) => (
             <li key={section.slug} className={styles.tocItem}>
-              <Link href={`/portfolio/${section.slug}`} className={styles.tocLink}>
+              <Link
+                href={`/portfolio/${section.slug}`}
+                className={styles.tocLink}
+              >
                 <span className={styles.tocNumber}>
-                  {String(i + 1).padStart(2, '0')}
+                  {String(i + 1).padStart(2, "0")}
                 </span>
                 <span className={styles.tocText}>
-                  <span className={styles.tocSectionTitle}>{section.title}</span>
+                  <span className={styles.tocSectionTitle}>
+                    {section.title}
+                  </span>
                   {section.period && (
                     <span className={styles.tocPeriod}>{section.period}</span>
                   )}
@@ -66,7 +71,7 @@ export default function PortfolioHomePage() {
             className={styles.card}
           >
             <span className={styles.cardNumber}>
-              {String(i + 1).padStart(2, '0')}
+              {String(i + 1).padStart(2, "0")}
             </span>
             <h3 className={styles.cardTitle}>{section.title}</h3>
             {section.period && (
@@ -77,5 +82,5 @@ export default function PortfolioHomePage() {
         ))}
       </section>
     </div>
-  )
+  );
 }
