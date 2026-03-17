@@ -15,10 +15,11 @@ export default function PortfolioHomePage() {
       <div className="page-header">
         <h1>Portfolio</h1>
         <p>
-          A frontend-focused full-stack developer who enjoys building products
-          that people actually use. My work spans React, React Native, Next.js,
-          TypeScript, and Python — from enterprise ERP platforms to personal
-          utilities and mobile apps.
+          I'm a frontend-focused full-stack developer who enjoys building
+          products that people actually use. My work portfolio spans React,
+          React Native, Next.js, TypeScript, and Python — from enterprise ERP
+          platforms to personal utilities and mobile apps. Things continue to
+          evolve.
         </p>
       </div>
 
