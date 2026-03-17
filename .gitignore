@@ -26,3 +26,8 @@ npm-debug.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Claude agent harness — runtime data (not config)
+# Instinct .yaml files are generated at runtime; only README is committed
+.claude/homunculus/instincts/*.yaml
+# Session activity logs live at ~/.claude/sessions/ (user-level, outside repo)
