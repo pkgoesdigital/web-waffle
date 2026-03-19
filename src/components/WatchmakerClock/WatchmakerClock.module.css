@@ -22,7 +22,7 @@
 .hour {
   width: 4px;
   height: 70px;
-  background: #1a1a2e;
+  background: var(--color-text);
   bottom: 138px;
   left: 138px;
 }
@@ -30,7 +30,7 @@
 .minute {
   width: 3px;
   height: 100px;
-  background: white;
+  background: var(--color-surface);
   bottom: 138px;
   left: 138.5px;
 }
@@ -38,7 +38,7 @@
 .second {
   width: 2px;
   height: 120px;
-  background: rgba(255, 255, 255, 0.7);
+  background: color-mix(in srgb, var(--color-surface) 70%, transparent);
   bottom: 138px;
   left: 139px;
 }
@@ -46,11 +46,11 @@
 .center {
   width: 12px;
   height: 12px;
-  background: white;
+  background: var(--color-surface);
   border-radius: 50%;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--shadow-sm);
 }
