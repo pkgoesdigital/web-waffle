@@ -88,9 +88,7 @@ Microsoft Purview extends that governance layer further: auto-tagging applies se
 
 **The best handoff is a machine-readable one.**
 
-Two years of product management at enterprise scale generates a significant surface area of institutional knowledge: API behaviors, vendor quirks, domain-specific terminology, workflow edge cases, stakeholder preferences, costing rules, GL account structures. Most of that knowledge lives in Slack threads, meeting notes, and the PM's head — and none of it survives a transition intact.
-
-In the two-year self-review, change management rated 2 out of 5. The diagnosis wasn't lack of effort — it was structural: no formal adoption framework, no PM team to distribute knowledge across, and a domain that was too large for one person to document comprehensively in real time. The proposed fix was an AI script that organizes training content by Product Area, reducing the cognitive load of knowledge transfer from "write everything down" to "classify what already exists."
+Two years of product management at enterprise scale generates a significant surface area of institutional knowledge: API behaviors, vendor quirks, domain-specific terminology, workflow edge cases, stakeholder preferences, costing rules, GL account structures. Most of that knowledge lives in Slack threads, meeting notes, and my head — and none of it survives a transition intact.
 
 That's the current alpha project: a Claude-powered agent designed to absorb the context accumulated over two years. The first tool in the pipeline uses sentence-transformers to semantically classify documents — Postman collections, domain schemas, meeting artifacts, test data objects — into configurable categories. It handles PDFs, Word docs, Excel files, and images via OCR. The goal isn't a search engine; it's a reasoning layer that can answer the questions a product manager would, with the institutional context to give those answers weight.
 
