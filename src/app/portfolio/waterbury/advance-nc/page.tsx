@@ -13,6 +13,20 @@ export default function AdvanceNcPage() {
         Elementor widgets for WordPress — career sliders, county filter
         components — and SCORM-packaged online courses covering sector spotlights
         in Advanced Materials and Biotech.
+        <a
+          href="https://advancenc.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Visit the Advance NC website.
+        </a>{' '}
+        <a
+          href="https://github.com/pkgoesdigital/advancenc/tree/main"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          SCORM files and content samples available in this repo.
+        </a>
       </p>
 
       <h2>SCORM Courses</h2>
@@ -20,8 +34,15 @@ export default function AdvanceNcPage() {
         The SCORM packages are built for LMS deployment and follow the 1.2
         specification for broad compatibility. Additional educational content
         included courses developed for Emily Griffith Technical College. The
-        courses are still deployed and in active use across multiple learning
+        courses are still deployed and in use across multiple learning
         management systems.
+        <br></br>
+        <a
+          href="https://advancenc.com/explore-advanced-manufacturing/industry-sectors/automotive-truck-heavy-machinery/"
+          target="_blank"
+          rel="noopener noreferrer"
+        ></a>
+        An example page with embedded SCORM content
       </p>
 
       <h2>Instructional Design</h2>

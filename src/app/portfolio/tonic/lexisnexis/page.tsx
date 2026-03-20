@@ -22,7 +22,7 @@ export default function LexisNexisPage() {
           Interactive survey built with plain HTML, CSS, JavaScript, and PHP — no
           framework dependencies, embeddable in any LexisNexis landing page
         </li>
-        <li>Fully responsive, with particular attention to tablet layout</li>
+        <li>Fully responsive by baking in the responsive design into the style architecture.</li>
         <li>
           Metrics passed to the sales team via URL parameters on completion,
           including: overall assessment score, score-derived &ldquo;level&rdquo; or
