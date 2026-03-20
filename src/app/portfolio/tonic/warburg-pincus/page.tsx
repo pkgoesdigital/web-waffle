@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import PortfolioPage from '@/components/PortfolioPage/PortfolioPage'
 
 export const metadata: Metadata = { title: 'Warburg Pincus — Quill — Portfolio' }
@@ -22,11 +23,20 @@ export default function WarburgPincusPage() {
         This was a six-engineer project working inside Warburg Pincus&rsquo;s
         existing Microsoft Azure development environment. The application was built
         in React with AG Grid for tabular data display and charting libraries for
-        visualizations. Dashboards needed to be flexible across deal types in
+        visualizations. Dashboards needed to be flexible across all deal types in
         different industries, and each deal could be updated by over 100
         authenticated users — making state management and asynchronous update
         handling a core architectural concern.
       </p>
+
+      <Image
+        src="/img/warburg-pincus/quill-dashboard.webp"
+        alt="Quill dashboard showing financial metrics, bar charts, and operating performance analysis panels"
+        width={2880}
+        height={5592}
+        sizes="(max-width: 860px) 100vw, 860px"
+        style={{ width: '100%', height: 'auto' }}
+      />
 
       <h2>My Role</h2>
       <p>
@@ -42,6 +52,24 @@ export default function WarburgPincusPage() {
         investment valuations, multi-page financial reporting, and flexible metric
         display across industries.
       </p>
+
+      <Image
+        src="/img/warburg-pincus/quill-valuation.webp"
+        alt="Quill valuation tab showing investment summary table with quarterly data and equity value charts"
+        width={2880}
+        height={3092}
+        sizes="(max-width: 860px) 100vw, 860px"
+        style={{ width: '100%', height: 'auto' }}
+      />
+
+      <Image
+        src="/img/warburg-pincus/quill-snapshot-discussion.webp"
+        alt="Quill snapshot discussion book view showing multi-section financial narrative and supplemental data tables"
+        width={2880}
+        height={6748}
+        sizes="(max-width: 860px) 100vw, 860px"
+        style={{ width: '100%', height: 'auto' }}
+      />
 
       <h2>Technical Highlights</h2>
       <ul>
