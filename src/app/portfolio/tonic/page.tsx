@@ -1,14 +1,10 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import PortfolioPage from '@/components/PortfolioPage/PortfolioPage'
-import { portfolioSections } from '@/data/portfolio-sections'
-import styles from './page.module.css'
 
 export const metadata: Metadata = { title: 'Tonic Inc. Digital Consulting — Portfolio' }
 
 export default function TonicPage() {
-  const section = portfolioSections.find((s) => s.slug === 'tonic')
-
   return (
     <PortfolioPage slug="tonic">
       <p>
@@ -41,56 +37,70 @@ export default function TonicPage() {
 
       <h2>Selected Clients</h2>
 
-      <h3>N-Tier Financial Services</h3>
-      <p>
-        Built a corporate platform with megamenu navigation architecture for
-        complex feature hierarchies in regulatory reporting and risk management.
+      <h3>
         <a
           href="https://www.ntierfs.com/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Visit the N-Tier Financial Services website.
-        </a>{' '}
+          N-Tier Financial Services
+        </a>
+      </h3>
+      <p>
+        Built a new website with megamenu navigation architecture for
+        complex content hierarchies in regulatory reporting and risk management.<br />
         <a
           href="https://github.com/pkgoesdigital/nTierFinancialServices"
           target="_blank"
           rel="noopener noreferrer"
         >
           View the repo with the custom megamenu solution.
-        </a>
+        </a>{' '}
+        <Link href="/portfolio/tonic/n-tier">View project page →</Link>
       </p>
 
-      <h3>US Climate Alliance</h3>
+      <h3>
+        <a
+          href="https://usclimatealliance.org/policy-priorities/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          US Climate Alliance
+        </a>
+      </h3>
       <p>
         Built and delivered a WordPress site with Elementor, creating a scalable
         content management system with templates for member pages, press releases,
         reports, guides, and media advisories. Embedded React Applications were added to each State page,
-         which pulled data out of a REST Api specific to that state's policy initiatives. Recorded a full library of Loom
+        which pulled data out of a REST Api specific to that state&rsquo;s policy initiatives. Recorded a full library of Loom
         tutorial videos empowering the client&rsquo;s team to maintain the site
-        independently.
+        independently.{' '}
+        <Link href="/portfolio/tonic/us-climate-alliance">View project page →</Link>
       </p>
 
-      <h3>LexisNexis</h3>
-      <p>
-        Built an interactive risk assessment training tool for underwriting
-        professionals, designed responsively for iPad and web. Improved
-        accessibility and streamlined user flow across projects by leveraging
-        UI/UX best practices, resulting in a 15% increase in user engagement and higher customer activation.{' '}
+      <h3>
         <a
           href="https://solutions.risk.lexisnexis.com/tpu-assessment"
           target="_blank"
           rel="noopener noreferrer"
         >
-          View the assessment.
-        </a>{' '}
+          LexisNexis
+        </a>
+      </h3>
+      <p>
+        Built an interactive risk assessment training tool for underwriting
+        professionals, designed responsively for iPad and web. Improved
+        accessibility and streamlined user flow across projects by leveraging
+        UI/UX best practices, resulting in a 15% increase in user engagement and higher customer activation.{' '}
+        <br />
         <a
           href="https://github.com/pkgoesdigital/LexisNexisTPUAssessment"
           target="_blank"
           rel="noopener noreferrer"
         >
           View the repo.
-        </a>
+        </a>{' '}
+        <Link href="/portfolio/tonic/lexisnexis">View project page →</Link>
       </p>
 
       <h3>Warburg Pincus</h3>
@@ -99,54 +109,51 @@ export default function TonicPage() {
         firm, working within their existing Microsoft Azure environment. Built
         React modals with state management, real-time update notifications, and
         integrations with iLevel and other third-party portfolio management
-        systems.
+        systems.{' '}
+        <Link href="/portfolio/tonic/warburg-pincus">View project page →</Link>
       </p>
 
-      <h3>Kula Empowered</h3>
+      <h3>
+        <a
+          href="https://www.kulaempowered.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Kula Empowered
+        </a>
+      </h3>
       <p>
         Built the beta React Native mobile app for a child safety non-profit,
         covering all screens, routing, push notifications via OneSignal, and
-        submission to both the Google Play Store and Apple App Store.
+        submission to both the Google Play Store and Apple App Store.{' '}
+        <Link href="/portfolio/tonic/kula">View project page →</Link>
       </p>
 
-      <h3>Torus Transforms</h3>
-      <p>
-        Built a multilingual React Native mobile app providing COVID-19
-        information in Dari, Russian, and Thai. Handled localization, push
-        notifications, and app store submissions. Pivoted to a mobile web launch
-        after platform publishing restrictions. The app was launched after I was off the project, 
-        and it's now in it's second development iteration - adding more educational content.{' '}
+      <h3>
         <a
           href="https://www.torustransforms.org/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          View the site.
+          Torus Transforms
         </a>
+      </h3>
+      <p>
+        Built a multilingual React Native mobile app providing COVID-19
+        information in Dari, Russian, and Thai. Handled localization, push
+        notifications, and app store submissions. Pivoted to a mobile web launch
+        after platform publishing restrictions. The app was launched after I was off the project,
+        and it&rsquo;s now in its second development iteration - adding more educational content.{' '}
+        <Link href="/portfolio/tonic/torus">View project page →</Link>
       </p>
 
       <h3>DoubleCheck</h3>
       <p>
         Built Angular-compatible front-end templates for tabular credit card
         transaction data using Bootstrap, HTML, and CSS — unblocking the
-        client&rsquo;s internal team before a hard deadline.
+        client&rsquo;s internal team before a hard deadline.{' '}
+        <Link href="/portfolio/tonic/doublecheck">View project page →</Link>
       </p>
-
-      {section?.children && section.children.length > 0 && (
-        <div className={styles.projects}>
-          <h2>Projects</h2>
-          <ul className={styles.projectList}>
-            {section.children.map((child) => (
-              <li key={child.slug}>
-                <Link href={`/portfolio/tonic/${child.slug}`} className={styles.projectLink}>
-                  <span className={styles.projectTitle}>{child.title}</span>
-                  <span className={styles.projectDescription}>{child.description}</span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
     </PortfolioPage>
   )
 }
