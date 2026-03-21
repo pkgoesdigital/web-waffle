@@ -87,7 +87,10 @@ export default function D3Visualization({ dataUrl }: D3VisualizationProps) {
         return res.json()
       })
       .then(setData)
-      .catch((err) => setError(err.message))
+      .catch((err: unknown) => {
+        console.error('D3 data fetch failed:', err)
+        setError('Unable to load visualization.')
+      })
   }, [dataUrl])
 
   const render = useCallback(() => {

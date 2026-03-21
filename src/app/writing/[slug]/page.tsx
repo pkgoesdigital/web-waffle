@@ -42,6 +42,13 @@ export default async function WritingPostPage({ params }: Props) {
         {item.date && (
           <time className={styles.date}>{formatDate(item.date)}</time>
         )}
+        {'tags' in item && item.tags.length > 0 && (
+          <ul className={styles.tags}>
+            {item.tags.map((tag) => (
+              <li key={tag} className={styles.tag}>{tag}</li>
+            ))}
+          </ul>
+        )}
         {'status' in item && item.status !== 'publish' && (
           <span className={styles.badge}>{item.status}</span>
         )}

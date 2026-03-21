@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import PortfolioPage from '@/components/PortfolioPage/PortfolioPage'
+import styles from './page.module.css'
 
 export const metadata: Metadata = { title: 'Tonic Inc. Digital Consulting — Portfolio' }
 
@@ -50,12 +51,9 @@ export default function TonicPage() {
       </p>
 
       <h3>
-        <a
-          href="https://www.ntierfs.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          N-Tier Financial Services
+        N-Tier Financial Services{' '}
+        <a href="https://www.ntierfs.com/" target="_blank" rel="noopener noreferrer" className={styles.headingLink}>
+          ntierfs.com
         </a>
       </h3>
       <p>
@@ -66,12 +64,9 @@ export default function TonicPage() {
       </p>
 
       <h3>
-        <a
-          href="https://usclimatealliance.org/policy-priorities/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          US Climate Alliance
+        US Climate Alliance{' '}
+        <a href="https://usclimatealliance.org/policy-priorities/" target="_blank" rel="noopener noreferrer" className={styles.headingLink}>
+          usclimatealliance.org
         </a>
       </h3>
       <p>
@@ -87,12 +82,9 @@ export default function TonicPage() {
       </p>
 
       <h3>
-        <a
-          href="https://solutions.risk.lexisnexis.com/tpu-assessment"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          LexisNexis
+        LexisNexis{' '}
+        <a href="https://solutions.risk.lexisnexis.com/tpu-assessment" target="_blank" rel="noopener noreferrer" className={styles.headingLink}>
+          solutions.risk.lexisnexis.com
         </a>
       </h3>
       <p>
@@ -113,12 +105,9 @@ export default function TonicPage() {
       </p>
 
       <h3>
-        <a
-          href="https://www.kulaempowered.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Kula Empowered
+        Kula Empowered{' '}
+        <a href="https://www.kulaempowered.com/" target="_blank" rel="noopener noreferrer" className={styles.headingLink}>
+          kulaempowered.com
         </a>
       </h3>
       <p>
@@ -130,12 +119,9 @@ export default function TonicPage() {
       </p>
 
       <h3>
-        <a
-          href="https://www.torustransforms.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Torus Transforms
+        Torus Transforms{' '}
+        <a href="https://www.torustransforms.org/" target="_blank" rel="noopener noreferrer" className={styles.headingLink}>
+          torustransforms.org
         </a>
       </h3>
       <p>
