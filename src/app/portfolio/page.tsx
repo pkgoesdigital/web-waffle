@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { portfolioSections } from "@/data/portfolio-sections";
+import { getCardColor } from "@/lib/colors";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
@@ -57,6 +58,7 @@ export default function PortfolioHomePage() {
             key={section.slug}
             href={`/portfolio/${section.slug}`}
             className={styles.card}
+            style={{ backgroundColor: getCardColor(i) }}
           >
             <span className={styles.cardNumber}>
               {String(i + 1).padStart(2, "0")}

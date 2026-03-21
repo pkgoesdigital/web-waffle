@@ -4,7 +4,7 @@ title: "Fundamentals of web dev"
 slug: "fundamentals-of-web-dev"
 date: "2026-03-21"
 subtitle: ""
-status: "draft"
+status: "publish"
 categories: []
 tags: []
 ---
