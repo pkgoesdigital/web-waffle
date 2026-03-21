@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import PortfolioPage from '@/components/PortfolioPage/PortfolioPage'
 
 export const metadata: Metadata = { title: 'Kula App — Portfolio' }
@@ -14,6 +15,41 @@ export default function KulaPage() {
         management, activity tracking, a favorites system, and push notifications
         via OneSignal.
       </p>
+
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1rem' }}>
+        <Image
+          src="/img/kula/kula-home.webp"
+          alt="Kula home screen showing child profile for Suzi with age-range tabs and monthly activity content"
+          width={1125}
+          height={2436}
+          sizes="(max-width: 640px) 50vw, 430px"
+          style={{ width: '100%', height: 'auto' }}
+        />
+        <Image
+          src="/img/kula/kula-activity-detail.webp"
+          alt="Kula activity detail screen showing Month 10 development summary for a 14-year-old child profile"
+          width={1125}
+          height={2436}
+          sizes="(max-width: 640px) 50vw, 430px"
+          style={{ width: '100%', height: 'auto' }}
+        />
+        <Image
+          src="/img/kula/kula-activity-modal.webp"
+          alt="Kula activity modal displaying Year 14 Month 10 guidance content for caregivers"
+          width={1125}
+          height={2436}
+          sizes="(max-width: 640px) 50vw, 430px"
+          style={{ width: '100%', height: 'auto' }}
+        />
+        <Image
+          src="/img/kula/kula-resources.webp"
+          alt="Kula Resources tab showing USA and Canada support organizations including the National Children's Advocacy Center"
+          width={1125}
+          height={2436}
+          sizes="(max-width: 640px) 50vw, 430px"
+          style={{ width: '100%', height: 'auto' }}
+        />
+      </div>
 
       <h2>Architecture</h2>
       <p>
