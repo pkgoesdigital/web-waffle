@@ -46,20 +46,6 @@ export default function PortfolioHomePage() {
                 </span>
               </Link>
 
-              {section.children && section.children.length > 0 && (
-                <ul className={styles.tocChildren}>
-                  {section.children.map((child) => (
-                    <li key={child.slug} className={styles.tocChildItem}>
-                      <Link
-                        href={`/portfolio/${section.slug}/${child.slug}`}
-                        className={styles.tocChildLink}
-                      >
-                        {child.title}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              )}
             </li>
           ))}
         </ol>

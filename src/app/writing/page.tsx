@@ -1,12 +1,12 @@
 import type { Metadata } from 'next'
-import { getPublishedPosts, getFeaturedPages } from '@/lib/content'
+import { getAllPosts, getFeaturedPages } from '@/lib/content'
 import PostList from '@/components/PostList/PostList'
 
 export const metadata: Metadata = { title: 'Writing' }
 
 export default function WritingPage() {
   const featured = getFeaturedPages()
-  const posts = getPublishedPosts()
+  const posts = getAllPosts()
 
   return (
     <div>

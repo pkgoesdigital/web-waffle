@@ -18,11 +18,11 @@ export const portfolioSections: PortfolioSection[] = [
     title: 'Tuff Shed',
     period: 'Apr 2024 – Present',
     description:
-      'Technical product manager on an enterprise Next.js monorepo powering tuffshed.com, a Home Depot partnership site, checkout, analytics, and product configurators.',
+      'Technical product manager on internal tooling projects, business intelligence, and data infrastructure.',
     children: [
       {
-        slug: 'tuff-shed-scripts',
-        title: 'Tuff Shed Scripts',
+        slug: 'internal-tools',
+        title: 'Tuff Shed Internal Tools',
         description:
           'Internal Python automation tooling including a semantic document classifier and an early-stage Claude-powered AI agent project built on accumulated product context.',
       },
@@ -33,74 +33,74 @@ export const portfolioSections: PortfolioSection[] = [
     title: 'The Waterbury Group',
     period: 'Jan 2024 – May 2024',
     description:
-      'Technical project management for multiple web application builds, establishing process, scope, and requirements across data-driven engagements.',
+      'Technical product management for web application builds - established architecture, defined scope, and paved the development path for outsourced development.',
     children: [
       {
         slug: 'advance-nc',
-        title: 'Advance NC',
+        title: 'Advance NC - Custom Wordpress Site + Interactive Content',
         description:
           'Interactive web content and SCORM-packaged online courses for workforce development, covering Advanced Materials and Biotech sector spotlights.',
       },
       {
         slug: 'birthday-stats',
-        title: 'Birthday Stats',
+        title: 'Birthday Stats - Application Concept + React/Vite Setup',
         description:
-          'The same application concept built three ways — Vite + React, Next.js, and a full-featured configurator with i18n, Docker, Azure Pipelines, and Kubernetes deployment.',
+          'Concept and technical setup for a React/Vite web application visualizing birth date statistics, including data sourcing, component architecture, and deployment configuration.',
       },
     ],
   },
-  {
+  { 
     slug: 'tonic',
     title: 'Tonic Inc. Digital Consulting',
     period: 'Nov 2021 – Dec 2023',
     description:
-      'Full stack web and mobile engineering across a range of clients — from private equity dashboards to non-profit mobile apps and marketing integrations.',
+      'Full stack web and mobile engineer across a range of clients — from private equity dashboards to non-profit mobile apps, and marketing integrations.',
     children: [
       {
         slug: 'kula',
-        title: 'Kula App',
+        title: 'Kula App - React Native Mobile App',
         description:
           'Cross-platform React Native mobile app with authentication, activity tracking, push notifications, and Redux-powered offline storage. Built for a non-profit client.',
       },
       {
         slug: 'torus',
-        title: 'Torus Transforms',
+        title: 'Torus Transforms - React Native Mobile App',
         description:
           'React Native mobile app providing multilingual COVID-19 information in Dari, Russian, and Thai. Launched as a mobile web app after app store publishing restrictions.',
       },
       {
         slug: 'us-climate-alliance',
-        title: 'U.S. Climate Alliance',
+        title: 'U.S. Climate Alliance - Custom WordPress Site, embedded React Applications + REST API trips',
         description:
           'WordPress/Elementor site rebuild for a bipartisan governor coalition — 22 responsive templates, Policy Database integration, interactive member map, and client training.',
       },
       {
         slug: 'lexisnexis',
-        title: 'LexisNexis TPU Assessment',
+        title: 'LexisNexis TPU Assessment - Custom JavaScript Tool',
         description:
           'Interactive risk assessment tool for insurance underwriting professionals built with HTML, CSS, JavaScript, and PHP. Embeddable, tablet-responsive, with URL-parameter lead scoring.',
       },
       {
         slug: 'n-tier',
-        title: 'N-Tier Financial Services',
+        title: 'N-Tier Financial Services - Custom WordPress Build',
         description:
           'WordPress site build with 12 responsive templates and a custom jQuery megamenu for regulatory reporting and risk management content. Sole engineer, five weeks.',
       },
       {
         slug: 'warburg-pincus',
-        title: 'Warburg Pincus — Quill',
+        title: 'Warburg Pincus — Quill Application',
         description:
           'Internal React + AG Grid dashboard application for 300+ private equity deal professionals. Ten data visualizations, real-time state updates, and iLevel integration.',
       },
       {
         slug: 'doublecheck',
-        title: 'DoubleCheck',
+        title: 'DoubleCheck - Bootstrap/Angular Tabular Templates',
         description:
           'Bootstrap/Angular-compatible front-end templates for tabular transaction data, built to unblock the client\'s Angular team before an internal deadline.',
       },
       {
         slug: 'angular-todo',
-        title: 'Angular Todo App',
+        title: 'Angular Todo App - Code challenge demo',
         description:
           'A task management SPA built with Angular 11, TypeScript, and RxJS as a coding challenge. Led directly to the consulting role at Tonic.',
       },
