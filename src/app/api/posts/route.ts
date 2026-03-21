@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { getAllPosts } from '@/lib/content'
+import { getPublishedPosts } from '@/lib/content'
 import type { PaginatedResult, PostMeta } from '@/lib/types'
 
 export function GET(request: NextRequest) {
@@ -12,7 +12,7 @@ export function GET(request: NextRequest) {
     Math.max(1, parseInt(searchParams.get('limit') ?? '20', 10))
   )
 
-  let posts = getAllPosts()
+  let posts = getPublishedPosts()
 
   if (category) {
     posts = posts.filter((p) => p.categories.includes(category))
