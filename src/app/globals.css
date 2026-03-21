@@ -159,6 +159,7 @@ ol {
   padding: 0.15em 0.4em;
   border-radius: 3px;
   font-size: 0.9em;
+  color: var(--color-bg)
 }
 
 .prose ul,
