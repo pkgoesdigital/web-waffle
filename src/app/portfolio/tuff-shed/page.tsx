@@ -12,13 +12,9 @@ export default function TuffShedPage() {
   return (
     <PortfolioPage slug="tuff-shed">
       <p>
-        The largest and most architecturally complex project in this portfolio is
-        an enterprise monorepo powering the digital presence for Tuff Shed —
-        including their retail website (tuffshed.com), a Home Depot partnership
-        site (888tuffshed.com), a standalone checkout flow, a data analytics
-        dashboard, and several embedded product configurators. This work is
-        ongoing, carried out by a team of 3 engineers, 2 technical product
-        managers, and 2 directors.
+        Tuff Shed&rsquo;s data platform sits at the center of a distributed system spanning legacy ERP, cloud infrastructure,
+        and a modern digital storefront. The core work involves designing and maintaining the pipelines, models, and services
+        that keep operational and fiscal data clean, accessible, and in sync across the stack.
       </p>
 
       <h2>Frontend Monorepo</h2>
