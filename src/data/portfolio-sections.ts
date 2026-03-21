@@ -21,7 +21,7 @@ export const portfolioSections: PortfolioSection[] = [
       'Technical product manager on internal tooling projects, business intelligence, and data infrastructure.',
     children: [
       {
-        slug: 'internal-tools',
+        slug: 'tuff-shed-scripts',
         title: 'Tuff Shed Internal Tools',
         description:
           'Internal Python automation tooling including a semantic document classifier and an early-stage Claude-powered AI agent project built on accumulated product context.',
