@@ -55,7 +55,7 @@ export default function TonicPage() {
           rel="noopener noreferrer"
         >
           View the repo with the custom megamenu solution.
-        </a>{' '}
+        </a>{' '}<br></br>
         <Link href="/portfolio/tonic/n-tier">View project page →</Link>
       </p>
 
@@ -74,7 +74,7 @@ export default function TonicPage() {
         reports, guides, and media advisories. Embedded React Applications were added to each State page,
         which pulled data out of a REST Api specific to that state&rsquo;s policy initiatives. Recorded a full library of Loom
         tutorial videos empowering the client&rsquo;s team to maintain the site
-        independently.{' '}
+        independently.<br></br>{' '}
         <Link href="/portfolio/tonic/us-climate-alliance">View project page →</Link>
       </p>
 
@@ -99,7 +99,7 @@ export default function TonicPage() {
           rel="noopener noreferrer"
         >
           View the repo.
-        </a>{' '}
+        </a>{' '}<br></br>
         <Link href="/portfolio/tonic/lexisnexis">View project page →</Link>
       </p>
 
@@ -109,7 +109,7 @@ export default function TonicPage() {
         firm, working within their existing Microsoft Azure environment. Built
         React modals with state management, real-time update notifications, and
         integrations with iLevel and other third-party portfolio management
-        systems.{' '}
+        systems.{' '}<br></br>
         <Link href="/portfolio/tonic/warburg-pincus">View project page →</Link>
       </p>
 
@@ -125,7 +125,7 @@ export default function TonicPage() {
       <p>
         Built the beta React Native mobile app for a child safety non-profit,
         covering all screens, routing, push notifications via OneSignal, and
-        submission to both the Google Play Store and Apple App Store.{' '}
+        submission to both the Google Play Store and Apple App Store.{' '}<br></br>
         <Link href="/portfolio/tonic/kula">View project page →</Link>
       </p>
 
@@ -144,14 +144,14 @@ export default function TonicPage() {
         notifications, and app store submissions. Pivoted to a mobile web launch
         after platform publishing restrictions. The app was launched after I was off the project,
         and it&rsquo;s now in its second development iteration - adding more educational content.{' '}
-        <Link href="/portfolio/tonic/torus">View project page →</Link>
+        <br></br><Link href="/portfolio/tonic/torus">View project page →</Link>
       </p>
 
       <h3>DoubleCheck</h3>
       <p>
         Built Angular-compatible front-end templates for tabular credit card
         transaction data using Bootstrap, HTML, and CSS — unblocking the
-        client&rsquo;s internal team before a hard deadline.{' '}
+        client&rsquo;s internal team before a hard deadline.{' '}<br></br>
         <Link href="/portfolio/tonic/doublecheck">View project page →</Link>
       </p>
     </PortfolioPage>
