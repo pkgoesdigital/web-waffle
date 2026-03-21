@@ -12,7 +12,7 @@ export default function AdvanceNcPage() {
         For Advance NC, I developed interactive web content including custom
         Elementor widgets for WordPress — career sliders, county filter
         components — and SCORM-packaged online courses covering sector spotlights
-        in Advanced Materials and Biotech.
+        in Advanced Materials and Biotech.<br></br>
         <a
           href="https://advancenc.com/"
           target="_blank"
@@ -20,13 +20,6 @@ export default function AdvanceNcPage() {
         >
           Visit the Advance NC website.
         </a>{' '}
-        <a
-          href="https://github.com/pkgoesdigital/advancenc/tree/main"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          SCORM files and content samples available in this repo.
-        </a>
       </p>
 
       <h2>SCORM Courses</h2>
@@ -41,8 +34,8 @@ export default function AdvanceNcPage() {
           href="https://advancenc.com/explore-advanced-manufacturing/industry-sectors/automotive-truck-heavy-machinery/"
           target="_blank"
           rel="noopener noreferrer"
-        ></a>
-        An example page with embedded SCORM content
+        >An example page with embedded SCORM content</a>
+        
       </p>
 
       <h2>Instructional Design</h2>

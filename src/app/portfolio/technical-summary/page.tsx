@@ -5,15 +5,15 @@ import styles from './page.module.css'
 export const metadata: Metadata = { title: 'Technical Summary — Portfolio' }
 
 const skills = [
-  { category: 'Languages', items: 'TypeScript, JavaScript, PHP, Python, C#, F#, Java, HTML, CSS' },
-  { category: 'Frameworks', items: 'React, React Native, Next.js (App Router and Pages Router), Angular, ASP.NET Core' },
-  { category: 'State Management', items: 'Redux, Jotai, React Query, React Context, RxJS' },
+  { category: 'Languages', items: 'TypeScript, JavaScript, PHP, Python, Java, HTML, CSS' },
+  { category: 'Frameworks', items: 'React, React Native, Next.js (App Router and Pages Router), Angular' },
+  { category: 'State Management', items: 'Redux, React Query, React Context, RxJS' },
   { category: 'Styling', items: 'Tailwind CSS, CSS Modules, SASS, Bootstrap' },
   { category: 'Build Tools', items: 'Turborepo, Vite, Metro, Webpack, Angular CLI' },
   { category: 'Backend', items: 'Node.js, Express, DAPR, JasperReports, Jtwig' },
   { category: 'Databases', items: 'PostgreSQL, MongoDB, Neo4j, NoSQL' },
-  { category: 'Integrations', items: 'Salesforce, Storyblok CMS, Google Maps/Places/Analytics, OneSignal, Sentry, Threekit, Logik, iLevel' },
-  { category: 'Infrastructure', items: 'Azure, Docker, Kubernetes, Helm, Redis, pnpm workspaces, Jenkins, Azure Pipelines' },
+  { category: 'Integrations', items: 'Salesforce, Storyblok CMS, Google Maps/Places/Analytics, OneSignal, Sentry, iLevel' },
+  { category: 'Infrastructure', items: 'Azure, Docker, Redis, pnpm workspaces, Jenkins, Azure Pipelines' },
   { category: 'AI / ML', items: 'sentence-transformers, Tesseract OCR' },
   { category: 'Testing', items: 'Jest, Jasmine, Karma, ESLint, Prettier, end-to-end and unit testing via CI/CD' },
   { category: 'CMS', items: 'WordPress, Elementor, Storyblok, Strapi' },

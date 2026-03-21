@@ -17,9 +17,9 @@ export default function TonicPage() {
 
       <h2>Scope of Work</h2>
       <p>
-        During this period I independently built and delivered 3 websites with
+        During this period I independently built and delivered <b>three</b> websites with
         embedded React applications, REST API integrations, information
-        architecture, and content management. I developed two mobile apps for
+        architecture, and content management. I developed <b>two</b> mobile apps for
         non-profit organizations in React Native, picking up the framework
         through on-the-job learning and the help of a senior mobile engineer. Both apps shipped to their respective user
         bases and remain in use.
@@ -27,15 +27,27 @@ export default function TonicPage() {
       <p>
         I prototyped, developed, and integrated front-end marketing code
         solutions for gathering business data used by over 10,000 insurance
-        professionals. For a private equity firm (Warburg Pincus), my team and I produced
-        ten dashboard visualizations for financial data management across the entire private equity portfolio, resulting in a
+        professionals. For a private equity firm (Warburg Pincus), my team and I produced&nbsp;
+         <b>ten</b> dashboard visualizations for financial data management across the entire private equity portfolio, <b>resulting in a
         more intuitive, faster data analysis tool for a firm of 300+ deal
-        professionals. The Warburg Pincus work involved complex tabbed interfaces
+        professionals.</b> The Warburg Pincus work involved complex tabbed interfaces
         for investment valuations, multi-page reporting, and sophisticated
         financial data presentation.
       </p>
 
       <h2>Selected Clients</h2>
+
+
+      <h3>Warburg Pincus</h3>
+      <p>
+        <Link href="/portfolio/tonic/warburg-pincus">View project page →</Link></p>
+      <p>
+        Produced ten dashboard visualizations for a 300+ person private equity
+        firm, working within their existing Microsoft Azure environment. Built
+        React modals with state management, real-time update notifications, and
+        integrations with iLevel and other third-party portfolio management
+        systems.{' '}
+      </p>
 
       <h3>
         <a
@@ -47,16 +59,10 @@ export default function TonicPage() {
         </a>
       </h3>
       <p>
+        <Link href="/portfolio/tonic/n-tier">View project page →</Link></p>
+      <p>
         Built a new website with megamenu navigation architecture for
         complex content hierarchies in regulatory reporting and risk management.<br />
-        <a
-          href="https://github.com/pkgoesdigital/nTierFinancialServices"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          View the repo with the custom megamenu solution.
-        </a>{' '}<br></br>
-        <Link href="/portfolio/tonic/n-tier">View project page →</Link>
       </p>
 
       <h3>
@@ -69,13 +75,15 @@ export default function TonicPage() {
         </a>
       </h3>
       <p>
+        <Link href="/portfolio/tonic/us-climate-alliance">View project page →</Link>
+      </p>
+      <p>
         Built and delivered a WordPress site with Elementor, creating a scalable
         content management system with templates for member pages, press releases,
         reports, guides, and media advisories. Embedded React Applications were added to each State page,
         which pulled data out of a REST Api specific to that state&rsquo;s policy initiatives. Recorded a full library of Loom
         tutorial videos empowering the client&rsquo;s team to maintain the site
-        independently.<br></br>{' '}
-        <Link href="/portfolio/tonic/us-climate-alliance">View project page →</Link>
+        independently.{' '}
       </p>
 
       <h3>
@@ -88,6 +96,8 @@ export default function TonicPage() {
         </a>
       </h3>
       <p>
+        <Link href="/portfolio/tonic/lexisnexis">View project page →</Link></p>
+      <p>
         Built an interactive risk assessment training tool for underwriting
         professionals, designed responsively for iPad and web. Improved
         accessibility and streamlined user flow across projects by leveraging
@@ -99,18 +109,7 @@ export default function TonicPage() {
           rel="noopener noreferrer"
         >
           View the repo.
-        </a>{' '}<br></br>
-        <Link href="/portfolio/tonic/lexisnexis">View project page →</Link>
-      </p>
-
-      <h3>Warburg Pincus</h3>
-      <p>
-        Produced ten dashboard visualizations for a 300+ person private equity
-        firm, working within their existing Microsoft Azure environment. Built
-        React modals with state management, real-time update notifications, and
-        integrations with iLevel and other third-party portfolio management
-        systems.{' '}<br></br>
-        <Link href="/portfolio/tonic/warburg-pincus">View project page →</Link>
+        </a>{' '}
       </p>
 
       <h3>
@@ -123,10 +122,11 @@ export default function TonicPage() {
         </a>
       </h3>
       <p>
+        <Link href="/portfolio/tonic/kula">View project page →</Link></p>
+      <p>
         Built the beta React Native mobile app for a child safety non-profit,
         covering all screens, routing, push notifications via OneSignal, and
-        submission to both the Google Play Store and Apple App Store.{' '}<br></br>
-        <Link href="/portfolio/tonic/kula">View project page →</Link>
+        submission to both the Google Play Store and Apple App Store.{' '}
       </p>
 
       <h3>
@@ -139,20 +139,23 @@ export default function TonicPage() {
         </a>
       </h3>
       <p>
+        <Link href="/portfolio/tonic/torus">View project page →</Link></p>
+      <p>
         Built a multilingual React Native mobile app providing COVID-19
         information in Dari, Russian, and Thai. Handled localization, push
         notifications, and app store submissions. Pivoted to a mobile web launch
         after platform publishing restrictions. The app was launched after I was off the project,
         and it&rsquo;s now in its second development iteration - adding more educational content.{' '}
-        <br></br><Link href="/portfolio/tonic/torus">View project page →</Link>
       </p>
 
       <h3>DoubleCheck</h3>
       <p>
+        <Link href="/portfolio/tonic/doublecheck">View project page →</Link>
+      </p>
+      <p>
         Built Angular-compatible front-end templates for tabular credit card
         transaction data using Bootstrap, HTML, and CSS — unblocking the
-        client&rsquo;s internal team before a hard deadline.{' '}<br></br>
-        <Link href="/portfolio/tonic/doublecheck">View project page →</Link>
+        client&rsquo;s internal team before a hard deadline.{' '}
       </p>
     </PortfolioPage>
   )

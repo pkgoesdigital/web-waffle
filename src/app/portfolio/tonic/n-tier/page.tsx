@@ -28,19 +28,8 @@ export default function NTierPage() {
         A custom hover-driven megamenu was built using jQuery — each top-level
         nav item mapped to a panel of sub-navigation content, with the active panel
         swapping on <code>mouseover</code>. Sub-menu items were filtered out of
-        the trigger set so only top-level items drove panel visibility:
+        the trigger set so only top-level items drove panel visibility.
       </p>
-      <pre><code>{`navItems.forEach((navSelector) => {
-  const triggers = menu.find(".menu-item").filter(function () {
-    return !jQuery(this).parents(".jet-custom-nav__sub").length;
-  });
-  triggers.on("mouseover", function () {
-    var myindex = triggers.index(this);
-    hovers.hide();
-    firstItem.hide();
-    jQuery(hovers[myindex]).show();
-  });
-});`}</code></pre>
 
       <h2>What I Delivered</h2>
       <p>
