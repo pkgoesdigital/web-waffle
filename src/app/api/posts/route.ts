@@ -2,15 +2,26 @@ import { NextRequest, NextResponse } from 'next/server'
 import { getPublishedPosts } from '@/lib/content'
 import type { PaginatedResult, PostMeta } from '@/lib/types'
 
+const VALID_STATUSES = new Set(['publish', 'draft', 'trash'])
+
 export function GET(request: NextRequest) {
   const { searchParams } = request.nextUrl
   const category = searchParams.get('category')
   const status = searchParams.get('status')
-  const page = Math.max(1, parseInt(searchParams.get('page') ?? '1', 10))
-  const limit = Math.min(
-    100,
-    Math.max(1, parseInt(searchParams.get('limit') ?? '20', 10))
-  )
+
+  if (status && !VALID_STATUSES.has(status)) {
+    return NextResponse.json({ error: 'Invalid status' }, { status: 400 })
+  }
+
+  const pageParam = parseInt(searchParams.get('page') ?? '1', 10)
+  const limitParam = parseInt(searchParams.get('limit') ?? '20', 10)
+
+  if (!Number.isFinite(pageParam) || !Number.isFinite(limitParam)) {
+    return NextResponse.json({ error: 'Invalid pagination parameters' }, { status: 400 })
+  }
+
+  const page = Math.max(1, pageParam)
+  const limit = Math.min(100, Math.max(1, limitParam))
 
   let posts = getPublishedPosts()
 
@@ -33,5 +44,8 @@ export function GET(request: NextRequest) {
     hasMore: start + limit < total,
   }
 
-  return NextResponse.json(result)
+  const response = NextResponse.json(result)
+  // Cache at the CDN edge for 60s to reduce origin hits
+  response.headers.set('Cache-Control', 's-maxage=60, stale-while-revalidate=300')
+  return response
 }
