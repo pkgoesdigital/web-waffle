@@ -1,8 +1,8 @@
 [
-  { "label": "Product", "value": 85 },
-  { "label": "Engineering", "value": 72 },
-  { "label": "Design", "value": 64 },
-  { "label": "Data", "value": 91 },
-  { "label": "Strategy", "value": 58 },
-  { "label": "Leadership", "value": 77 }
+  { "label": "Frontend", "value": 93 },
+  { "label": "Technical PM", "value": 85 },
+  { "label": "Systems Integration", "value": 80 },
+  { "label": "Data / ETL", "value": 76 },
+  { "label": "Backend", "value": 71 },
+  { "label": "Mobile", "value": 68 }
 ]
