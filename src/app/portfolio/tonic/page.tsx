@@ -39,9 +39,10 @@ export default function TonicPage() {
       <h2>Selected Clients</h2>
 
 
-      <h3>Warburg Pincus</h3>
-      <p>
-        <Link href="/portfolio/tonic/warburg-pincus">View project page →</Link></p>
+      <div className={styles.projectHeader}>
+        <h3>Warburg Pincus</h3>
+        <Link href="/portfolio/tonic/warburg-pincus" className={styles.viewProjectBtn}>View project page →</Link>
+      </div>
       <p>
         Produced ten dashboard visualizations for a 300+ person private equity
         firm, working within their existing Microsoft Azure environment. Built
@@ -50,28 +51,21 @@ export default function TonicPage() {
         systems.{' '}
       </p>
 
-      <h3>
-        N-Tier Financial Services{' '}
-        <a href="https://www.ntierfs.com/" target="_blank" rel="noopener noreferrer" className={styles.headingLink}>
-          ntierfs.com
-        </a>
-      </h3>
-      <p>
-        <Link href="/portfolio/tonic/n-tier">View project page →</Link></p>
+      <div className={styles.projectHeader}>
+        <h3>N-Tier Financial Services</h3>
+        <a href="https://www.ntierfs.com/" target="_blank" rel="noopener noreferrer" className={styles.headingLink}>ntierfs.com</a>
+        <Link href="/portfolio/tonic/n-tier" className={styles.viewProjectBtn}>View project page →</Link>
+      </div>
       <p>
         Built a new website with megamenu navigation architecture for
         complex content hierarchies in regulatory reporting and risk management.<br />
       </p>
 
-      <h3>
-        US Climate Alliance{' '}
-        <a href="https://usclimatealliance.org/policy-priorities/" target="_blank" rel="noopener noreferrer" className={styles.headingLink}>
-          usclimatealliance.org
-        </a>
-      </h3>
-      <p>
-        <Link href="/portfolio/tonic/us-climate-alliance">View project page →</Link>
-      </p>
+      <div className={styles.projectHeader}>
+        <h3>US Climate Alliance</h3>
+        <a href="https://usclimatealliance.org/policy-priorities/" target="_blank" rel="noopener noreferrer" className={styles.headingLink}>usclimatealliance.org</a>
+        <Link href="/portfolio/tonic/us-climate-alliance" className={styles.viewProjectBtn}>View project page →</Link>
+      </div>
       <p>
         Built and delivered a WordPress site with Elementor, creating a scalable
         content management system with templates for member pages, press releases,
@@ -81,14 +75,11 @@ export default function TonicPage() {
         independently.{' '}
       </p>
 
-      <h3>
-        LexisNexis{' '}
-        <a href="https://solutions.risk.lexisnexis.com/tpu-assessment" target="_blank" rel="noopener noreferrer" className={styles.headingLink}>
-          solutions.risk.lexisnexis.com
-        </a>
-      </h3>
-      <p>
-        <Link href="/portfolio/tonic/lexisnexis">View project page →</Link></p>
+      <div className={styles.projectHeader}>
+        <h3>LexisNexis</h3>
+        <a href="https://solutions.risk.lexisnexis.com/tpu-assessment" target="_blank" rel="noopener noreferrer" className={styles.headingLink}>solutions.risk.lexisnexis.com</a>
+        <Link href="/portfolio/tonic/lexisnexis" className={styles.viewProjectBtn}>View project page →</Link>
+      </div>
       <p>
         Built an interactive risk assessment training tool for underwriting
         professionals, designed responsively for iPad and web. Improved
@@ -104,28 +95,22 @@ export default function TonicPage() {
         </a>{' '}
       </p>
 
-      <h3>
-        Kula Empowered{' '}
-        <a href="https://www.kulaempowered.com/" target="_blank" rel="noopener noreferrer" className={styles.headingLink}>
-          kulaempowered.com
-        </a>
-      </h3>
-      <p>
-        <Link href="/portfolio/tonic/kula">View project page →</Link></p>
+      <div className={styles.projectHeader}>
+        <h3>Kula Empowered</h3>
+        <a href="https://www.kulaempowered.com/" target="_blank" rel="noopener noreferrer" className={styles.headingLink}>kulaempowered.com</a>
+        <Link href="/portfolio/tonic/kula" className={styles.viewProjectBtn}>View project page →</Link>
+      </div>
       <p>
         Built the beta React Native mobile app for a child safety non-profit,
         covering all screens, routing, push notifications via OneSignal, and
         submission to both the Google Play Store and Apple App Store.{' '}
       </p>
 
-      <h3>
-        Torus Transforms{' '}
-        <a href="https://www.torustransforms.org/" target="_blank" rel="noopener noreferrer" className={styles.headingLink}>
-          torustransforms.org
-        </a>
-      </h3>
-      <p>
-        <Link href="/portfolio/tonic/torus">View project page →</Link></p>
+      <div className={styles.projectHeader}>
+        <h3>Torus Transforms</h3>
+        <a href="https://www.torustransforms.org/" target="_blank" rel="noopener noreferrer" className={styles.headingLink}>torustransforms.org</a>
+        <Link href="/portfolio/tonic/torus" className={styles.viewProjectBtn}>View project page →</Link>
+      </div>
       <p>
         Built a multilingual React Native mobile app providing COVID-19
         information in Dari, Russian, and Thai. Handled localization, push
@@ -134,10 +119,10 @@ export default function TonicPage() {
         and it&rsquo;s now in its second development iteration - adding more educational content.{' '}
       </p>
 
-      <h3>DoubleCheck</h3>
-      <p>
-        <Link href="/portfolio/tonic/doublecheck">View project page →</Link>
-      </p>
+      <div className={styles.projectHeader}>
+        <h3>DoubleCheck</h3>
+        <Link href="/portfolio/tonic/doublecheck" className={styles.viewProjectBtn}>View project page →</Link>
+      </div>
       <p>
         Built Angular-compatible front-end templates for tabular credit card
         transaction data using Bootstrap, HTML, and CSS — unblocking the
