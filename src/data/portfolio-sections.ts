@@ -63,6 +63,42 @@ export const portfolioSections: PortfolioSection[] = [
           'Cross-platform React Native mobile app with authentication, activity tracking, push notifications, and Redux-powered offline storage. Built for a non-profit client.',
       },
       {
+        slug: 'torus',
+        title: 'Torus Transforms',
+        description:
+          'React Native mobile app providing multilingual COVID-19 information in Dari, Russian, and Thai. Launched as a mobile web app after app store publishing restrictions.',
+      },
+      {
+        slug: 'us-climate-alliance',
+        title: 'U.S. Climate Alliance',
+        description:
+          'WordPress/Elementor site rebuild for a bipartisan governor coalition — 22 responsive templates, Policy Database integration, interactive member map, and client training.',
+      },
+      {
+        slug: 'lexisnexis',
+        title: 'LexisNexis TPU Assessment',
+        description:
+          'Interactive risk assessment tool for insurance underwriting professionals built with HTML, CSS, JavaScript, and PHP. Embeddable, tablet-responsive, with URL-parameter lead scoring.',
+      },
+      {
+        slug: 'n-tier',
+        title: 'N-Tier Financial Services',
+        description:
+          'WordPress site build with 12 responsive templates and a custom jQuery megamenu for regulatory reporting and risk management content. Sole engineer, five weeks.',
+      },
+      {
+        slug: 'warburg-pincus',
+        title: 'Warburg Pincus — Quill',
+        description:
+          'Internal React + AG Grid dashboard application for 300+ private equity deal professionals. Ten data visualizations, real-time state updates, and iLevel integration.',
+      },
+      {
+        slug: 'doublecheck',
+        title: 'DoubleCheck',
+        description:
+          'Bootstrap/Angular-compatible front-end templates for tabular transaction data, built to unblock the client\'s Angular team before an internal deadline.',
+      },
+      {
         slug: 'angular-todo',
         title: 'Angular Todo App',
         description:

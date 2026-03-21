@@ -283,7 +283,6 @@ ol {
 .page-header {
   max-width: var(--max-width);
   margin: 0 auto var(--space-12);
-  padding: 0 var(--space-6);
 }
 
 .page-header h1 {

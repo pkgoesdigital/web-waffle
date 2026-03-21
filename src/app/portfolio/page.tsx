@@ -15,11 +15,12 @@ export default function PortfolioHomePage() {
       <div className="page-header">
         <h1>Portfolio</h1>
         <p>
-          I'm a frontend-focused full-stack developer who enjoys building
-          products that people actually use. My work portfolio spans React,
-          React Native, Next.js, TypeScript, and Python — from enterprise ERP
-          platforms to personal utilities and mobile apps. Things continue to
-          evolve.
+          I&rsquo;m a full-stack developer who enjoys building
+          products with tangible, measureable outcomes. My work portfolio spans B2B and
+          B2C technologies — from enterprise ERP platforms to personal utilities
+          and mobile apps. For a full list of languages, frameworks, and tools,
+          see the{' '}
+          <Link href="/portfolio/technical-summary">Technical Summary</Link>.
         </p>
       </div>
 

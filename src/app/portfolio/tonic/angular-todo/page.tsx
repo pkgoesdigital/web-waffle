@@ -13,8 +13,16 @@ export default function AngularTodoPage() {
         and NgBootstrap. Built as a coding challenge, it demonstrates
         component-based Angular architecture with RxJS observables for state
         management, Karma/Jasmine testing infrastructure, and
-        production-optimized build configuration.
+        production-optimized build configuration.<br></br>
+        <a
+          href="https://github.com/pkgoesdigital/todoodles"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View the code on GitHub.
+        </a>{' '}
       </p>
+
 
       <h2>Context</h2>
       <p>

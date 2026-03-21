@@ -91,15 +91,6 @@ export default function TuffShedPage() {
         ongoing migration and integration needs across the platform.
       </p>
 
-      <h2>A Note on the Change-Machine Project</h2>
-      <p>
-        A change-machine algorithm project completed for the team demonstrates
-        comfort working across paradigms: the same algorithm implemented six
-        different ways in C# and F#, optimizing separately for readability,
-        conciseness, memory efficiency, and scalability — including pure
-        functional approaches using fold/aggregate patterns.
-      </p>
-
       {section?.children && section.children.length > 0 && (
         <div className={styles.projects}>
           <h2>Projects</h2>
