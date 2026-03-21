@@ -17,18 +17,28 @@ type PostListProps = {
 export default function PostList({ posts, featured }: PostListProps) {
   const [query, setQuery] = useState('')
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE)
+  const [showPublished, setShowPublished] = useState(true)
+
+  const publishedPosts = useMemo(() => posts.filter((p) => p.status === 'publish'), [posts])
+  const draftPosts = useMemo(() => posts.filter((p) => p.status === 'draft'), [posts])
+  const activePosts = showPublished ? publishedPosts : draftPosts
 
   const filteredPosts = useMemo(() => {
-    if (!query.trim()) return posts
+    if (!query.trim()) return activePosts
     const q = query.toLowerCase()
-    return posts.filter((p) =>
+    return activePosts.filter((p) =>
       [p.title, p.subtitle ?? '', ...p.tags].join(' ').toLowerCase().includes(q)
     )
-  }, [posts, query])
+  }, [activePosts, query])
 
-  // Reset pagination when the search query changes
   const handleQueryChange = (value: string) => {
     setQuery(value)
+    setVisibleCount(PAGE_SIZE)
+  }
+
+  const handleToggle = () => {
+    setShowPublished((prev) => !prev)
+    setQuery('')
     setVisibleCount(PAGE_SIZE)
   }
 
@@ -46,6 +56,19 @@ export default function PostList({ posts, featured }: PostListProps) {
           onChange={(e) => handleQueryChange(e.target.value)}
           aria-label="Search posts"
         />
+        <label className={styles.toggleLabel}>
+          <span className={styles.toggleText}>
+            {showPublished ? 'Published' : 'Drafts'}
+          </span>
+          <button
+            role="switch"
+            aria-checked={showPublished}
+            onClick={handleToggle}
+            className={`${styles.toggle} ${showPublished ? styles.toggleOn : styles.toggleOff}`}
+          >
+            <span className={styles.toggleThumb} />
+          </button>
+        </label>
       </div>
 
       {!query && featured.length > 0 && (
@@ -70,7 +93,7 @@ export default function PostList({ posts, featured }: PostListProps) {
         <h2 className="section-title">
           {query
             ? `${filteredPosts.length} result${filteredPosts.length !== 1 ? 's' : ''}`
-            : 'All Posts'}
+            : showPublished ? 'All Posts' : 'Drafts'}
         </h2>
 
         {visiblePosts.length > 0 ? (
