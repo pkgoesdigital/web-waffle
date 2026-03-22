@@ -10,7 +10,7 @@
   background: var(--color-border);
   border: 3px solid var(--color-border);
   border-radius: 8px;
-  text-decoration: none;
+  text-decoration: none !important;
   transition: box-shadow var(--transition-fast), transform var(--transition-fast), filter var(--transition-fast);
 }
 
