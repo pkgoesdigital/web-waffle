@@ -30,7 +30,7 @@ export default function NavLinks() {
       >
         {isOpen ? '✕' : '☰'}
       </button>
-      <nav className={`${styles.nav} ${isOpen ? styles.navOpen : ''}`}>
+      <nav className={styles.nav} style={isOpen ? { display: 'flex' } : undefined}>
         {links.map((link) => (
           <Link
             key={link.href}
