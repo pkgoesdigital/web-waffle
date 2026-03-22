@@ -20,7 +20,7 @@
   border-radius: 6px;
   color: var(--color-text);
   text-decoration: none;
-  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast), opacity var(--transition-fast);
 }
 
 .projects .projectLink:hover {
@@ -28,6 +28,7 @@
   box-shadow: var(--shadow-md);
   transform: translateY(-2px);
   text-decoration: none;
+  opacity: 0.85;
 }
 
 .projectTitle {

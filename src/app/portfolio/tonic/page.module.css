@@ -11,13 +11,14 @@
   border: 3px solid var(--color-border);
   border-radius: 8px;
   text-decoration: none;
-  transition: box-shadow var(--transition-fast), transform var(--transition-fast);
+  transition: box-shadow var(--transition-fast), transform var(--transition-fast), opacity var(--transition-fast);
 }
 
 .viewProjectBtn:hover {
   box-shadow: var(--shadow-md);
   transform: translateY(-2px);
   color: var(--color-bg);
+  opacity: 0.85;
 }
 
 .projectHeader {
@@ -73,7 +74,7 @@
   border: 3px solid var(--color-border);
   border-radius: 6px;
   color: var(--color-text);
-  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast), opacity var(--transition-fast);
 }
 
 .projectLink:hover {
@@ -81,6 +82,7 @@
   box-shadow: var(--shadow-md);
   transform: translateY(-2px);
   text-decoration: none;
+  opacity: 0.85;
 }
 
 .projectTitle {
