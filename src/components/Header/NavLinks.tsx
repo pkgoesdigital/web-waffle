@@ -14,10 +14,10 @@ const links = [
 
 export default function NavLinks() {
   const pathname = usePathname()
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(true)
 
   useEffect(() => {
-    setIsOpen(false)
+    setIsOpen(true)
   }, [pathname])
 
   return (
@@ -26,11 +26,11 @@ export default function NavLinks() {
         className={styles.menuBtn}
         onClick={() => setIsOpen(!isOpen)}
         aria-label="Toggle navigation"
-        aria-expanded={isOpen}
+        aria-expanded={!isOpen}
       >
-        {isOpen ? '✕' : '☰'}
+        {isOpen ? '☰' : '✕'}
       </button>
-      <nav className={styles.nav} style={isOpen ? { display: 'flex' } : undefined}>
+      <nav className={styles.nav} style={isOpen ? { display: 'none' } : { display: 'flex' }}>
         {links.map((link) => (
           <Link
             key={link.href}
@@ -38,7 +38,7 @@ export default function NavLinks() {
             className={`${styles.navLink} ${
               pathname.startsWith(link.href) ? styles.active : ''
             }`}
-            onClick={() => setIsOpen(false)}
+            onClick={() => setIsOpen(true)}
           >
             {link.label}
           </Link>
