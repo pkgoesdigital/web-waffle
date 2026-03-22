@@ -59,14 +59,14 @@
   color: var(--color-text-muted);
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  transition: color var(--transition-fast), opacity var(--transition-fast);
+  transition: color var(--transition-fast), filter var(--transition-fast);
   padding: var(--space-1) 0;
   border-bottom: 3px solid transparent;
 }
 
 .navLink:hover {
   color: var(--color-text);
-  opacity: 0.85;
+  filter: brightness(0.95);
 }
 
 .active {
