@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import styles from './Header.module.css'
@@ -15,6 +15,10 @@ const links = [
 export default function NavLinks() {
   const pathname = usePathname()
   const [isOpen, setIsOpen] = useState(false)
+
+  useEffect(() => {
+    setIsOpen(false)
+  }, [pathname])
 
   return (
     <>
