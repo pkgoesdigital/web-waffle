@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { getAllPosts, getFeaturedPages } from '@/lib/content'
 import PostList from '@/components/PostList/PostList'
+import styles from './page.module.css'
 
 export const metadata: Metadata = { title: 'Writing' }
 
@@ -9,7 +10,7 @@ export default function WritingPage() {
   const posts = getAllPosts()
 
   return (
-    <div>
+    <div className={styles.page}>
       <div className="page-header">
         <h1>Writing</h1>
         <p>
