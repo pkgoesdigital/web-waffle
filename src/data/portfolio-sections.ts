@@ -26,6 +26,12 @@ export const portfolioSections: PortfolioSection[] = [
         description:
           'Internal Python automation tooling including a semantic document classifier and an early-stage Claude-powered AI agent project built on accumulated product context.',
       },
+      {
+        slug: 'erp-migration',
+        title: 'ERP Migration',
+        description:
+          'Large-scale data cleaning and ETL migration effort supporting a JD Edwards–to–Nextworld ERP implementation, using Python Jupyter notebooks on Azure ML compute.',
+      },
     ],
   },
   {
