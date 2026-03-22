@@ -1,5 +1,6 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import styles from './Header.module.css'
@@ -13,20 +14,36 @@ const links = [
 
 export default function NavLinks() {
   const pathname = usePathname()
+  const [isOpen, setIsOpen] = useState(true)
+
+  useEffect(() => {
+    setIsOpen(true)
+  }, [pathname])
 
   return (
-    <nav className={styles.nav}>
-      {links.map((link) => (
-        <Link
-          key={link.href}
-          href={link.href}
-          className={`${styles.navLink} ${
-            pathname.startsWith(link.href) ? styles.active : ''
-          }`}
-        >
-          {link.label}
-        </Link>
-      ))}
-    </nav>
+    <>
+      <button
+        className={styles.menuBtn}
+        onClick={() => setIsOpen(!isOpen)}
+        aria-label="Toggle navigation"
+        aria-expanded={!isOpen}
+      >
+        {isOpen ? '☰' : '✕'}
+      </button>
+      <nav className={`${styles.nav} ${isOpen ? styles.navClosed : ''}`}>
+        {links.map((link) => (
+          <Link
+            key={link.href}
+            href={link.href}
+            className={`${styles.navLink} ${
+              pathname.startsWith(link.href) ? styles.active : ''
+            }`}
+            onClick={() => setIsOpen(true)}
+          >
+            {link.label}
+          </Link>
+        ))}
+      </nav>
+    </>
   )
 }

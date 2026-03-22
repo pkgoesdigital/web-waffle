@@ -26,13 +26,6 @@ export default function WaterburyPage() {
         building proof-of-concepts, researching technical limitations and
         workarounds, and supporting development roadmapping.
       </p>
-      <p>
-        Every project I scoped was delivered on time, with clear documentation
-        that outlasted my tenure on the engagement. The role required bridging
-        the gap between client stakeholders and development teams, translating
-        business needs into structured technical requirements without losing
-        fidelity on either side.
-      </p>
 
       {section?.children && section.children.length > 0 && (
         <div className={styles.projects}>

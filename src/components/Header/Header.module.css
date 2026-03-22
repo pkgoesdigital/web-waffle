@@ -28,6 +28,7 @@
   color: var(--color-accent);
 }
 
+/* Desktop nav — must appear before the media query so mobile rules can override */
 .nav {
   display: flex;
   gap: var(--space-6);
@@ -40,16 +41,67 @@
   color: var(--color-text-muted);
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  transition: color var(--transition-fast);
+  transition: color var(--transition-fast), filter var(--transition-fast);
   padding: var(--space-1) 0;
   border-bottom: 3px solid transparent;
 }
 
 .navLink:hover {
   color: var(--color-text);
+  filter: brightness(0.95);
 }
 
 .active {
   color: var(--color-text);
   border-bottom-color: var(--color-accent);
+}
+
+.menuBtn {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .inner {
+    padding: 0 var(--space-4);
+  }
+
+  .menuBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: var(--text-xl);
+    color: var(--color-text);
+    padding: var(--space-2);
+    line-height: 1;
+  }
+
+  .nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--color-bg);
+    border-bottom: 3px solid var(--color-border);
+    flex-direction: column;
+    gap: 0;
+    padding: var(--space-3) var(--space-4) var(--space-4);
+    z-index: 99;
+  }
+
+  .navClosed {
+    display: none;
+  }
+
+  .navLink {
+    padding: var(--space-3) 0;
+    border-bottom: 3px solid var(--color-border);
+    width: 100%;
+  }
+
+  .navLink:last-child {
+    border-bottom: none;
+  }
 }

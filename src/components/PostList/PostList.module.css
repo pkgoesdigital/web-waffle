@@ -46,12 +46,13 @@
   border: 3px solid var(--color-border);
   border-radius: 8px;
   cursor: pointer;
-  transition: background var(--transition-fast), border-color var(--transition-fast);
+  transition: background var(--transition-fast), border-color var(--transition-fast), filter var(--transition-fast);
 }
 
 .loadMore:hover {
   background: var(--color-bg);
   border-color: var(--color-accent);
+  filter: brightness(0.95);
 }
 
 .toggleLabel {

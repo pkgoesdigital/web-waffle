@@ -7,13 +7,14 @@ a.card {
   min-height: 220px;
   text-decoration: none;
   color: var(--color-text);
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), filter var(--transition-fast);
 }
 
 a.card:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
   color: var(--color-text);
+  filter: brightness(0.95);
 }
 
 .content {
