@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getSql } from '@/lib/db'
-import { VALID_SLOT_KEYS, CALENDAR_DAYS } from '@/lib/kristyn-config'
+import { VALID_SLOT_KEYS, SLOT_BY_KEY, CALENDAR_DAYS } from '@/lib/kristyn-config'
 
 type SignupRow = {
   slot_date: string
@@ -54,10 +54,9 @@ export async function GET() {
     response.headers.set('Cache-Control', 'no-store')
     return response
   } catch (e) {
-  console.error('[kristyn-wade GET]', e)
-  return NextResponse.json({ error: String(e) }, { status: 500 })
-}
-
+    console.error('[kristyn-wade GET]', e)
+    return NextResponse.json({ error: 'Unable to load sign-ups. Please try again.' }, { status: 500 })
+  }
 }
 
 export async function POST(request: NextRequest) {
@@ -78,6 +77,9 @@ export async function POST(request: NextRequest) {
   if (!name) {
     return NextResponse.json({ error: 'Please enter your full name.' }, { status: 400 })
   }
+  if (name.length > 255) {
+    return NextResponse.json({ error: 'Name is too long.' }, { status: 400 })
+  }
 
   const emailVal = typeof email === 'string' ? email.trim() : ''
   const phoneVal = typeof phone === 'string' ? phone.trim() : ''
@@ -86,6 +88,17 @@ export async function POST(request: NextRequest) {
       { error: 'Please share an email or phone number so her family can reach you if plans change.' },
       { status: 400 }
     )
+  }
+  if (emailVal) {
+    if (emailVal.length > 320) {
+      return NextResponse.json({ error: 'Email address is too long.' }, { status: 400 })
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal)) {
+      return NextResponse.json({ error: 'Please enter a valid email address.' }, { status: 400 })
+    }
+  }
+  if (phoneVal && phoneVal.length > 30) {
+    return NextResponse.json({ error: 'Phone number is too long.' }, { status: 400 })
   }
 
   if (typeof slot_key !== 'string' || !VALID_SLOT_KEYS.has(slot_key)) {
@@ -96,15 +109,25 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: 'Invalid or out-of-range date.' }, { status: 400 })
   }
 
+  const slotDef = SLOT_BY_KEY[slot_key]
+  const maxSignups = slotDef.maxSignups
+
   try {
     const sql = getSql()
     const result = await sql`
       INSERT INTO kristyn_signups (slot_date, slot_key, full_name, email, phone)
-      VALUES (${slot_date}::date, ${slot_key}, ${name}, ${emailVal || null}, ${phoneVal || null})
+      SELECT ${slot_date}::date, ${slot_key}, ${name}, ${emailVal || null}, ${phoneVal || null}
+      WHERE (
+        SELECT COUNT(*) FROM kristyn_signups
+        WHERE slot_date = ${slot_date}::date AND slot_key = ${slot_key}
+      ) < ${maxSignups}
       RETURNING id
     `
 
     const inserted = result as unknown as Array<{ id: number }>
+    if (inserted.length === 0) {
+      return NextResponse.json({ error: 'This slot is full.' }, { status: 409 })
+    }
     return NextResponse.json({ success: true, id: inserted[0].id }, { status: 201 })
   } catch (err: unknown) {
     const pgErr = err as { code?: string }
