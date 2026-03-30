@@ -167,8 +167,9 @@ export default function KristynCalendar() {
   return (
     <div className={styles.container}>
       <p className={styles.intro}>
-        The community is rallying around Kristyn, and every visit helps. Use this page to coordinate visits and meal drop-offs —
-        so things stay spread out and she always has company. Kristyn is Vegan, so if signing up for a meal, please keep that in mind and add lots of love into your recipe.
+        🚴🏻‍♀️ The community is rallying around Kristyn, and every visit helps. Use this page to coordinate visits and meal drop-offs —
+        so things stay spread out and she always has company.
+        <br></br> 🥗 Kristyn is Vegan, so please keep that in mind if signing up for a dinner drop-off & visit.
       </p>
 
       {loadingSignups && (
@@ -230,13 +231,13 @@ export default function KristynCalendar() {
                                 >
                                   <span className={styles.slotLabel}>{slot.label}</span>
                                   <span className={styles.slotTime}>{slot.timeRange}</span>
-                                  <span className={styles.slotQuietNote}>Rest time — no visits please</span>
+                                  <span className={styles.slotQuietNote}>No visits please</span>
                                 </div>
                               )
                             }
 
                             return (
-                              <div key={slot.key}>
+                              <div key={slot.key} className={styles.slotWrapper}>
                                 <button
                                   className={`${styles.slotBtn} ${
                                     slot.type === 'meal' ? styles.slotMeal : styles.slotVisit
@@ -260,7 +261,7 @@ export default function KristynCalendar() {
                                   )}
                                   {slotData.names.length === 0 && !full && (
                                     <span className={styles.slotEmpty}>
-                                      No one yet — be the first
+                                      Open
                                     </span>
                                   )}
                                 </button>

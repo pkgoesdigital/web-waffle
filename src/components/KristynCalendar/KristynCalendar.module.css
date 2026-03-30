@@ -35,7 +35,6 @@
 
 .weekBlock {
   border: 3px solid var(--color-border);
-  overflow: hidden;
 }
 
 .weekHeader {
@@ -143,6 +142,10 @@
   gap: var(--space-2);
 }
 
+.slotWrapper {
+  position: relative;
+}
+
 .slotBtn {
   display: flex;
   flex-direction: column;
@@ -236,7 +239,6 @@
   padding: var(--space-2) var(--space-3);
   border-radius: 6px;
   border: 2px dashed rgba(20, 133, 123, 0.25);
-  opacity: 0.45;
 }
 
 .slotQuietNote {
@@ -248,11 +250,16 @@
 /* Signup panel */
 
 .signupPanel {
-  margin-top: var(--space-2);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  min-width: 280px;
   padding: var(--space-4);
   border: 3px solid var(--color-border);
   border-radius: 8px;
   background: var(--color-bg);
+  box-shadow: var(--shadow-lg);
   animation: slideDown 150ms ease;
 }
 
