@@ -53,9 +53,11 @@ export async function GET() {
     const response = NextResponse.json({ signups })
     response.headers.set('Cache-Control', 'no-store')
     return response
-  } catch {
-    return NextResponse.json({ error: 'Unable to load sign-ups. Please try again.' }, { status: 500 })
-  }
+  } catch (e) {
+  console.error('[kristyn-wade GET]', e)
+  return NextResponse.json({ error: String(e) }, { status: 500 })
+}
+
 }
 
 export async function POST(request: NextRequest) {

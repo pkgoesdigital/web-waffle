@@ -31,3 +31,4 @@ next-env.d.ts
 # Instinct .yaml files are generated at runtime; only README is committed
 .claude/homunculus/instincts/*.yaml
 # Session activity logs live at ~/.claude/sessions/ (user-level, outside repo)
+.vercel
