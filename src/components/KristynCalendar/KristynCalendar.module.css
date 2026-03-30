@@ -18,7 +18,7 @@
 
 .fetchError {
   background: #fff0f0;
-  border: 2px solid #e07070;
+  border: 3px solid #e07070;
   border-radius: 8px;
   padding: var(--space-4);
   color: #8b2020;
@@ -79,18 +79,18 @@
 /* Days within an expanded week */
 
 .weekDays {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 0;
+  display: flex;
 }
 
 @media (max-width: 768px) {
   .weekDays {
-    grid-template-columns: 1fr;
+    flex-direction: column;
   }
 }
 
 .dayColumn {
+  flex: 1 1 0;
+  min-width: 0;
   border-right: 3px solid rgba(20, 133, 123, 0.2);
   padding: var(--space-3);
 }
@@ -101,6 +101,7 @@
 
 @media (max-width: 768px) {
   .dayColumn {
+    flex: 1 1 auto;
     border-right: none;
     border-bottom: 3px solid rgba(20, 133, 123, 0.2);
   }
@@ -120,7 +121,7 @@
 }
 
 .dayName {
-  font-size: var(--text-xs);
+  font-size: var(--text-sm);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -152,6 +153,7 @@
   align-items: flex-start;
   gap: var(--space-1);
   width: 100%;
+  min-width: 0;
   padding: var(--space-2) var(--space-3);
   border-radius: 6px;
   border: 3px solid transparent;
@@ -200,32 +202,32 @@
 }
 
 .slotLabel {
-  font-size: var(--text-xs);
+  font-size: var(--text-sm);
   font-weight: 700;
   color: var(--color-text);
 }
 
 .slotBadge {
-  font-size: var(--text-xs);
+  font-size: var(--text-sm);
   font-weight: 600;
   color: var(--color-text-muted);
   white-space: nowrap;
 }
 
 .slotTime {
-  font-size: var(--text-xs);
+  font-size: var(--text-sm);
   color: var(--color-text-muted);
 }
 
 .slotNames {
-  font-size: var(--text-xs);
+  font-size: var(--text-sm);
   color: var(--color-text);
   font-style: italic;
   line-height: 1.4;
 }
 
 .slotEmpty {
-  font-size: var(--text-xs);
+  font-size: var(--text-sm);
   color: var(--color-text-muted);
   font-style: italic;
 }
