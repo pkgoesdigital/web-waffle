@@ -19,27 +19,11 @@ export const SLOT_DEFINITIONS: SlotDefinition[] = [
     maxSignups: 3,
   },
   {
-    key: 'meal-lunch',
-    type: 'meal',
-    label: 'Lunch Drop-off',
-    timeRange: '11:30 AM – 12:30 PM',
-    startHour: 11,
-    maxSignups: 1,
-  },
-  {
     key: 'visit-afternoon',
     type: 'visit',
     label: 'Afternoon Visit',
-    timeRange: '1:00 PM – 3:00 PM',
+    timeRange: '1:00 PM – 6:00 PM',
     startHour: 13,
-    maxSignups: 3,
-  },
-  {
-    key: 'visit-late-afternoon',
-    type: 'visit',
-    label: 'Late Afternoon Visit',
-    timeRange: '4:00 PM – 6:00 PM',
-    startHour: 16,
     maxSignups: 3,
   },
   {
