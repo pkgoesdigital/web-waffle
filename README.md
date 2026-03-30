@@ -2,10 +2,6 @@
 
 Personal website for [paulaklimas.com](https://paulaklimas.com). Built on Next.js 15 with the App Router, TypeScript, and a filesystem-based content system. Fully static output — no database, no CMS.
 
-
-https://github.com/user-attachments/assets/51288a1f-8cdf-4e6b-a067-e85b832accd8
-
-
 ## Commands
 
 ```bash
@@ -73,28 +69,6 @@ export default function MyChildPage() {
   )
 }
 ```
-
-**Current portfolio structure:**
-
-```
-/portfolio
-  /portfolio/tuff-shed
-    /portfolio/tuff-shed/tuff-shed-scripts
-  /portfolio/waterbury
-    /portfolio/waterbury/advance-nc
-    /portfolio/waterbury/birthday-stats
-  /portfolio/tonic
-    /portfolio/tonic/kula
-    /portfolio/tonic/angular-todo
-  /portfolio/nextworld
-  /portfolio/personal-website
-  /portfolio/technical-summary
-  /portfolio/miscellaneous
-```
-
-
-https://github.com/user-attachments/assets/41c7ca52-e608-4f95-b16e-b8bfc08f04e4
-
 
 **Images:** Place in `public/portfolio/<section>/` and reference with Next.js `<Image>`.
 
