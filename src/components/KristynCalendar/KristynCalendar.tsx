@@ -167,8 +167,8 @@ export default function KristynCalendar() {
   return (
     <div className={styles.container}>
       <p className={styles.intro}>
-        Kristyn would love to see you. Use this page to coordinate visits and meal drop-offs —
-        so things stay spread out and she always has company.
+        The community is rallying around Kristyn, and every visit helps. Use this page to coordinate visits and meal drop-offs —
+        so things stay spread out and she always has company. Kristyn is Vegan, so if signing up for a meal, please keep that in mind and add lots of love into your recipe.
       </p>
 
       {loadingSignups && (

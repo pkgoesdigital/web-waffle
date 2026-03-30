@@ -1,5 +1,5 @@
 .container {
-  max-width: 960px;
+  /* max-width: 960px; */
   margin: 0 auto;
   padding: 0 var(--space-6);
 }
@@ -7,8 +7,6 @@
 .intro {
   font-size: var(--text-lg);
   color: var(--color-text-muted);
-  max-width: 600px;
-  line-height: 1.7;
   margin-bottom: var(--space-12);
 }
 
@@ -36,8 +34,7 @@
 }
 
 .weekBlock {
-  border: 2px solid var(--color-border);
-  border-radius: 10px;
+  border: 3px solid var(--color-border);
   overflow: hidden;
 }
 
@@ -64,11 +61,11 @@
 
 .weekHeaderExpanded {
   background: #edf5f4;
-  border-bottom: 2px solid var(--color-border);
+  border-bottom: 3px solid var(--color-border);
 }
 
 .weekLabel {
-  font-size: var(--text-sm);
+  font-size: var(--text-lg);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -76,7 +73,7 @@
 }
 
 .weekChevron {
-  font-size: var(--text-xs);
+  font-size: var(--text-lg);
   color: var(--color-text-muted);
 }
 
@@ -95,7 +92,7 @@
 }
 
 .dayColumn {
-  border-right: 1px solid rgba(20, 133, 123, 0.2);
+  border-right: 3px solid rgba(20, 133, 123, 0.2);
   padding: var(--space-3);
 }
 
@@ -106,7 +103,7 @@
 @media (max-width: 768px) {
   .dayColumn {
     border-right: none;
-    border-bottom: 1px solid rgba(20, 133, 123, 0.2);
+    border-bottom: 3px solid rgba(20, 133, 123, 0.2);
   }
 
   .dayColumn:last-child {
@@ -120,7 +117,7 @@
   align-items: center;
   margin-bottom: var(--space-3);
   padding-bottom: var(--space-2);
-  border-bottom: 1px solid rgba(20, 133, 123, 0.15);
+  border-bottom: 3px solid rgba(20, 133, 123, 0.15);
 }
 
 .dayName {
@@ -154,7 +151,7 @@
   width: 100%;
   padding: var(--space-2) var(--space-3);
   border-radius: 6px;
-  border: 2px solid transparent;
+  border: 3px solid transparent;
   background: var(--color-surface);
   cursor: pointer;
   font-family: var(--font-sans);
@@ -253,7 +250,7 @@
 .signupPanel {
   margin-top: var(--space-2);
   padding: var(--space-4);
-  border: 2px solid var(--color-border);
+  border: 3px solid var(--color-border);
   border-radius: 8px;
   background: var(--color-bg);
   animation: slideDown 150ms ease;
@@ -360,7 +357,7 @@
   font-family: var(--font-sans);
   color: var(--color-text);
   background: var(--color-surface);
-  border: 2px solid var(--color-border);
+  border: 3px solid var(--color-border);
   border-radius: 6px;
   outline: none;
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast);

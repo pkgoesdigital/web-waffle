@@ -13,7 +13,7 @@ export default function KristynWadePage() {
     <div className={styles.page}>
       <div className="page-header">
         <h1>Visiting Kristyn</h1>
-        <p>Sign up for a time to visit or drop off a meal — every act of care means the world.</p>
+        <p>The family will be notified of all sign-ups automatically!</p>
       </div>
       <KristynCalendar />
     </div>
