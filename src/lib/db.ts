@@ -4,10 +4,10 @@ let _sql: ReturnType<typeof neon> | null = null
 
 export function getSql(): ReturnType<typeof neon> {
   if (!_sql) {
-    if (!process.env.DATABASE_URL) {
+    if (!process.env.neon_web_waffle_DATABASE_URL) {
       throw new Error('DATABASE_URL environment variable is not set')
     }
-    _sql = neon(process.env.DATABASE_URL)
+    _sql = neon(process.env.neon_web_waffle_DATABASE_URL)
   }
   return _sql
 }
