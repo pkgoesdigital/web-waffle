@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import ThemeToggle from '@/components/ThemeToggle/ThemeToggle'
 import styles from './Header.module.css'
 
 const links = [
@@ -27,10 +28,11 @@ export default function NavLinks() {
         onClick={() => setIsOpen(!isOpen)}
         aria-label="Toggle navigation"
         aria-expanded={!isOpen}
+        aria-controls="main-nav"
       >
         {isOpen ? '☰' : '✕'}
       </button>
-      <nav className={`${styles.nav} ${isOpen ? styles.navClosed : ''}`}>
+      <nav id="main-nav" className={`${styles.nav} ${isOpen ? styles.navClosed : ''}`}>
         {links.map((link) => (
           <Link
             key={link.href}
@@ -43,6 +45,7 @@ export default function NavLinks() {
             {link.label}
           </Link>
         ))}
+        <ThemeToggle />
       </nav>
     </>
   )

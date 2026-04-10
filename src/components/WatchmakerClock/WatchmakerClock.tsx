@@ -7,9 +7,10 @@ export default function WatchmakerClock() {
   const clockRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     let raf = 0
 
-    const tick = () => {
+    const updateHands = () => {
       const current = new Date()
       const hr = current.getHours() % 12
       const min = current.getMinutes()
@@ -32,10 +33,19 @@ export default function WatchmakerClock() {
         minHand.style.transform = `rotate(${6 * min + 0.1 * sec}deg)`
       if (secHand)
         secHand.style.transform = `rotate(${6 * sec + 0.006 * milli}deg)`
-
-      raf = requestAnimationFrame(tick)
     }
 
+    if (prefersReducedMotion) {
+      // Update once per second instead of every frame
+      updateHands()
+      const interval = setInterval(updateHands, 1000)
+      return () => clearInterval(interval)
+    }
+
+    const tick = () => {
+      updateHands()
+      raf = requestAnimationFrame(tick)
+    }
     raf = requestAnimationFrame(tick)
     return () => cancelAnimationFrame(raf)
   }, [])

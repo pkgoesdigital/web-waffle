@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { getCardColor } from '@/lib/colors'
 import styles from './ContentCard.module.css'
 
 type ContentCardProps = {
@@ -7,7 +6,7 @@ type ContentCardProps = {
   title: string
   subtitle?: string
   date?: string
-  index: number
+  color: string
   status?: string
 }
 
@@ -16,16 +15,14 @@ export default function ContentCard({
   title,
   subtitle,
   date,
-  index,
+  color,
   status,
 }: ContentCardProps) {
-  const bgColor = getCardColor(index)
-
   return (
     <Link
       href={href}
       className={styles.card}
-      style={{ backgroundColor: bgColor }}
+      style={{ '--card-color': color } as React.CSSProperties}
     >
       <div className={styles.content}>
         {date && <span className={styles.date}>{date}</span>}

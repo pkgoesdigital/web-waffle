@@ -60,18 +60,18 @@ function renderBarChart(
     .call(d3.axisBottom(x).tickSizeOuter(0))
     .selectAll('text')
     .attr('font-size', '12px')
-    .attr('fill', '#6b7280')
+    .attr('fill', 'currentColor')
 
   // Y axis
   g.append('g')
     .call(d3.axisLeft(y).ticks(5))
     .selectAll('text')
     .attr('font-size', '12px')
-    .attr('fill', '#6b7280')
+    .attr('fill', 'currentColor')
 
   // Remove axis lines for cleaner look
-  g.selectAll('.domain').attr('stroke', '#e5e7eb')
-  g.selectAll('.tick line').attr('stroke', '#e5e7eb')
+  g.selectAll('.domain').attr('stroke', 'currentColor').attr('opacity', 0.3)
+  g.selectAll('.tick line').attr('stroke', 'currentColor').attr('opacity', 0.3)
 }
 
 export default function D3Visualization({ dataUrl }: D3VisualizationProps) {
@@ -121,9 +121,9 @@ export default function D3Visualization({ dataUrl }: D3VisualizationProps) {
   }
 
   return (
-    <div ref={containerRef} className={styles.container}>
+    <figure ref={containerRef} className={styles.container} role="img" aria-label="Data visualization bar chart">
       {!data && <p className={styles.loading}>Loading visualization...</p>}
-      <svg ref={svgRef} className={styles.svg} />
-    </div>
+      <svg ref={svgRef} className={styles.svg} aria-hidden="true" />
+    </figure>
   )
 }

@@ -56,6 +56,31 @@
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+
+  /* Card color lightness (used by colors.ts via CSS variable) */
+  --card-lightness: 82%;
+
+  /* Hover brightness for cards */
+  --hover-brightness: brightness(0.95);
+}
+
+/* Dark theme overrides */
+[data-theme="dark"] {
+  --color-bg: #18181f;
+  --color-surface: #1f1f28;
+  --color-text: #c8c8d2;
+  --color-text-muted: #858595;
+  --color-border: #1eb8ab;
+  --color-accent: #1eb8ab;
+  --color-accent-hover: #c46fb3;
+  --color-text-white: #ffffff;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+
+  --card-lightness: 40%;
+  --hover-brightness: brightness(1.15);
 }
 
 h1,
@@ -77,6 +102,7 @@ html {
   background-color: var(--color-bg);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: color var(--transition-normal), background-color var(--transition-normal);
 }
 
 body {
@@ -99,6 +125,18 @@ a {
 
 a:hover {
   color: var(--color-accent-hover);
+}
+
+/* Global focus-visible styles for keyboard navigation */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[role="switch"]:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 
 img {
@@ -274,6 +312,26 @@ ol {
   padding: 0 var(--space-6);
 }
 
+/* Skip to content link — visible only on keyboard focus */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: var(--space-4);
+  z-index: 200;
+  padding: var(--space-2) var(--space-4);
+  background: var(--color-accent);
+  color: var(--color-bg);
+  font-weight: 600;
+  border-radius: 0 0 8px 8px;
+  text-decoration: none;
+  transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+  top: 0;
+  color: var(--color-bg);
+}
+
 /* Page container utility */
 .page-container {
   margin: 0 auto;
@@ -314,4 +372,16 @@ ol {
   max-width: var(--max-width);
   margin: 0 auto var(--space-6);
   padding: 0 var(--space-6);
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

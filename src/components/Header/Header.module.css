@@ -48,7 +48,7 @@
 
 .navLink:hover {
   color: var(--color-text);
-  filter: brightness(0.95);
+  filter: var(--hover-brightness);
 }
 
 .active {
@@ -76,6 +76,8 @@
     color: var(--color-text);
     padding: var(--space-2);
     line-height: 1;
+    min-width: 44px;
+    min-height: 44px;
   }
 
   .nav {
