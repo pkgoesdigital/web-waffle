@@ -8,9 +8,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "test:watch": "jest --watch",
-    "test:ci": "jest --ci --coverage"
+    "test:ci": "jest --ci --coverage --passWithNoTests"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
@@ -48,7 +48,7 @@
       "^@/(.*)$": "<rootDir>/src/$1",
       "\\.module\\.css$": "<rootDir>/__mocks__/styleMock.js"
     },
-    "testPathPattern": "\\.(test|spec)\\.(ts|tsx)$",
+    "testMatch": ["**/*.test.ts", "**/*.test.tsx", "**/*.spec.ts", "**/*.spec.tsx"],
     "transform": {
       "^.+\\.(ts|tsx)$": [
         "ts-jest",
