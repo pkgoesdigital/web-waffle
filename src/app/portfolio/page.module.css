@@ -41,7 +41,7 @@
 .tocLink:hover {
   background: var(--color-bg);
   color: var(--color-accent);
-  filter: brightness(0.95);
+  filter: var(--hover-brightness);
 }
 
 .tocNumber {
@@ -85,6 +85,8 @@ a.card {
   padding: var(--space-6);
   border-radius: 8px;
   color: var(--color-text);
+  background-color: var(--card-color);
+  border: 4px solid var(--card-color);
   transition: transform var(--transition-fast), box-shadow var(--transition-fast), filter var(--transition-fast);
 }
 
@@ -92,7 +94,11 @@ a.card:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
   color: var(--color-text);
-  filter: brightness(0.95);
+  filter: var(--hover-brightness);
+}
+
+:global([data-theme="dark"]) a.card {
+  background-color: var(--color-bg);
 }
 
 .cardNumber {
@@ -100,6 +106,10 @@ a.card:hover {
   font-weight: 600;
   color: var(--color-text-muted);
   font-variant-numeric: tabular-nums;
+}
+
+:global([data-theme="dark"]) .cardNumber {
+  color: var(--color-text);
 }
 
 .cardTitle {
@@ -111,6 +121,11 @@ a.card:hover {
 .cardPeriod {
   font-size: var(--text-xs);
   color: var(--color-text-muted);
+  font-style: italic;
+}
+
+:global([data-theme="dark"]) .cardPeriod {
+  color: var(--color-text);
 }
 
 .cardDescription {
@@ -118,6 +133,10 @@ a.card:hover {
   color: var(--color-text-muted);
   line-height: 1.6;
   margin-top: var(--space-1);
+}
+
+:global([data-theme="dark"]) .cardDescription {
+  color: var(--color-text);
 }
 
 /* Child entries in the TOC */
@@ -149,5 +168,5 @@ a.card:hover {
 .tocChildLink:hover {
   background: var(--color-bg);
   color: var(--color-accent);
-  filter: brightness(0.95);
+  filter: var(--hover-brightness);
 }

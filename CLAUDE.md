@@ -5,13 +5,29 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Commands
 
 ```bash
-npm run dev      # Start dev server (Next.js, port 3000)
-npm run build    # Production build — also type-checks the project
-npm run lint     # ESLint (next/core-web-vitals + next/typescript)
-npm run start    # Serve the production build locally
+npm run dev        # Start dev server (Next.js, port 3000)
+npm run build      # Production build — also type-checks the project
+npm run lint       # ESLint (next/core-web-vitals + next/typescript)
+npm run start      # Serve the production build locally
+npm run test       # Run Jest test suite (once)
+npm run test:watch # Run Jest in watch mode during development
+npm run test:ci    # Run Jest with --ci flag + coverage (used in CI/CD)
 ```
 
-There is no test suite. `npm run build` is the primary correctness check — it catches TypeScript errors and generates all static pages.
+### Testing requirements
+
+**Every new source file must have a companion spec file.** The spec file lives next to the source file and uses the `.test.ts` / `.test.tsx` suffix:
+
+```
+src/lib/content.ts           → src/lib/content.test.ts
+src/components/PostList/     → src/components/PostList/PostList.test.tsx
+src/app/api/posts/route.ts   → src/app/api/posts/route.test.ts
+```
+
+- Use **Jest** + **React Testing Library** for all tests.
+- Use `@testing-library/user-event` for simulating user interactions in component tests.
+- CSS Modules are mocked via `__mocks__/styleMock.js` — no special setup needed.
+- `npm run build` remains the primary type-correctness check; tests are the behaviour correctness check.
 
 ## Architecture
 
@@ -54,7 +70,42 @@ All components use CSS Modules co-located in the component folder (`ComponentNam
 - **`PostList`** — only `'use client'` component; handles search filtering (`useMemo` over title/subtitle/tags) and load-more pagination (`PAGE_SIZE = 12`). Receives pre-fetched `PostMeta[]` and `PageMeta[]` as props from the server page.
 - **`D3Visualization`** — client component wrapping a D3 chart fetched from `/api/viz`.
 - **`WatchmakerClock`** — client component (canvas-based animated clock).
-- **`ContentCard`** / **`CardGrid`** — pure presentational server-compatible components.
+- **`ContentCard`** / **`CardGrid`** — pure presentational server-compatible components. `ContentCard` accepts a `color` prop (not an index) — the parent is responsible for generating shuffled colors.
+- **`ThemeProvider`** — client context providing `theme` and `toggleTheme` to the component tree.
+- **`ThemeToggle`** — pill-shaped light/dark switch rendered inside the header nav.
+
+### Theme system (dark mode)
+
+The site supports light and dark mode via a custom React context (`ThemeProvider`), not a third-party library.
+
+**How it works:**
+- `ThemeProvider` (`src/components/ThemeProvider/ThemeProvider.tsx`) is a `'use client'` context that wraps the root layout. It reads the initial theme from the `data-theme` attribute (set by the FOIT script) and exposes `theme` + `toggleTheme`.
+- An inline `<script>` in `layout.tsx` runs before React hydrates to read `localStorage` → `prefers-color-scheme` → default to `light`, preventing flash of wrong theme.
+- `data-theme="dark"` on `<html>` activates the dark CSS variable overrides in `globals.css`.
+- `ThemeToggle` (`src/components/ThemeToggle/ThemeToggle.tsx`) renders a pill-shaped toggle in the header nav (matching the writing page Published/Drafts toggle style).
+
+**Card color system:**
+- `src/lib/colors.ts` exports `getShuffledCardColors(count)` which Fisher-Yates shuffles the 8 HSL hues per call, producing randomized card colors on each server request.
+- Colors are passed to cards as a `--card-color` CSS custom property (not `backgroundColor` directly), enabling CSS to control how the color is used per theme.
+- In **light mode**: `--card-color` is the card background and border.
+- In **dark mode**: card background is `var(--color-bg)` (matching the page), and `--card-color` appears only as the 4px border.
+- `--card-lightness` CSS variable controls the HSL lightness (82% light, 40% dark).
+
+**When modifying themes:**
+- Light mode accent colors (`#14857b` teal, `#732d67` purple) should not be changed without asking.
+- Dark mode uses brightened accents (`#1eb8ab`, `#c46fb3`) for WCAG AA contrast compliance.
+- All new interactive elements must use `var(--color-*)` variables, never hardcoded colors.
+
+### Accessibility standards
+
+The site follows WCAG 2.2 AA. When adding new features:
+
+- **Focus styles:** Global `a:focus-visible` / `button:focus-visible` outlines are defined in `globals.css`. Never use `outline: none` without a visible `:focus-visible` replacement.
+- **Touch targets:** All interactive elements must meet 44x44px minimum. Use `min-width`/`min-height` or an invisible `::before` pseudo-element to expand tap areas without changing visual size.
+- **Motion:** `globals.css` includes a `@media (prefers-reduced-motion: reduce)` block that kills all transitions/animations. Any new `requestAnimationFrame` loops must check `window.matchMedia('(prefers-reduced-motion: reduce)')` and fall back to interval-based updates.
+- **Color contrast:** All text/background pairings must meet 4.5:1 for normal text (3:1 for large text). When adding dark mode overrides, verify contrast against `--color-bg`.
+- **ARIA:** Interactive controls need `aria-label`, `role`, and state attributes (`aria-expanded`, `aria-checked`). D3/SVG visualizations should be wrapped in `<figure role="img" aria-label="...">`.
+- **Skip link:** A `.skip-link` is present in `layout.tsx` targeting `#main-content`.
 
 ### Global styles
 
@@ -62,6 +113,7 @@ All components use CSS Modules co-located in the component folder (`ComponentNam
 - `.prose` — article body styling (max-width 680px)
 - `.page-container` / `.page-header` — layout wrappers
 - `.section` / `.section-title` — section spacing utilities
+- `.skip-link` — hidden skip-to-content link, visible on keyboard focus
 
 ### Adding a new post
 
@@ -115,7 +167,10 @@ If a rebase produces conflicts that aren't trivially resolvable, stop and surfac
 ### Commit discipline
 - One logical concern per commit — do not bundle unrelated changes.
 - Commit after completing each task — don't batch multiple completed tasks into one commit.
-- Run `npm run build` before committing to confirm the project is in a valid state.
+- **Pre-commit checklist (required — do not skip):**
+  1. `npm run test` — all tests must pass with zero failures.
+  2. `npm run build` — build must succeed with no TypeScript errors.
+  3. Both checks must be green before running `git commit`. If either fails, fix the issue before committing.
 - Commit messages: short imperative subject line (`Add`, `Fix`, `Refactor`, not `Added`), with a body when the "why" isn't obvious.
 
 ## Code Style Rules

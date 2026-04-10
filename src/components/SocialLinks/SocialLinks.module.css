@@ -10,6 +10,7 @@
   justify-content: center;
   border-radius: 50%;
   background: var(--color-bg);
+  border: 2px solid hsl(350, 65%, var(--card-lightness));
   transition:
     background var(--transition-fast),
     transform var(--transition-fast);
@@ -24,3 +25,13 @@
   width: 60px;
   height: 60px;
 }
+
+/* Cycle colored borders through the same hues as the page cards */
+li:nth-child(8n+1) .link { border-color: hsl(350, 65%, var(--card-lightness)); }
+li:nth-child(8n+2) .link { border-color: hsl(25,  65%, var(--card-lightness)); }
+li:nth-child(8n+3) .link { border-color: hsl(45,  65%, var(--card-lightness)); }
+li:nth-child(8n+4) .link { border-color: hsl(160, 65%, var(--card-lightness)); }
+li:nth-child(8n+5) .link { border-color: hsl(200, 65%, var(--card-lightness)); }
+li:nth-child(8n+6) .link { border-color: hsl(270, 65%, var(--card-lightness)); }
+li:nth-child(8n+7) .link { border-color: hsl(330, 65%, var(--card-lightness)); }
+li:nth-child(8n+8) .link { border-color: hsl(90,  65%, var(--card-lightness)); }

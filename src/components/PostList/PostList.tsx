@@ -3,6 +3,7 @@
 import { useState, useMemo } from 'react'
 import type { PostMeta, PageMeta } from '@/lib/types'
 import { formatDate } from '@/lib/format'
+import { getShuffledCardColors } from '@/lib/colors'
 import ContentCard from '@/components/ContentCard/ContentCard'
 import CardGrid from '@/components/CardGrid/CardGrid'
 import styles from './PostList.module.css'
@@ -41,6 +42,12 @@ export default function PostList({ posts, featured }: PostListProps) {
     setQuery('')
     setVisibleCount(PAGE_SIZE)
   }
+
+  // Shuffle card colors once per mount so the order is fresh each page visit
+  const cardColors = useMemo(
+    () => getShuffledCardColors(featured.length + posts.length),
+    [featured.length, posts.length]
+  )
 
   const visiblePosts = filteredPosts.slice(0, visibleCount)
   const hasMore = filteredPosts.length > visibleCount
@@ -82,7 +89,7 @@ export default function PostList({ posts, featured }: PostListProps) {
                 title={page.title}
                 subtitle={page.subtitle}
                 date={formatDate(page.date)}
-                index={i}
+                color={cardColors[i]}
               />
             ))}
           </CardGrid>
@@ -105,7 +112,7 @@ export default function PostList({ posts, featured }: PostListProps) {
                 title={post.title}
                 subtitle={post.subtitle}
                 date={formatDate(post.date)}
-                index={i + (query ? 0 : featured.length)}
+                color={cardColors[i + (query ? 0 : featured.length)]}
                 status={post.status}
               />
             ))}
