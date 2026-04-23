@@ -8,7 +8,7 @@ type Props = {
 
 export default function IconBadge({ label, icon }: Props) {
   return (
-    <span className={styles.badge} title={label}>
+    <div className={styles.wrapper} title={label}>
       {icon ? (
         <svg
           viewBox="0 0 24 24"
@@ -21,7 +21,9 @@ export default function IconBadge({ label, icon }: Props) {
       ) : (
         <span className={styles.placeholder} aria-hidden="true" />
       )}
-      <span className={styles.label}>{label}</span>
-    </span>
+      <span className={styles.badge}>
+        <span className={styles.label}>{label}</span>
+      </span>
+    </div>
   )
 }
