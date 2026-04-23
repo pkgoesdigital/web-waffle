@@ -59,6 +59,13 @@ export function getEvents(): EventMeta[] {
   return getEventIndex().filter((e) => e.status !== 'cancelled')
 }
 
+export function getEventsForMonth(year: number, month: number): EventMeta[] {
+  return getEventIndex().filter((e) => {
+    const [eYear, eMonth] = e.date.split('-').map(Number)
+    return eYear === year && eMonth - 1 === month
+  })
+}
+
 export function getUpcomingEvents(months = 2): EventMeta[] {
   const now = new Date()
   const cutoff = new Date(now.getFullYear(), now.getMonth() + months + 1, 1)

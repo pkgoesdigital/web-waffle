@@ -138,6 +138,46 @@ describe('getUpcomingEvents', () => {
   })
 })
 
+describe('getEventsForMonth', () => {
+  it('returns events matching the given year and month (0-indexed)', () => {
+    const events = withEvents(
+      {
+        files: ['2026-04-28-april.md', '2026-05-01-may.md'],
+        fileContents: [
+          makeEventFile({ date: '2026-04-28', slug: '2026-04-28-april' }),
+          makeEventFile({ date: '2026-05-01', slug: '2026-05-01-may' }),
+        ],
+      },
+      (m) => m.getEventsForMonth(2026, 3) // month 3 = April (0-indexed)
+    )
+    expect(events).toHaveLength(1)
+    expect(events[0].slug).toBe('2026-04-28-april')
+  })
+
+  it('includes cancelled events (unlike getEvents)', () => {
+    const events = withEvents(
+      {
+        files: ['2026-04-28-cancelled.md'],
+        fileContents: [makeEventFile({ date: '2026-04-28', status: 'cancelled', slug: '2026-04-28-cancelled' })],
+      },
+      (m) => m.getEventsForMonth(2026, 3)
+    )
+    expect(events).toHaveLength(1)
+    expect(events[0].status).toBe('cancelled')
+  })
+
+  it('returns empty array when no events match the month', () => {
+    const events = withEvents(
+      {
+        files: ['2026-05-01-may.md'],
+        fileContents: [makeEventFile({ date: '2026-05-01', slug: '2026-05-01-may' })],
+      },
+      (m) => m.getEventsForMonth(2026, 3) // April — no match
+    )
+    expect(events).toHaveLength(0)
+  })
+})
+
 describe('getEventBySlug', () => {
   it('returns full event with content for a known slug', async () => {
     let event: EventMeta | undefined

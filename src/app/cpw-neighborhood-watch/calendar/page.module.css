@@ -3,6 +3,39 @@
   margin: 0 auto;
 }
 
+.monthNav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  margin-bottom: var(--space-3);
+}
+
+.monthTitle {
+  margin: 0;
+  flex: 1;
+  text-align: center;
+}
+
+.navBtn {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-accent);
+  white-space: nowrap;
+  transition: opacity 0.15s ease;
+}
+
+.navBtn:hover {
+  opacity: 0.75;
+}
+
+.navBtnDisabled {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text-muted);
+  opacity: 0.35;
+  white-space: nowrap;
+}
+
 .listSection {
   margin-top: var(--space-12);
 }
