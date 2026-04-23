@@ -10,7 +10,7 @@ const links = [
   { href: '/writing', label: 'Writing' },
   { href: '/about', label: 'About' },
   { href: '/portfolio', label: 'Portfolio' },
-  { href: '/cpw-neighborhood-watch', label: 'Neighborhood Watch' },
+  { href: '/cpw-neighborhood-watch', label: 'Portal' },
   { href: '/contact', label: 'Contact' },
 ]
 
