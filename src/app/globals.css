@@ -103,6 +103,7 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: color var(--transition-normal), background-color var(--transition-normal);
+  scrollbar-gutter: stable;
 }
 
 body {
