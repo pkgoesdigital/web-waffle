@@ -1,0 +1,28 @@
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+
+.calendarCta {
+  margin-top: var(--space-10);
+  padding-top: var(--space-6);
+  border-top: 1.5px solid var(--color-border);
+}
+
+.calendarLink {
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.calendarLink:hover {
+  text-decoration: underline;
+}
+
+.calendarLink:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
