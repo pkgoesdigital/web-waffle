@@ -40,6 +40,8 @@
   position: relative;
   display: flex;
   align-items: center;
+  /* Extends the hover area downward to bridge the gap between navLink and dropdown */
+  padding-bottom: var(--space-2);
 }
 
 .navLink {
@@ -80,7 +82,7 @@
 
 .dropdown {
   position: absolute;
-  top: calc(100% + var(--space-2));
+  top: 100%;
   left: 50%;
   transform: translateX(-50%) translateY(-4px);
   min-width: 210px;
@@ -170,6 +172,7 @@
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
+    padding-bottom: 0;
     border-bottom: 3px solid var(--color-border);
   }
 
