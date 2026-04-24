@@ -40,8 +40,17 @@
   position: relative;
   display: flex;
   align-items: center;
-  /* Extends the hover area downward to bridge the gap between navLink and dropdown */
-  padding-bottom: var(--space-2);
+}
+
+/* Invisible bridge that fills the gap between the nav link and dropdown,
+   keeping the hover state alive as the cursor moves between them */
+.navItem::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: var(--space-2);
 }
 
 .navLink {
@@ -171,8 +180,11 @@
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
-    padding-bottom: 0;
     border-bottom: 3px solid var(--color-border);
+  }
+
+  .navItem::after {
+    display: none;
   }
 
   /* ThemeToggle sits after the last navItem — remove its border */
