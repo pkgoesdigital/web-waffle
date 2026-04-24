@@ -81,8 +81,7 @@
   transition: transform 0.2s ease;
 }
 
-.navItem:hover .chevron,
-.navItem:focus-within .chevron {
+.navItem:hover .chevron {
   transform: rotate(180deg);
 }
 
@@ -109,8 +108,7 @@
   z-index: 200;
 }
 
-.navItem:hover .dropdown,
-.navItem:focus-within .dropdown {
+.navItem:hover .dropdown {
   opacity: 1;
   pointer-events: auto;
   transform: translateX(-50%) translateY(0);
