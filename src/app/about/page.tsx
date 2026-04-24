@@ -75,8 +75,11 @@ export default function AboutPage() {
         <p>
           I believe better software can inspire better humans. I believe in
           failure, reflection, rebuilding, and confrontation — they make things
-          more interesting and provide opportunities for growth. To quote my therapist: <em>"The only way out, is through."</em>
+          more interesting and provide opportunities for growth.
         </p>
+        <blockquote>
+          &ldquo;The only way out, is through.&rdquo; &mdash; my therapist
+        </blockquote>
 
         <p>
           If something here resonates — a project, an article, a way of

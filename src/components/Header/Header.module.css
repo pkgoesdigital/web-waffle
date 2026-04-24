@@ -10,7 +10,6 @@
 .inner {
   max-width: var(--max-width);
   margin: 0 auto;
-  /* padding: 0 var(--space-6); */
   height: 100%;
   display: flex;
   align-items: center;
@@ -28,33 +27,110 @@
   color: var(--color-accent);
 }
 
-/* Desktop nav — must appear before the media query so mobile rules can override */
+/* Desktop nav */
 .nav {
   display: flex;
-  gap: var(--space-6);
+  gap: var(--space-8);
   align-items: center;
+}
+
+/* ── Nav item wrapper (handles dropdown positioning) ─────────────────────── */
+
+.navItem {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Invisible bridge that fills the gap between the nav link and dropdown,
+   keeping the hover state alive as the cursor moves between them */
+.navItem::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: var(--space-2);
 }
 
 .navLink {
   font-size: var(--text-sm);
-  font-weight: 500;
+  font-weight: 400;
   color: var(--color-text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  transition: color var(--transition-fast), filter var(--transition-fast);
+  transition: color 0.2s ease;
   padding: var(--space-1) 0;
   border-bottom: 3px solid transparent;
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
 }
 
 .navLink:hover {
   color: var(--color-text);
-  filter: var(--hover-brightness);
 }
 
 .active {
   color: var(--color-text);
   border-bottom-color: var(--color-accent);
 }
+
+.chevron {
+  font-size: 40px;
+  line-height: 0;
+  opacity: 0.6;
+  transition: transform 0.2s ease;
+}
+
+.navItem:hover .chevron {
+  transform: rotate(180deg);
+}
+
+/* ── Dropdown ─────────────────────────────────────────────────────────────── */
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-4px);
+  min-width: 210px;
+  list-style: none;
+  margin: 0;
+  padding: var(--space-2) 0;
+  background: color-mix(in srgb, var(--color-bg) 88%, transparent);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 3px solid var(--color-border);
+  border-radius: 10px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1), transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 200;
+}
+
+.navItem:hover .dropdown {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.dropdownLink {
+  display: block;
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--text-sm);
+  font-weight: 400;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.dropdownLink:hover,
+.dropdownActive {
+  color: var(--color-text);
+  background: color-mix(in srgb, var(--color-text) 8%, transparent);
+}
+
+/* ── Mobile ───────────────────────────────────────────────────────────────── */
 
 .menuBtn {
   display: none;
@@ -88,6 +164,7 @@
     background: var(--color-bg);
     border-bottom: 3px solid var(--color-border);
     flex-direction: column;
+    align-items: flex-start;
     gap: 0;
     padding: var(--space-3) var(--space-4) var(--space-4);
     z-index: 99;
@@ -97,13 +174,67 @@
     display: none;
   }
 
+  .navItem {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    border-bottom: 3px solid var(--color-border);
+  }
+
+  .navItem::after {
+    display: none;
+  }
+
+  /* ThemeToggle sits after the last navItem — remove its border */
+  .navItem:last-of-type {
+    border-bottom: none;
+  }
+
   .navLink {
     padding: var(--space-3) 0;
-    border-bottom: 3px solid var(--color-border);
+    border-bottom: none;
     width: 100%;
   }
 
-  .navLink:last-child {
-    border-bottom: none;
+  /* Dropdown becomes a static inline list on mobile */
+  .dropdown {
+    position: static;
+    opacity: 1;
+    pointer-events: auto;
+    transform: none;
+    background: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0 0 var(--space-2);
+    min-width: unset;
+    width: 100%;
+    transition: none;
+  }
+
+  .dropdownLink {
+    padding: var(--space-2) 0 var(--space-2) var(--space-4);
+    white-space: normal;
+    border-top: 1px solid var(--color-border);
+    display: block;
+    width: 100%;
+  }
+
+  .dropdownLink:hover,
+  .dropdownActive {
+    background: none;
+  }
+
+  .chevron {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dropdown,
+  .chevron {
+    transition: none;
   }
 }

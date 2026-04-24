@@ -1,0 +1,143 @@
+.section {
+  margin-bottom: var(--space-12);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  border: 1.5px solid var(--color-border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.weekday {
+  padding: var(--space-2) var(--space-1);
+  text-align: center;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  color: var(--color-text);
+  opacity: 0.5;
+  background: var(--color-bg);
+  border-bottom: 1.5px solid var(--color-border);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.emptyCell {
+  background: var(--color-bg);
+  min-height: 72px;
+  opacity: 0.3;
+}
+
+.dayCell {
+  padding: var(--space-2);
+  background: var(--color-bg);
+  min-height: 72px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  border: 1px solid transparent;
+  transition: background 0.1s;
+}
+
+.dayCell.hasEvents {
+  background: color-mix(in srgb, var(--color-accent) 5%, var(--color-bg));
+}
+
+.dayNumber {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text);
+  opacity: 0.7;
+  line-height: 1;
+}
+
+.eventDot {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  text-decoration: none;
+  border-radius: 4px;
+  padding: 2px var(--space-1);
+  transition: background 0.1s;
+}
+
+.eventDot:hover {
+  background: color-mix(in srgb, var(--color-accent) 12%, transparent);
+}
+
+.eventDot:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 1px;
+}
+
+.eventDot.cancelled .dotIndicator {
+  background: #c0392b;
+}
+
+[data-theme='dark'] .eventDot.cancelled .dotIndicator {
+  background: #e74c3c;
+}
+
+.dotIndicator {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.eventLabel {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--color-accent);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.eventDot.cancelled .eventLabel {
+  color: #c0392b;
+  text-decoration: line-through;
+}
+
+[data-theme='dark'] .eventDot.cancelled .eventLabel {
+  color: #e74c3c;
+}
+
+/* Mobile: collapse to event-only date list */
+@media (max-width: 640px) {
+  .grid {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+  }
+
+  .weekday,
+  .emptyCell {
+    display: none;
+  }
+
+  .dayCell {
+    min-height: unset;
+    padding: var(--space-3) var(--space-4);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .dayCell:not(.hasEvents) {
+    display: none;
+  }
+
+  .dayCell:last-child {
+    border-bottom: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .eventDot,
+  .dayCell {
+    transition: none;
+  }
+}

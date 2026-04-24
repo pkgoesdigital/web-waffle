@@ -1,23 +1,158 @@
 import type { Metadata } from 'next'
+import type { SimpleIcon } from 'simple-icons'
+import {
+  siTypescript, siJavascript, siPython, siPhp, siHtml5, siCss,
+  siReact, siNextdotjs, siAngular,
+  siRedux, siReactquery, siReactivex,
+  siTailwindcss, siSass, siBootstrap, siCssmodules,
+  siTurborepo, siVite, siWebpack,
+  siNodedotjs, siExpress,
+  siPostgresql, siMongodb, siNeo4j,
+  siStoryblok, siGooglemaps, siGoogleanalytics, siSentry,
+  siDocker, siRedis, siPnpm, siJenkins,
+  siJest, siJasmine, siEslint, siPrettier,
+  siWordpress, siElementor, siStrapi,
+  siD3, siGraphql, siJquery,
+} from 'simple-icons'
 import PortfolioPage from '@/components/PortfolioPage/PortfolioPage'
+import IconBadge from '@/components/IconBadge/IconBadge'
 import styles from './page.module.css'
 
 export const metadata: Metadata = { title: 'Technical Summary — Portfolio' }
 
-const skills = [
-  { category: 'Languages', items: 'TypeScript, JavaScript, PHP, Python, Java, HTML, CSS' },
-  { category: 'Frameworks', items: 'React, React Native, Next.js (App Router and Pages Router), Angular' },
-  { category: 'State Management', items: 'Redux, React Query, React Context, RxJS' },
-  { category: 'Styling', items: 'Tailwind CSS, CSS Modules, SASS, Bootstrap' },
-  { category: 'Build Tools', items: 'Turborepo, Vite, Metro, Webpack, Angular CLI' },
-  { category: 'Backend', items: 'Node.js, Express, DAPR, JasperReports, Jtwig' },
-  { category: 'Databases', items: 'PostgreSQL, MongoDB, Neo4j, NoSQL' },
-  { category: 'Integrations', items: 'Salesforce, Storyblok CMS, Google Maps/Places/Analytics, OneSignal, Sentry, iLevel' },
-  { category: 'Infrastructure', items: 'Azure, Docker, Redis, pnpm workspaces, Jenkins, Azure Pipelines' },
-  { category: 'AI / ML', items: 'sentence-transformers, Tesseract OCR' },
-  { category: 'Testing', items: 'Jest, Jasmine, Karma, ESLint, Prettier, end-to-end and unit testing via CI/CD' },
-  { category: 'CMS', items: 'WordPress, Elementor, Storyblok, Strapi' },
-  { category: 'Other', items: 'SCORM, Formik/Yup, D3.js, i18n, JasperReports XML, GraphQL, jQuery, AG Grid' },
+type SkillItem = { label: string; icon?: SimpleIcon }
+type SkillCategory = { category: string; items: SkillItem[] }
+
+const skills: SkillCategory[] = [
+  {
+    category: 'Languages',
+    items: [
+      { label: 'TypeScript', icon: siTypescript },
+      { label: 'JavaScript', icon: siJavascript },
+      { label: 'Python', icon: siPython },
+      { label: 'PHP', icon: siPhp },
+      { label: 'Java' },
+      { label: 'HTML', icon: siHtml5 },
+      { label: 'CSS', icon: siCss },
+    ],
+  },
+  {
+    category: 'Frameworks',
+    items: [
+      { label: 'React', icon: siReact },
+      { label: 'React Native', icon: siReact },
+      { label: 'Next.js', icon: siNextdotjs },
+      { label: 'Angular', icon: siAngular },
+    ],
+  },
+  {
+    category: 'State Management',
+    items: [
+      { label: 'Redux', icon: siRedux },
+      { label: 'React Query', icon: siReactquery },
+      { label: 'React Context', icon: siReact },
+      { label: 'RxJS', icon: siReactivex },
+    ],
+  },
+  {
+    category: 'Styling',
+    items: [
+      { label: 'Tailwind CSS', icon: siTailwindcss },
+      { label: 'CSS Modules', icon: siCssmodules },
+      { label: 'SASS', icon: siSass },
+      { label: 'Bootstrap', icon: siBootstrap },
+    ],
+  },
+  {
+    category: 'Build Tools',
+    items: [
+      { label: 'Turborepo', icon: siTurborepo },
+      { label: 'Vite', icon: siVite },
+      { label: 'Webpack', icon: siWebpack },
+      { label: 'Metro' },
+      { label: 'Angular CLI', icon: siAngular },
+    ],
+  },
+  {
+    category: 'Backend',
+    items: [
+      { label: 'Node.js', icon: siNodedotjs },
+      { label: 'Express', icon: siExpress },
+      { label: 'DAPR' },
+      { label: 'JasperReports' },
+      { label: 'Jtwig' },
+    ],
+  },
+  {
+    category: 'Databases',
+    items: [
+      { label: 'PostgreSQL', icon: siPostgresql },
+      { label: 'MongoDB', icon: siMongodb },
+      { label: 'Neo4j', icon: siNeo4j },
+      { label: 'NoSQL' },
+    ],
+  },
+  {
+    category: 'Integrations',
+    items: [
+      { label: 'Salesforce' },
+      { label: 'Storyblok', icon: siStoryblok },
+      { label: 'Google Maps', icon: siGooglemaps },
+      { label: 'Google Analytics', icon: siGoogleanalytics },
+      { label: 'OneSignal' },
+      { label: 'Sentry', icon: siSentry },
+      { label: 'iLevel' },
+    ],
+  },
+  {
+    category: 'Infrastructure',
+    items: [
+      { label: 'Azure' },
+      { label: 'Docker', icon: siDocker },
+      { label: 'Redis', icon: siRedis },
+      { label: 'pnpm', icon: siPnpm },
+      { label: 'Jenkins', icon: siJenkins },
+      { label: 'Azure Pipelines' },
+    ],
+  },
+  {
+    category: 'AI / ML',
+    items: [
+      { label: 'sentence-transformers' },
+      { label: 'Tesseract OCR' },
+    ],
+  },
+  {
+    category: 'Testing',
+    items: [
+      { label: 'Jest', icon: siJest },
+      { label: 'Jasmine', icon: siJasmine },
+      { label: 'ESLint', icon: siEslint },
+      { label: 'Prettier', icon: siPrettier },
+      { label: 'Karma' },
+    ],
+  },
+  {
+    category: 'CMS',
+    items: [
+      { label: 'WordPress', icon: siWordpress },
+      { label: 'Elementor', icon: siElementor },
+      { label: 'Storyblok', icon: siStoryblok },
+      { label: 'Strapi', icon: siStrapi },
+    ],
+  },
+  {
+    category: 'Other',
+    items: [
+      { label: 'D3.js', icon: siD3 },
+      { label: 'GraphQL', icon: siGraphql },
+      { label: 'jQuery', icon: siJquery },
+      { label: 'AG Grid' },
+      { label: 'i18n' },
+      { label: 'SCORM' },
+      { label: 'Formik / Yup' },
+    ],
+  },
 ]
 
 export default function TechnicalSummaryPage() {
@@ -30,16 +165,18 @@ export default function TechnicalSummaryPage() {
         stack.
       </p>
 
-      <table className={styles.table}>
-        <tbody>
-          {skills.map(({ category, items }) => (
-            <tr key={category} className={styles.row}>
-              <td className={styles.category}>{category}</td>
-              <td className={styles.items}>{items}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <div className={styles.grid}>
+        {skills.map(({ category, items }) => (
+          <section key={category} className={styles.category}>
+            <h3 className={styles.categoryHeading}>{category}</h3>
+            <div className={styles.badges}>
+              {items.map((item) => (
+                <IconBadge key={item.label} label={item.label} icon={item.icon} />
+              ))}
+            </div>
+          </section>
+        ))}
+      </div>
     </PortfolioPage>
   )
 }
