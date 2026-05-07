@@ -38,11 +38,9 @@ export default async function CalendarPage({
     displayMonth = m - 1
   }
 
-  // Navigation bounded by the month containing (today ± 30 days)
-  const minus30 = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000)
-  const plus30 = new Date(now.getTime() + 30 * 24 * 60 * 60 * 1000)
-  const minBound = { year: minus30.getFullYear(), month: minus30.getMonth() }
-  const maxBound = { year: plus30.getFullYear(), month: plus30.getMonth() }
+  // Navigation bounded: 1 month back, 2 months forward (full calendar months)
+  const minBound = addMonths(now.getFullYear(), now.getMonth(), -1)
+  const maxBound = addMonths(now.getFullYear(), now.getMonth(), 2)
 
   const prev = addMonths(displayYear, displayMonth, -1)
   const next = addMonths(displayYear, displayMonth, 1)
