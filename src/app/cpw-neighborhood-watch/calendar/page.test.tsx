@@ -78,8 +78,8 @@ describe('CalendarPage', () => {
   })
 
   it('disables next navigation when at the max bound month', async () => {
-    // May is the max bound month; next would be June which is out of range
-    await renderPage('2026-05')
+    // June is the max bound month (April + 2); next would be July which is out of range
+    await renderPage('2026-06')
     expect(screen.queryByRole('link', { name: /Next/ })).not.toBeInTheDocument()
   })
 })

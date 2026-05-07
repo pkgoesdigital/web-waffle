@@ -5,13 +5,16 @@ Personal website for [paulaklimas.com](https://paulaklimas.com). Built on Next.j
 ## Commands
 
 ```bash
-npm run dev      # Start dev server (localhost:3000)
-npm run build    # Production build — also type-checks the project
-npm run lint     # ESLint (next/core-web-vitals + next/typescript)
-npm run start    # Serve the production build locally
+npm run dev        # Start dev server (localhost:3000)
+npm run build      # Production build — also type-checks the project
+npm run lint       # ESLint (next/core-web-vitals + next/typescript)
+npm run start      # Serve the production build locally
+npm run test       # Run Jest test suite (once)
+npm run test:watch # Run Jest in watch mode
+npm run test:ci    # Run Jest with --ci flag + coverage
 ```
 
-`npm run build` is the primary correctness check. It catches TypeScript errors and generates all static pages.
+`npm run build` is the primary correctness check. It catches TypeScript errors and generates all static pages. Every source file must have a companion `*.test.ts` / `*.test.tsx` spec file.
 
 ## Architecture
 
@@ -83,16 +86,64 @@ src/data/viz/*.json           →  /api/viz?dataset=<name>  (1-hour cache)
 
 `/api/posts` returns paginated post metadata: `?page=`, `?limit=`, `?category=`, `?status=`
 
+### Content — `/cpw-neighborhood-watch`
+
+A community safety section for the City Park West Neighborhood Watch. All content is filesystem-based — no code changes required to add events or newsletters.
+
+```
+src/content/events/*.md       →  displayed on /cpw-neighborhood-watch/calendar
+src/content/newsletters/*.md  →  displayed on /cpw-neighborhood-watch/newsletter
+src/content/pages/cpw-neighborhood-watch.md  →  /cpw-neighborhood-watch landing page
+```
+
+**Adding an event** — create `src/content/events/<date>-<slug>.md`:
+
+```yaml
+---
+id: "13"
+title: "Event Title"
+slug: "2026-06-01-event-slug"
+date: "2026-06-01"
+time: "6:00 PM"
+location: "Location Name"   # plain text only — no URLs
+type: "meeting"             # meeting | cleanup | social | dpd | other
+status: "confirmed"         # confirmed | tentative | cancelled
+description: "One-paragraph description."
+source: "CPW daily summary, May 2026"
+---
+```
+
+**Adding a newsletter** — create `src/content/newsletters/<date>-<slug>.md`:
+
+```yaml
+---
+id: "cpw-newsletter-2026-05"
+title: "City Park West Neighborhood Watch — May 2026 Recap"
+slug: "2026-05-cpw-recap"
+date: "2026-05-31"
+period: "May 2026"
+status: "published"         # published | draft
+---
+
+Newsletter body in markdown.
+```
+
+The calendar navigation window is 1 month back / 2 months forward from the current month. `src/lib/events.ts` and `src/lib/newsletters.ts` are the entry points for their respective content types.
+
 ### Key files
 
 | File | Purpose |
 |---|---|
-| `src/lib/content.ts` | All content reads; in-memory index cache |
+| `src/lib/content.ts` | All post/page reads; in-memory index cache |
+| `src/lib/events.ts` | Event reads; `getEventsForMonth()`, `getUpcomingEvents()` |
+| `src/lib/newsletters.ts` | Newsletter reads; `getPublishedNewsletters()`, `getNewsletterBySlug()` |
 | `src/lib/markdown.ts` | `markdownToHtml()` via remark |
-| `src/lib/types.ts` | `PostMeta`, `Post`, `PageMeta`, `Page`, `PaginatedResult<T>`, `SocialLink` |
+| `src/lib/types.ts` | `PostMeta`, `Post`, `PageMeta`, `Page`, `EventMeta`, `CPWEvent`, `NewsletterMeta`, `Newsletter`, `PaginatedResult<T>`, `SocialLink` |
 | `src/data/portfolio-sections.ts` | Portfolio section registry |
 | `src/components/PortfolioPage/` | Shared wrapper for all portfolio section pages |
 | `src/components/PostList/` | Client component — search + load-more pagination for `/writing` |
+| `src/components/EventCalendarGrid/` | Calendar grid rendering for CPW events |
+| `src/components/EventList/` | Event detail list for CPW calendar page |
 | `src/app/globals.css` | CSS custom properties, `.prose`, layout utilities |
 
 ### Components
@@ -101,6 +152,8 @@ All components use CSS Modules co-located in `ComponentName/ComponentName.tsx` +
 
 - **`PostList`** — only `'use client'` component; search filter + load-more pagination
 - **`PortfolioPage`** — shared wrapper for portfolio section pages; handles back nav, prev/next, child section lookups
+- **`EventCalendarGrid`** — renders the CPW event calendar grid for a given month
+- **`EventList`** — renders event detail cards below the calendar grid
 - **`D3Visualization`** — client component wrapping a D3 chart
 - **`WatchmakerClock`** — client component (canvas-based animated clock)
 
@@ -157,3 +210,33 @@ These are the prompts that shaped this codebase during development sessions with
 > Add a few things to the CLAUDE.md file: "Don't add comments unless the code is genuinely non-obvious.", "Don't refactor code I didn't ask you to touch.", "Don't uncomment test blocks unless I tell you to.", "Commit after completing each task."
 
 > how should I work with you while I am also in the codebase?
+
+---
+
+**Removing the CPW auth wall and renaming Portal to CPW:**
+
+> I want to adjust the Portal section of the website. Instead of having a password that exposes the information, change "Portal" to instead be titled "CPW" First, remove the code responsible for allowing the user to login and provide a password to the portal. The "cpw-neighborhood-watch/calendar" and "cpw-neighborhood-watch" pages should still be active.
+
+---
+
+**Populating the CPW calendar for May 2026:**
+
+> the calendar needs to be at least two months out. Let's add the month of June in the calendar, and create the event.
+
+> I want to adjust the Portal section of the website [...] populate the calendar for month=2026-05. Use the content found in /Users/paulaklimas/Documents/Claude/city-park-west-neighborhood-watch/daily-summaries to create events for May.
+
+---
+
+**Dependency maintenance (Jest upgrade, overrides, Dependabot):**
+
+> I'm getting an error when running npm run build, locally "./src/app/portfolio/technical-summary/page.tsx Module not found: Can't resolve 'simple-icons'" - what is the issue?
+
+> I upgraded Jest, but received these warnings [glob deprecation]. Never add zoom links to events. remove any which currently exist.
+
+> I'd like to implement the dependabot config as well.
+
+---
+
+**Adding the CPW Newsletter section:**
+
+> I'd like to add a newsletter page, which publishes a post, including the content from each file written and saved monthly [...] Users should be able to see both "Calendar" and a new "Newsletter" landing page, in the navigation under "CPW". Then, draft the first newsletter post based on the content found here /Users/paulaklimas/Documents/Claude/city-park-west-neighborhood-watch/newsletters.

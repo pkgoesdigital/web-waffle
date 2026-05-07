@@ -35,4 +35,11 @@ describe('NeighborhoodWatchPage', () => {
     const link = screen.getByRole('link', { name: /View the event calendar/ })
     expect(link).toHaveAttribute('href', '/cpw-neighborhood-watch/calendar')
   })
+
+  it('renders the newsletter CTA link', async () => {
+    const { default: Page } = await import('./page')
+    render(await Page())
+    const link = screen.getByRole('link', { name: /Read the newsletter/ })
+    expect(link).toHaveAttribute('href', '/cpw-neighborhood-watch/newsletter')
+  })
 })
