@@ -3,24 +3,27 @@
   margin: 0 auto;
 }
 
-.calendarCta {
+.ctaRow {
   margin-top: var(--space-10);
   padding-top: var(--space-6);
   border-top: 1.5px solid var(--color-border);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-6);
 }
 
-.calendarLink {
+.ctaLink {
   font-size: var(--text-base);
   font-weight: 600;
   color: var(--color-accent);
   text-decoration: none;
 }
 
-.calendarLink:hover {
+.ctaLink:hover {
   text-decoration: underline;
 }
 
-.calendarLink:focus-visible {
+.ctaLink:focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 3px;
   border-radius: 2px;

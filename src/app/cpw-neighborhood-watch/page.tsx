@@ -22,9 +22,12 @@ export default async function NeighborhoodWatchPage() {
 
       <div className="prose" dangerouslySetInnerHTML={{ __html: html }} />
 
-      <div className={styles.calendarCta}>
-        <Link href="/cpw-neighborhood-watch/calendar" className={styles.calendarLink}>
+      <div className={styles.ctaRow}>
+        <Link href="/cpw-neighborhood-watch/calendar" className={styles.ctaLink}>
           View the event calendar &rarr;
+        </Link>
+        <Link href="/cpw-neighborhood-watch/newsletter" className={styles.ctaLink}>
+          Read the newsletter &rarr;
         </Link>
       </div>
     </div>

@@ -24,7 +24,10 @@ const links: NavLink[] = [
   {
     href: '/cpw-neighborhood-watch',
     label: 'CPW',
-    children: [{ href: '/cpw-neighborhood-watch/calendar', label: 'Calendar' }],
+    children: [
+      { href: '/cpw-neighborhood-watch/calendar', label: 'Calendar' },
+      { href: '/cpw-neighborhood-watch/newsletter', label: 'Newsletter' },
+    ],
   },
   { href: '/contact', label: 'Contact' },
 ]
