@@ -8,12 +8,14 @@ status: "published"
 ---
 
 **Neighborhood:** City Park West
+
 **Report Period:** April 1–30, 2026
+
 **Prepared by:** CPW Neighborhood Watch Coordinator
 
 ---
 
-## Executive Summary
+## Summary
 
 April 2026 marked a pivotal month for the City Park West Neighborhood Watch. The group formally launched its coordinator role, completed the DPD District 2 Neighborhood Watch Orientation (April 9), and joined the standing TGP Good Neighbor Committee. District 2 officially assumed patrol coverage of our sector on April 20th, bringing new resources and community engagement. At the same time, residents continued to report serious quality-of-life incidents — open drug use, fires set in public spaces, multiple attempted and completed burglaries, and repeated police non-response — generating significant community concern and a surge of political advocacy around state sentencing laws.
 
