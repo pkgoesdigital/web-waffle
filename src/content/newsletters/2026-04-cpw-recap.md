@@ -59,7 +59,7 @@ Both cases were logged by Denver 311. Residents are encouraged to continue filin
 
 ## Resident Observations
 
-*Sourced from neighborhood WhatsApp group, April 2026 — paraphrased, no identifying information*
+*Sourced from neighborhood WhatsApp group, April 2026 — paraphrased*
 
 - Multiple residents described a pattern of 911 and non-emergency calls going unanswered during active incidents — including open drug use, trespassing, an observed active burglary, and public fires.
 - Residents on 16th Street and Race Street reported feeling unsafe walking in the alley corridor and near The Gathering Place. One resident noted a child in the household is regularly frightened and has expressed feeling unsafe in the neighborhood.
@@ -70,75 +70,27 @@ Both cases were logged by Denver 311. Residents are encouraged to continue filin
 
 ---
 
-## Themes & Patterns
+## Neighborhood Context: East Colfax BRT Construction
 
-**1. Police non-response remains the top resident frustration.** Across multiple incidents this month — including an observed active burglary, open fentanyl use, porch disturbances, and public fires — residents consistently reported calling 911 or the non-emergency line and receiving no officer response. This is compounding distrust and prompting residents to consider self-organizing patrols.
-
-**2. District 2 transition brings cautious optimism.** The April 20 transfer of CPW to DPD District 2 coverage is welcomed. Christie Mochoruk's consistent community engagement — orientations, crime bulletins, events, monthly newsletters — sets a strong foundation. Residents are watching closely to see whether District 2's patrol presence materially changes on-the-ground conditions.
-
-**3. State sentencing law is perceived as the root constraint.** Multiple residents and neighborhood stakeholders attribute the cycle of repeat incidents to Colorado's SB21-271 (2021 sentencing reform) and the December 2025 Colorado Supreme Court ruling preventing cities from imposing penalties stronger than state law. Residents are actively pursuing state legislative remedies.
-
-**4. The Gathering Place corridor continues to generate the most incident activity.** The Race/High alley, the TGP alcove and front-door area, and nearby businesses remain the most frequently cited locations for disorder. The TGP Good Neighbor Committee and mediation process (facilitated by Steve Charbonneau of Find Solutions) are active tools for managing this relationship.
-
-**5. Neighborhood engagement and political advocacy are accelerating.** CPW residents sent formal letters to State Rep. Lindsay Gilchrist and State Sen. Matt Ball requesting meetings on state sentencing reform. Rep. Gilchrist responded affirmatively and agreed to meet. Residents also attended a Municipal Sentencing Town Hall with Denver's At-Large Councilwomen on April 17.
+The East Colfax Bus Rapid Transit project has entered Phase 3 (Paving Operations, April–August 2026). Work begins at Grant Street and moves east, including milling, overlay, striping, and roadway finishing. Operations run Monday–Friday, 7 AM–7 PM. Residents should expect periodic lane changes and active equipment along the Colfax corridor during this period.
 
 ---
 
-## Legislative Advocacy Update
+## Specific Asks of DPD from Neighborhood Watch
 
-In early March, a coalition of 50+ CPW residents and business owners — organized under the City Park West Safety Group — sent formal letters to State Rep. Lindsay Gilchrist (HD-8) and State Sen. Matt Ball requesting meetings to discuss neighborhood safety concerns and state sentencing reform. The letters cited SB21-271 as a primary obstacle to DPD enforcement, and asked legislators to consider amendments increasing maximum penalties for petty offenses and adding accountability for repeat offenders.
+1. **Improve response rates to 911 and non-emergency calls for quality-of-life incidents.** Residents documented multiple incidents — open drug use, trespassing, public fires, and an observed active burglary — where officers did not respond. Even brief check-ins after a call send a signal; sustained non-response is eroding public trust.
 
-**Rep. Gilchrist responded in March**, agreeing to meet and directing her aide (Sydney) to schedule a daytime session at the Capitol. A joint meeting with both legislators is being coordinated.
+2. **Increase visible patrol in the Race/High alley corridor**, particularly between 16th Street and Colfax. This block has the highest concentration of recurring incidents (encampments, open drug use, vehicle access interference, fires).
 
-A crime victims advocacy lobbyist has also been in contact with the group, recommending specific bills to focus on — including SB26-112 (cash bond for repeat failures to appear), which did not pass the Senate this session. This contact may be a valuable ally going forward.
+3. **Follow up on The Gathering Place alcove and front-entrance area.** Fires, drug use, and erratic behavior continue to be reported in and around this location. We ask that District 2 officers conduct regular check-ins and confirm progress on the no-trespassing agreement with TGP through the Good Neighbor Committee.
+
+4. **Clarify enforcement options for the 1900 block of E. 16th Avenue** (LIHTC housing complex, Capitol Hill LIHTC Investors LLC). Did the April 9 operation result in charges? Is there an ongoing monitoring plan or nuisance abatement pathway given the out-of-state ownership structure?
+
+5. **Clarify the video evidence submission process.** Two residents were told their video footage could not be accepted via the non-emergency line. What is the correct process for submitting camera footage to support an incident report?
+
+6. **Continue distributing no-trespassing agreement information** to CPW residents and property owners. Residents are motivated to establish these agreements (commercial and residential) and need guidance on the process.
 
 ---
-
-## DPD District 2 Community Resources & Events
-
-*All events and resources provided by Christie Mochoruk, DPD D2 Community Engagement Program Manager*
-
-### April Events (Recap)
-
-- **April 1 — 2CAB Community Meeting** with Commander Aragon at District 2 Station (3921 Holly St). Featured Officers Bova and Velarde from DPD's Drone Unit; also introduced new D2 recruit officers.
-- **April 9 — Neighborhood Watch Orientation** (virtual, CPW group only). Covered transparency dashboards, crime prevention tools, sex offender registry map, and future engagement ideas.
-- **April 25 — Drug Take Back Event** at all District Stations, 10 AM–2 PM.
-- **April 28 — Neighborhood Watch Action & Awareness Presentation**, Carla Madison Rec Center (2401 E Colfax Ave), 6 PM.
-- **April 29 — Neighborhood Watch Action & Awareness Presentation** for Greater Park Hill neighbors, 6 PM.
-
-### Upcoming May Events
-
-- **May 2 — Self Defense Class**, Johnson Rec Center (4809 Race Street), 10 AM–2 PM. Registration required — email Christie at Christie.Mochoruk@denvergov.org. Spaces fill quickly.
-- **May 6 — 2CAB Community Meeting**, District 2 Station (3921 Holly St), 6 PM. Special guest: Sgt. Gates, DPD Street Racing Enforcement Unit. Denver Police Museum presenting on Police Week. Doors open 5 PM.
-- **May 9 — Denver District Attorney's Spring Community Academy.**
-- **May 14 — Crime Prevention Tune-Up Event**, New Freedom Park, 4:30–6 PM. Register for DenverTrack, register bicycles, receive free CLUB steering wheel locks and theft-deterrent license plate fasteners.
-
-*Remaining 2026 CAB dates (tentative): June 3, September 2, October 7, November 4, December 2.*
-
-### D2 Crime Bulletins Issued in April
-
-| Incident | Location |
-|---|---|
-| Armed Robbery | 2500 block N. Elm Street |
-| Hit and Run | 40th Ave & Colorado Blvd |
-| Aggravated Robbery | 3700 block of Blake Street |
-| Robbery | 3400 block of 42nd Ave |
-| Aggravated Robbery | 2200 block N. Oneida Street |
-| Robbery | 4600 block N. Humboldt Street |
-| Hit and Run (Fatal) | E. 35th Ave & N. Albion Street |
-| Shooting | 2700 block of Larimer Street |
-| 2022 Cold Case Homicide | Monaco & Colfax |
-| Sex Crimes | Multiple Locations |
-| Fatal Shooting — Suspect Identified | Russell Square Park (April 5) |
-| 3-Year Anniversary — Unsolved Homicides | (see DPD bulletin) |
-
-### D2 Officer of the Month — April Nominations
-
-Three exceptional officers were nominated for April:
-
-- **Officers Esquibel & Arnold:** Proactive stop on E. Colfax at N. Willow identified a suspect with active warrants and recovered crack cocaine and distribution paraphernalia. DA accepted charges for Unlawful Possession of a Controlled Substance.
-- **Officers Olguin & Hilton:** Responded to a felony menacing/extortion call at 5000 N. Milwaukee. Officers located the suspect's vehicle with a handgun in plain sight. DA accepted Felony Menacing and Extortion charges.
-- **Officers Marquez & Regalado-Velazquez:** Caught a suspect actively cutting copper electrical wiring from a business at 4600 E. 46th Ave (9th incident at that location this year). Suspect found with burglary tools, fentanyl, and methamphetamine. All charges accepted by DA.
 
 ### DPD D2 Community Safety Resources
 
@@ -165,29 +117,5 @@ Three exceptional officers were nominated for April:
 **Sex Offender Information:**
 - [DPD Sexually Violent Predators](https://www.youtube.com/playlist?list=PL11e6v3zMr6Gt7d2bvjbVFG6G9cigR24d) — YouTube playlist
 - [Sex Offender Registry](https://www.denvergov.org/Government/Agencies-Departments-Offices/Police-Department/Crime-Information/Sex-Offenders) — denvergov.org
-
----
-
-## Neighborhood Context: East Colfax BRT Construction
-
-The East Colfax Bus Rapid Transit project has entered Phase 3 (Paving Operations, April–August 2026). Work begins at Grant Street and moves east, including milling, overlay, striping, and roadway finishing. Operations run Monday–Friday, 7 AM–7 PM. Residents should expect periodic lane changes and active equipment along the Colfax corridor during this period.
-
----
-
-## Specific DPD Asks
-
-1. **Improve response rates to 911 and non-emergency calls for quality-of-life incidents.** Residents documented multiple incidents — open drug use, trespassing, public fires, and an observed active burglary — where officers did not respond. Even brief check-ins after a call send a signal; sustained non-response is eroding public trust.
-
-2. **Increase visible patrol in the Race/High alley corridor**, particularly between 16th Street and Colfax. This block has the highest concentration of recurring incidents (encampments, open drug use, vehicle access interference, fires).
-
-3. **Follow up on The Gathering Place alcove and front-entrance area.** Fires, drug use, and erratic behavior continue to be reported in and around this location. We ask that District 2 officers conduct regular check-ins and confirm progress on the no-trespassing agreement with TGP through the Good Neighbor Committee.
-
-4. **Clarify enforcement options for the 1900 block of E. 16th Avenue** (LIHTC housing complex, Capitol Hill LIHTC Investors LLC). Did the April 9 operation result in charges? Is there an ongoing monitoring plan or nuisance abatement pathway given the out-of-state ownership structure?
-
-5. **Clarify the video evidence submission process.** Two residents were told their video footage could not be accepted via the non-emergency line. What is the correct process for submitting camera footage to support an incident report?
-
-6. **Continue distributing no-trespassing agreement information** to CPW residents and property owners. Residents are motivated to establish these agreements (commercial and residential) and need guidance on the process.
-
----
 
 *This report was compiled from daily neighborhood email digests, the City Park West neighborhood WhatsApp safety group (April 1–30, 2026), and direct emails from DPD District 2. Digest entries reviewed: 28. WhatsApp safety items filtered: ~14. Email threads reviewed: 19.*
