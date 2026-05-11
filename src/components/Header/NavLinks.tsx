@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import ThemeToggle from '@/components/ThemeToggle/ThemeToggle'
 import { portfolioSections } from '@/data/portfolio-sections'
+import { getVisibleServices } from '@/data/services'
 import styles from './Header.module.css'
 
 type NavChild = { href: string; label: string }
@@ -13,6 +14,14 @@ type NavLink = { href: string; label: string; children?: NavChild[] }
 const links: NavLink[] = [
   { href: '/writing', label: 'Writing' },
   { href: '/about', label: 'About' },
+  {
+    href: '/services',
+    label: 'Services',
+    children: getVisibleServices().map((s) => ({
+      href: `/services/${s.slug}`,
+      label: s.title,
+    })),
+  },
   {
     href: '/portfolio',
     label: 'Portfolio',
@@ -64,9 +73,6 @@ export default function NavLinks() {
               onClick={close}
             >
               {link.label}
-              {link.children && (
-                <span className={styles.chevron} aria-hidden="true">▾</span>
-              )}
             </Link>
 
             {link.children && (
