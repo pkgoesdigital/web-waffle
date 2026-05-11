@@ -97,7 +97,7 @@ export default function ServicePage({ slug, children }: Props) {
         <h2 className={styles.ctaTitle}>Ready to talk?</h2>
         <p className={styles.ctaText}>
           The fastest way to start is a 30-minute call to see if there&rsquo;s a fit.
-          No pitch deck, no pressure.
+          No pitch deck, no pressure, just a conversation.
         </p>
         <a href={service.primaryCTA.href} className={styles.ctaButton}>
           {service.primaryCTA.label}

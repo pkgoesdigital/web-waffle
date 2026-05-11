@@ -8,7 +8,7 @@ status: "publish"
 featured: true
 ---
 
-Two years ago I transitioned from software engineering into product management at a national manufacturing company in the middle of an enterprise technology transformation. The company was migrating off JD Edwards — a legacy ERP that had been running operations for decades — onto a modern stack spanning Nextworld, Salesforce, Microsoft Fabric, Power BI, and a custom Next.js monorepo. The team was small: four engineers, three technical product managers, and two directors, and 4 project managers. The scope was not.
+A few years ago, I transitioned from software engineering into product management at a national manufacturing company in the middle of an enterprise technology transformation. The company was migrating off JD Edwards — a legacy ERP that had been running operations for decades — onto a modern stack spanning Nextworld, Salesforce, Microsoft Fabric, Power BI, and a custom Next.js monorepo. The team was small: four engineers, three technical product managers, and two directors, and 4 project managers. The scope was not.
 
 What follows are the lessons that stuck. Not best practices from a textbook, but patterns I watched play out across vendor negotiations, ERP implementations, BI platform migrations, factory floor visits, and a lot of standups.
 

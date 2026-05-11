@@ -33,8 +33,7 @@ export default function AIOverseerPage() {
         touching, and which corners of your org have quietly stood up
         something nobody on the leadership team knows about. I produce a
         written audit with risk areas ranked by likelihood and impact, plus
-        a short list of changes you could make this quarter that would move
-        the needle most.
+        a short list of changes you could make this quarter that would improve your outputs.
       </p>
 
       <h2>Ongoing engagement</h2>
@@ -42,18 +41,15 @@ export default function AIOverseerPage() {
         After the audit, we move into a monthly cadence: check-ins on usage,
         incidents, and emerging issues; on-call escalation for AI-specific
         problems your team can&rsquo;t resolve alone; and quarterly
-        recommendations on tooling and process changes. The bar for
-        escalation is &ldquo;something is happening that nobody on staff can
-        explain&rdquo; — not &ldquo;we got a deprecation email.&rdquo;
+        recommendations on tooling and process changes to continue to improve your outputs.
       </p>
 
-      <h2>When to call</h2>
+      <h2>When to engage</h2>
       <p>
         The honest answer: before something breaks publicly. The AI tooling
         landscape is moving fast enough that &ldquo;we&rsquo;ll figure it out
-        if it becomes a problem&rdquo; tends to mean &ldquo;we&rsquo;ll
-        figure it out at 11pm during an incident.&rdquo; This service exists
-        so that doesn&rsquo;t happen.
+        if it becomes a problem&rdquo; leads to outages and incidents that can be hard to recover from.&rdquo; This service exists
+        so that doesn&rsquo;t happen to your org.
       </p>
     </ServicePage>
   )

@@ -56,20 +56,20 @@ export const services: Service[] = [
   {
     slug: 'ai-starter-pack',
     title: 'AI Starter Pack',
-    tagline: "Get from 'we should do AI' to a plan you can actually ship.",
+    tagline: "Get from 'we should leverage AI' to a plan you can actually use.",
     forWho:
-      "Teams that know AI matters but don't know where to start, or have been spinning on it for months without real adoption.",
+      "Teams that know AI matters but don't know where to start, or have been struggling with it for months without gaining traction.",
     stage: 'pre-adoption',
     outcomes: [
       'A clear-eyed read on which AI investments make sense for your business right now — and which ones to skip.',
-      'A custom implementation plan: sequenced, scoped, and achievable.',
-      'Education on how AI actually works, the terminology that matters, and how to think about it.',
-      'Guardrails and best practices baked in from day one, not bolted on later.',
+      'A custom implementation plan: sequenced, scoped, and achievable based on your organizations culture and capabilities.',
+      'Education on how AI actually works, the terminology that matters, and how best to think about it.',
+      'Guardrails and best practices baked in from day one, so your implementation remains manageable and sustainable.',
     ],
     includes: [
       'Discovery sessions with leadership and team leads',
       'Workshops on AI fundamentals — capabilities, limitations, costs, common pitfalls',
-      'A written implementation plan with phasing, success metrics, and risk callouts',
+      'A custom written implementation plan with phasing, success metrics, and risk callouts specific to your org',
       'Tooling recommendations matched to your stack and budget',
       'A 30-day check-in after rollout begins',
     ],
@@ -78,23 +78,23 @@ export const services: Service[] = [
     primaryCTA: {
       label: 'Book a discovery call',
       href:
-        'mailto:paula@rabbitbrush.io?subject=AI%20Starter%20Pack%20%E2%80%94%20discovery%20call',
+        'https://calendar.app.google/hbqmQfTKJzgq9h4f9',
     },
     faq: [
       {
         question: 'We have an internal team — why bring you in?',
         answer:
-          "Outside perspective, broader pattern-matching across stacks and industries, and someone whose only job for these few weeks is your AI strategy. I leave you with a plan your team can run with — not a dependency on me.",
+          "Outside perspective, broader pattern-matching across stacks and industries due to my experience, and someone whose focus is dedicated to an AI strategy for your organization. Measure of Success: a plan your team can run with — not a dependency on me.",
       },
       {
         question: 'Do you build the actual AI tools?',
         answer:
-          "The default deliverable is a plan, not code. If you want hands-on implementation, that's a separate engagement we can scope after the plan is in shape.",
+          "The default deliverable is a plan, not code. If you want hands-on implementation, let's talk after the strategy is in shape.",
       },
       {
         question: 'A vendor is pitching us — can you weigh in?',
         answer:
-          "Bring me in *before* you sign. I've seen the same deck six times.",
+          "Bring me in *before* you sign. I can help you ask the right questions, identify red flags, and avoid getting locked into a bad deal.",
       },
     ],
     visible: true,
@@ -103,12 +103,12 @@ export const services: Service[] = [
   {
     slug: 'ai-build-partner',
     title: 'AI Build Partner',
-    tagline: "Plan in hand? I'll help you actually ship the thing.",
+    tagline: "Plan in hand? I'll help you actually implement it.",
     forWho:
-      "Teams with a plan (yours or mine) who need hands-on technical and product leadership to get from roadmap to production — without waiting six months to learn what works.",
+      "Teams with a plan (yours or mine) who need hands-on technical and product leadership to get from roadmap to production.",
     stage: 'in-flight',
     outcomes: [
-      'A working AI integration shipped to production on a timeline you can plan around.',
+      'A working AI integration on a timeline you can plan around.',
       "Architecture decisions that won't bite you in six months — cost, latency, fallback behavior, security, evals.",
       'Knowledge transfer baked into the engagement, so your team can own and extend it after I leave.',
       'Honest tradeoff calls in real time — when to use a model vs. a rule, when to buy vs. build, when to wait.',
@@ -116,7 +116,7 @@ export const services: Service[] = [
     includes: [
       'Hands-on implementation: prompts, integrations, evals, guardrails, tooling',
       'Architecture and tradeoff decisions documented as we make them',
-      'Pairing with your engineers — knowledge transfer is part of the deliverable, not a separate phase',
+      'Pairing with your engineers — knowledge transfer is part of the deliverable',
       'Pre-launch evaluation harness so you know what "working" actually means',
       'Handoff documentation and a 30-day post-launch support window',
     ],
@@ -125,7 +125,7 @@ export const services: Service[] = [
     primaryCTA: {
       label: 'Scope a build',
       href:
-        'mailto:paula@rabbitbrush.io?subject=AI%20Build%20Partner%20%E2%80%94%20scope%20a%20build',
+        'https://calendar.app.google/hbqmQfTKJzgq9h4f9',
     },
     faq: [
       {
@@ -136,12 +136,12 @@ export const services: Service[] = [
       {
         question: 'Can you work with our existing engineers?',
         answer:
-          "That's the default. I'd rather pair with your team than work in a silo — knowledge transfer is part of the deliverable, not a separate phase you tack on later.",
+          "That's the default. I'd rather pair with your team than work in a silo — knowledge transfer is part of the deal.",
       },
       {
         question: 'What if the scope changes mid-build?',
         answer:
-          'It will. We replan together at agreed checkpoints, not at random. You always know what trade we just made and why — the worst version of this is the one where the scope drifts and nobody admits it.',
+          'It will. We replan together at agreed checkpoints, and evaluate trade-offs together - I strive for no surprises, but engineering projects are inherently unpredictable.',
       },
     ],
     visible: true,
@@ -150,7 +150,7 @@ export const services: Service[] = [
   {
     slug: 'ai-overseer',
     title: 'AI Overseer',
-    tagline: "You've deployed AI. Now keep it from going sideways.",
+    tagline: "You've deployed AI. Now keep it from going sideways in your org.",
     forWho:
       "Teams already using AI tools who need a steady hand watching for drift, surfacing problems early, and stepping in when something breaks that nobody on staff can fix.",
     stage: 'post-adoption',
@@ -171,13 +171,13 @@ export const services: Service[] = [
     primaryCTA: {
       label: 'Book an audit call',
       href:
-        'mailto:paula@rabbitbrush.io?subject=AI%20Overseer%20%E2%80%94%20audit%20call',
+        'https://calendar.app.google/hbqmQfTKJzgq9h4f9',
     },
     faq: [
       {
         question: 'Is this just monitoring?',
         answer:
-          "It's audit, diagnosis, and escalation. Tools tell you something broke. I tell you why, what to do, and whether you should care. Monitoring is a feature; the value is the human judgment on top.",
+          "It's audit, diagnosis, and escalation. Tools tell you something broke, and I tell you why, what to do, and whether you should care. Monitoring is a feature; the value is the human judgment on top.",
       },
       {
         question: 'What if my team can fix things themselves?',

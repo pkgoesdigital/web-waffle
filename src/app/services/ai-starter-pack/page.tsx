@@ -4,7 +4,7 @@ import ServicePage from '@/components/ServicePage/ServicePage'
 export const metadata: Metadata = {
   title: 'AI Starter Pack — Services',
   description:
-    "A 3–4 week engagement that takes your team from 'we should do AI' to a real plan you can ship. Education, strategy, and a custom implementation roadmap.",
+    "A 3–4 week engagement that takes your team from 'we should use AI' to a real plan you can ship. Education, strategy, and a custom implementation roadmap.",
 }
 
 export default function AIStarterPackPage() {
@@ -23,9 +23,7 @@ export default function AIStarterPackPage() {
         I treat AI adoption like any other product decision: <strong>what problem
         are we solving, who is it for, what does &ldquo;good&rdquo; look
         like</strong>, and what&rsquo;s the smallest thing we can ship to find
-        out if we&rsquo;re right? The fact that the underlying technology is a
-        large language model doesn&rsquo;t change those fundamentals — it
-        just makes a lot of people forget them.
+        out if we&rsquo;re right?
       </p>
 
       <h2>How it works</h2>
@@ -33,9 +31,7 @@ export default function AIStarterPackPage() {
         We start with discovery — usually a week of conversations with
         leadership, team leads, and a few people doing the actual work. I want
         to understand what your team is actually trying to do, where the
-        friction is today, and where you suspect AI might help (and where
-        it&rsquo;s being pitched as a solution to a problem you don&rsquo;t
-        have).
+        friction is today, and where you suspect AI might help.
       </p>
       <p>
         Then we run workshops. Real ones, not slide-deck monologues — your
@@ -58,8 +54,8 @@ export default function AIStarterPackPage() {
         A roadmap your team can run with, the shared language to keep
         running with it, and a 30-day check-in once rollout begins so you
         don&rsquo;t have to wonder whether you&rsquo;re still on the right
-        track. The point is to leave you self-sufficient — not to install a
-        long-term dependency on me.
+        track. Measure of Success: to leave you self-sufficient — not install a
+        long-term dependency on me!
       </p>
     </ServicePage>
   )

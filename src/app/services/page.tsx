@@ -19,61 +19,22 @@ export default function ServicesPage() {
       <div className="page-header">
         <h1>Services</h1>
         <p>
-          I help teams adopt AI without losing the plot. I&rsquo;m a product
-          manager and engineer — so the work is grounded in how products
+          I help teams adopt AI <i>without</i> having the "we've lost the plot" moment. I&rsquo;m a product
+          manager and engineer in practice — so the work you'll receive will always be grounded in how products
           actually get built, what teams actually do, and what your users will
-          actually use. No hype. No acronyms unless they&rsquo;re earning their
-          keep.
+          actually use.
         </p>
         <p className={styles.brandNote}>
-          Consulting work is run through my practice, Rabbitbrush.
+          Consulting work is run through my practice,&nbsp; 
+            <Link
+              href="https://www.rabbitbrush.io"
+              className={styles.decisionLink}
+              target="_blank"
+            >
+              Rabbitbrush Studio
+            </Link>.
         </p>
       </div>
-
-      <section className={styles.decisionHelper} aria-label="Which service is right for you">
-        <h2 className={styles.decisionTitle}>Not sure which one?</h2>
-        <div className={styles.decisionGrid}>
-          <div className={styles.decisionCard}>
-            <p className={styles.decisionLabel}>Haven&rsquo;t started yet</p>
-            <p className={styles.decisionText}>
-              You know AI matters but don&rsquo;t know where to start — or
-              you&rsquo;ve been talking about it for months without anything
-              shipping.
-            </p>
-            <Link
-              href="/services/ai-starter-pack"
-              className={styles.decisionLink}
-            >
-              AI Starter Pack &rarr;
-            </Link>
-          </div>
-          <div className={styles.decisionCard}>
-            <p className={styles.decisionLabel}>Have a plan, need to build it</p>
-            <p className={styles.decisionText}>
-              You know what you want to build but don&rsquo;t have the
-              in-house technical and product chops to run the implementation
-              — or your engineers don&rsquo;t have AI reps yet.
-            </p>
-            <Link
-              href="/services/ai-build-partner"
-              className={styles.decisionLink}
-            >
-              AI Build Partner &rarr;
-            </Link>
-          </div>
-          <div className={styles.decisionCard}>
-            <p className={styles.decisionLabel}>Already deployed</p>
-            <p className={styles.decisionText}>
-              You have AI in the hands of your team. Now you need someone
-              watching for drift, auditing how it&rsquo;s used, and stepping in
-              when something breaks that nobody on staff can fix.
-            </p>
-            <Link href="/services/ai-overseer" className={styles.decisionLink}>
-              AI Overseer &rarr;
-            </Link>
-          </div>
-        </div>
-      </section>
 
       <section className={styles.servicesSection} aria-label="Service offerings">
         <h2 className="section-title">Offerings</h2>
@@ -105,14 +66,56 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      <section className={styles.decisionHelper} aria-label="Which service is right for you">
+        <h2 className={styles.decisionTitle}>Not sure where to start?</h2>
+        <div className={styles.decisionGrid}>
+          <div className={styles.decisionCard}>
+            <p className={styles.decisionLabel}>Feeling Overwhelmed</p>
+            <p className={styles.decisionText}>
+              You know AI matters and you want to get ahead of it in your organization, but don&rsquo;t know where to start. Or
+              you&rsquo;ve been talking about it for months, but haven't had the time to act on your ideas.
+            </p>
+            <Link
+              href="/services/ai-starter-pack"
+              className={styles.decisionLink}
+            >
+              AI Starter Pack &rarr;
+            </Link>
+          </div>
+          <div className={styles.decisionCard}>
+            <p className={styles.decisionLabel}>We have a plan, but need help building it</p>
+            <p className={styles.decisionText}>
+              You know what you want to build, but you don't have a strategy for building it. Or maybe you don&rsquo;t have the
+              in-house technical engineering skills, product skills, or resources to implement it yourself.
+            </p>
+            <Link
+              href="/services/ai-build-partner"
+              className={styles.decisionLink}
+            >
+              AI Build Partner &rarr;
+            </Link>
+          </div>
+          <div className={styles.decisionCard}>
+            <p className={styles.decisionLabel}>We've already deployed AI in our organization</p>
+            <p className={styles.decisionText}>
+              You have AI in the hands of your team. Now you need someone
+              watching for drift, auditing how it&rsquo;s used, and stepping in
+              when something breaks that nobody on staff can fix.
+            </p>
+            <Link href="/services/ai-overseer" className={styles.decisionLink}>
+              AI Overseer &rarr;
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <section className={styles.outroCta} aria-label="Other engagements">
         <h2 className={styles.outroTitle}>Have something else in mind?</h2>
         <p className={styles.outroText}>
-          Workshops, audits, fractional product help, or something I
-          haven&rsquo;t thought of — if it&rsquo;s in the neighborhood,
-          let&rsquo;s talk.
+          Have an idea for a workshop? Speaking engagement? Need fractional product help, or something else
+          not listed here? Let&rsquo;s chat!
         </p>
-        <Link href="/contact" className={styles.outroButton}>
+        <Link href="mailto:paula@rabbitbrush.io?subject=Services%20Inquiry" className={styles.outroButton}>
           Get in touch
         </Link>
       </section>

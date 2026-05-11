@@ -12,11 +12,11 @@ export default function AIBuildPartnerPage() {
     <ServicePage slug="ai-build-partner">
       <h2>What this is</h2>
       <p>
-        The middle of the funnel. You have a plan — yours, mine, or some
-        hybrid — and now you need someone who can actually build the thing.
+        You have a plan — yours, mine, or some
+        hybrid of the two. Now, you need someone who can actually build the thing.
         Not a vendor pitching you a platform. Not a contractor disappearing
         into a ticket queue. A product-minded engineer who can write the
-        prompts, wire up the integrations, build the evals, and own the
+        prompts, wire up the integrations, build the AI evals, and own the
         whole arc from architecture decisions to production rollout.
       </p>
       <p>
@@ -34,13 +34,12 @@ export default function AIBuildPartnerPage() {
       <p>
         We start with a kickoff and a written architecture doc — what
         we&rsquo;re building, what the tradeoffs are, what we&rsquo;re
-        explicitly choosing not to do. Short, sharp, signed off before
-        any code gets written. The doc gets updated as decisions evolve;
+        explicitly choosing not to do. The doc gets updated as decisions evolve;
         the goal is that anyone on your team can read it next year and
-        understand why this thing looks the way it does.
+        understand why we did it this way.
       </p>
       <p>
-        From there, build sprints. I work alongside your engineers — not
+        From there, scope and build during engineering sprints. I work alongside your engineers — not
         in a silo, not in a side branch nobody reviews. Pairing is the
         default. Code review is the default. Knowledge transfer
         isn&rsquo;t a phase tacked onto the end; it&rsquo;s how the work
@@ -61,14 +60,12 @@ export default function AIBuildPartnerPage() {
         Working software in production, an architecture your team
         understands, evals that catch regressions, and the documentation
         to keep extending it without me. I include a 30-day post-launch
-        support window because something always surfaces in week two
-        that didn&rsquo;t in week one. After that, your team owns it —
-        which is the point.
+        support window - after that, your team owns it and maintains it. 
       </p>
       <p>
         If you decide you want ongoing oversight after launch, the{' '}
         <a href="/services/ai-overseer">AI Overseer</a> retainer picks
-        up where this leaves off. Not a requirement, just an option.
+        up where this service leaves off.
       </p>
     </ServicePage>
   )
