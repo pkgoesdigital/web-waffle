@@ -21,7 +21,7 @@
     "react-dom": "^19.2.6",
     "remark": "^15.0.1",
     "remark-html": "^16.0.1",
-    "simple-icons": "^16.17.0"
+    "simple-icons": "^16.19.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.6.3",
