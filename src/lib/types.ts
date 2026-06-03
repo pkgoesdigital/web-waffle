@@ -65,23 +65,6 @@ export type CPWEvent = EventMeta & {
   content: string
 }
 
-// ── Newsletter types ─────────────────────────────────────────────────────────
-
-/** Newsletter metadata — no content body. Used in listings. */
-export type NewsletterMeta = {
-  id: string
-  title: string
-  slug: string
-  date: string
-  period: string
-  status: 'published' | 'draft'
-}
-
-/** Full newsletter — includes rendered markdown content. */
-export type Newsletter = NewsletterMeta & {
-  content: string
-}
-
 // ── Pagination ───────────────────────────────────────────────────────────────
 
 export type PaginatedResult<T> = {
