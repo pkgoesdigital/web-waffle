@@ -1,8 +1,8 @@
-name: Nightly Deploy
+name: Monthly Deploy
 
 on:
   schedule:
-    - cron: '0 1 * * *'   # 9pm ET (UTC-4 daylight / UTC-5 standard)
+    - cron: '0 1 15 * *'  # 9pm ET on the 15th of each month
   workflow_dispatch:        # allows manual trigger from GitHub UI
 
 jobs:
