@@ -24,8 +24,7 @@ export default function PersonalWebsitePage() {
         it&rsquo;s edited.
       </p>
       <p>
-        Long-form prose — writing posts, neighborhood-watch newsletters, and
-        community event listings — is authored as <code>.md</code> files with
+        Long-form prose — writing posts and community event listings — is authored as <code>.md</code> files with
         YAML frontmatter, parsed by <code>gray-matter</code>, and rendered
         through <code>remark</code>. A module-level in-memory cache in{' '}
         <code>src/lib/content.ts</code> indexes all frontmatter at startup and
@@ -77,8 +76,7 @@ export default function PersonalWebsitePage() {
       <h2>Testing</h2>
       <p>
         Jest with React Testing Library covers the surfaces where a regression
-        would actually be felt — the calendar grid, newsletter listing, and
-        event list. <code>jsdom</code> is the test environment;{' '}
+        would actually be felt — the calendar grid and event list. <code>jsdom</code> is the test environment;{' '}
         <code>ts-jest</code> handles TypeScript transformation. Run with{' '}
         <code>npm test</code>, or <code>npm run test:watch</code> while
         iterating. Most pages are simple enough that TypeScript catches what a

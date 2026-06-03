@@ -26,9 +26,6 @@ export default async function NeighborhoodWatchPage() {
         <Link href="/cpw-neighborhood-watch/calendar" className={styles.ctaLink}>
           View the event calendar &rarr;
         </Link>
-        <Link href="/cpw-neighborhood-watch/newsletter" className={styles.ctaLink}>
-          Read the newsletter &rarr;
-        </Link>
       </div>
     </div>
   )
