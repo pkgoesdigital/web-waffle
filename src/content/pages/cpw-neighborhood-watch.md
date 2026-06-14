@@ -20,6 +20,23 @@ We track safety concerns, share information about local incidents, and coordinat
 - Coordinate with The Gathering Place and other neighborhood organizations
 - Maintain a monthly summary shared with DPD liaison Christie M.
 
+## PSA — Garage Theft Alert
+
+*Source: DPD District 2 Command*
+
+District 2 Command has flagged an **uptick in thefts from garages on the south end of the City Park West neighborhood**, targeting both open garages and locked side person entry doors. Items being taken include bikes, tools, and other valuables.
+
+**Please remind neighbors to:**
+- Close garage doors when not in use
+- Lock side person entry doors to garages
+- Register bikes at [529 Garage / DPD](https://project529.com/garage/organizations/denverpolicedept/landing)
+- Take inventory of tools with photos and serial numbers — this aids recovery if items are stolen
+
+**Safe Summer Kick Off Giveaways** (June 18, 4–7 PM — 3625 E. Colfax, Sprouts parking lot):
+- **FREE** Shield 529 Garage decals ($12 value) with bike registrations
+- **FREE** AirTags/SmartTags ($20 value) with DenverTrack registrations
+- **FREE** The Club ($40 value) for those with vehicle registrations on hand — while supplies last
+
 ## DPD District 2 Contacts
 
 **Christie M.** — Community Engagement Program Manager — [christie.mochoruk@denvergov.org](mailto:christie.mochoruk@denvergov.org)
