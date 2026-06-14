@@ -22,7 +22,8 @@ We track safety concerns, share information about local incidents, and coordinat
 
 ## DPD District 2 Contacts
 
-**Christie M.** — Community Engagement Program Manager
+**Christie M.** — Community Engagement Program Manager — [christie.mochoruk@denvergov.org](mailto:christie.mochoruk@denvergov.org)
+
 For non-emergency concerns, contact the District 2 station directly.
 
 ### Community Resource Officers
