@@ -20,10 +20,17 @@ We track safety concerns, share information about local incidents, and coordinat
 - Coordinate with The Gathering Place and other neighborhood organizations
 - Maintain a monthly summary shared with DPD liaison Christie M.
 
-## DPD District 2 Contact
+## DPD District 2 Contacts
 
-**Christie M.** — DPD District 2 Community Engagement Program Manager
+**Christie M.** — Community Engagement Program Manager
 For non-emergency concerns, contact the District 2 station directly.
+
+### Community Resource Officers
+
+- **Hana R.** — [hana.ruiz@denvergov.org](mailto:hana.ruiz@denvergov.org)
+- **Jesus H.** — [jesus.hernandez@denvergov.org](mailto:jesus.hernandez@denvergov.org)
+- **Isabella C.** — [isabella.cervantes@denvergov.org](mailto:isabella.cervantes@denvergov.org)
+- **Mike B.** — [mike.borquez@denvergov.org](mailto:mike.borquez@denvergov.org)
 
 ## Get Involved
 
