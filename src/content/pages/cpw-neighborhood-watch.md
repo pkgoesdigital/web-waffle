@@ -18,11 +18,11 @@ We track safety concerns, share information about local incidents, and coordinat
 - Monitor neighborhood email threads and Nextdoor for safety-relevant activity
 - Attend and host community meetings with DPD District 2
 - Coordinate with The Gathering Place and other neighborhood organizations
-- Maintain a monthly summary shared with DPD liaison Christie Mochoruk
+- Maintain a monthly summary shared with DPD liaison Christie M.
 
 ## DPD District 2 Contact
 
-**Christie Mochoruk** — DPD District 2 Community Resource Officer
+**Christie M.** — DPD District 2 Community Resource Officer
 For non-emergency concerns, contact the District 2 station directly.
 
 ## Get Involved

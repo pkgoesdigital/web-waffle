@@ -23,8 +23,8 @@ April 2026 marked a pivotal month for the City Park West Neighborhood Watch. The
 - DPD District 2 officially assumed responsibility for the CPW sector on April 20, 2026.
 - An attempted residential burglary in broad daylight and a confirmed home invasion (3 arrested) occurred in early April; residents report police non-response to multiple 911 calls throughout the month.
 - Open fentanyl use in the Race/High alley, public fires, and erratic individuals on residential porches were the most frequently reported quality-of-life incidents.
-- CPW neighbors are actively engaging state legislators to amend SB21-271 (2021 sentencing reform); State Rep. Gilchrist agreed to meet with the group.
-- Paula Klimas has been formally onboarded as CPW Neighborhood Watch Coordinator and is now represented in the TGP Good Neighbor Committee meetings.
+- CPW neighbors are actively engaging state legislators to amend SB21-271 (2021 sentencing reform); State Rep. G. agreed to meet with the group.
+- Paula K. has been formally onboarded as CPW Neighborhood Watch Coordinator and is now represented in the TGP Good Neighbor Committee meetings.
 
 ---
 
@@ -107,7 +107,7 @@ The East Colfax Bus Rapid Transit project has entered Phase 3 (Paving Operations
 - **Emergencies:** Call 911
 - **Non-Emergency Police Response:** 720-913-2000
 - **311 (non-urgent, quality of life):** [Denver 311](https://www.denvergov.org/content/denvergov/en/denver-311-help-center.html)
-- **D2 Community Resource Officers (non-urgent):** Technician Borquez, Technician Ruiz, Officer Cervantes, Officer Hernandez — contact through the District 2 station.
+- **D2 Community Resource Officers (non-urgent):** Technician B., Technician R., Officer C., Officer H. — contact through the District 2 station.
 
 **Smart Safety Tools:**
 - [Smart 911](https://denvergov.org/911) — pre-populate your info for first responders

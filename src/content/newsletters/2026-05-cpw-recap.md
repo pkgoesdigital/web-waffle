@@ -9,7 +9,7 @@ status: "published"
 
 **Prepared for:** Denver Police Department, District 2
 **Reporting Period:** May 1–31, 2026
-**Submitted by:** Paula Klimas, City Park West Neighborhood Watch Coordinator
+**Submitted by:** Paula K., City Park West Neighborhood Watch Coordinator
 **Contact:** klimaspaula@gmail.com
 
 ---
@@ -29,9 +29,9 @@ status: "published"
 ### TGP Stabbing — May 14, 2026 ⚠️ OPEN CASE
 A stabbing occurred at approximately 7:00 AM in front of The Gathering Place (TGP), involving an altercation among individuals loitering outside. One person kicked another in the face; a third then stabbed the assailant. The victim was transported to Denver Health. Heavy police presence was observed at TGP and on Sinclair Street. An online police report was filed (tracking number **T26009832**), approved May 15 and assigned permanent case number **26-0800079**.
 
-DPD Community Resource Officer **Jesus Hernandez (P25004)** confirmed via email on May 16 that the matter is under active investigation. On May 18, a resident relayed that DPD confirmed an arrest was made — suspect identified in neighborhood communications as "Bobby." No official custody confirmation or charges were received by month-end.
+DPD Community Resource Officer **Jesus H. (P25004)** confirmed via email on May 16 that the matter is under active investigation. On May 18, a resident relayed that DPD confirmed an arrest was made — suspect identified in neighborhood communications as "Bobby." No official custody confirmation or charges were received by month-end.
 
-**Ask of DPD:** Please provide a case status update when information can be released, including confirmation of charges filed. CCs on correspondence: David Abeyta, Hana Ruiz, Mike Borquez, Isabella Cervantes, Christie Mochoruk.
+**Ask of DPD:** Please provide a case status update when information can be released, including confirmation of charges filed. CCs on correspondence: David A., Hana R., Mike B., Isabella C., Christie M.
 
 ---
 
@@ -76,7 +76,7 @@ A resident reported an abandoned-appearing pickup truck with a window left down,
 
 ---
 
-### DPD District 2 Crime Bulletins (circulated May 28 via Christie Mochoruk)
+### DPD District 2 Crime Bulletins (circulated May 28 via Christie M.)
 
 - Shooting — 3000 block of Champa Street
 - Robbery — 1300 block of N. Krameria Street
@@ -121,9 +121,9 @@ Resident communications from the High-Race Safety Watch group, wine-wednesdays g
 
 ## TGP Good Neighbor Committee
 
-Facilitator **Steve Charbonneau** (Find Solutions) distributed the April 29 GNC meeting summary on May 2. DPD D2 community resource officers (Hana Ruiz, Isabella Cervantes, Mike Borquez) remain standing members of the GNC.
+Facilitator **Steve C.** (Find Solutions) distributed the April 29 GNC meeting summary on May 2. DPD D2 community resource officers (Hana R., Isabella C., Mike B.) remain standing members of the GNC.
 
-**Robin Rothman** (TGP liaison) re-shared the historical **TGP Incident Spreadsheet** via Google Drive — originally developed for City Council outreach — as a potential feeder document for monthly DPD reporting. Legacy Dropbox links within the sheet may need updating.
+**Robin R.** (TGP liaison) re-shared the historical **TGP Incident Spreadsheet** via Google Drive — originally developed for City Council outreach — as a potential feeder document for monthly DPD reporting. Legacy Dropbox links within the sheet may need updating.
 
 Next GNC meeting: **June 17, 9:00 AM.**
 
@@ -132,11 +132,11 @@ Next GNC meeting: **June 17, 9:00 AM.**
 ## Neighborhood Watch Updates
 
 - **May 12:** CPW Neighborhood Watch email thread launched; 13 recipients; monthly newsletter and calendar live at paulaklimas.com/cpw-neighborhood-watch.
-- **May 21:** Paula attended CPW Board Meeting (Denver Book Society, 6 PM). Scott Holder (CPW board) confirmed and offered to share newsletter links on CPW social channels.
+- **May 21:** Paula attended CPW Board Meeting (Denver Book Society, 6 PM). Scott H. (CPW board) confirmed and offered to share newsletter links on CPW social channels.
 - **May 24:** Neighborhood Watch signs posted at 16th St. and Race St.
-- **May 26:** Neighborhood residents Jim Noone, Robin Rothman, and Colin met in person with **State Rep. Lindsay Gilchrist (HD-8)** and **State Sen. Matt Ball** regarding SB21-271 reform. Both legislators were receptive and invited continued dialogue. The group is planning a follow-up joint meeting with DPD and the mayor's office for **late June/early July.** Neighbors are organizing a bloc to demonstrate community presence at that meeting.
+- **May 26:** Neighborhood residents Jim N., Robin R., and Colin met in person with **State Rep. Lindsay G. (HD-8)** and **State Sen. Matt B.** regarding SB21-271 reform. Both legislators were receptive and invited continued dialogue. The group is planning a follow-up joint meeting with DPD and the mayor's office for **late June/early July.** Neighbors are organizing a bloc to demonstrate community presence at that meeting.
 - The **CPW Safety Group** (50+ residents and businesses) is actively engaged in legislative advocacy.
-- Paula Klimas is a seated member of the TGP Good Neighbor Committee.
+- Paula K. is a seated member of the TGP Good Neighbor Committee.
 
 ---
 
@@ -157,9 +157,9 @@ Next GNC meeting: **June 17, 9:00 AM.**
 ## Open Items Carried into June
 
 1. Await official DPD update on TGP stabbing case **26-0800079** (charges/custody status).
-2. Coordinate joint DPD + mayor's office community meeting for late June/early July (Jim Noone leading; DPD contact needed).
-3. Obtain TGP meeting notes and expanded contact list from Robin Rothman.
+2. Coordinate joint DPD + mayor's office community meeting for late June/early July (Jim N. leading; DPD contact needed).
+3. Obtain TGP meeting notes and expanded contact list from Robin R.
 4. Confirm resolution of six outstanding DPD asks from the April recap (listed above).
 5. Complete the East Colfax BRT online engagement form (denvergov.org).
-6. Coordinate joint legislative meeting with State Rep. Gilchrist and State Sen. Ball (contact: Sydney, hd8aide@gmail.com).
+6. Coordinate joint legislative meeting with State Rep. G. and State Sen. B. (contact: Sydney, hd8aide@gmail.com).
 7. Review May 2026 District 2 Newsletter (link shared via DPD email distribution).
