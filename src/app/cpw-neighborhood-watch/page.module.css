@@ -10,6 +10,13 @@
   margin-top: var(--space-4);
 }
 
+.container :global(.psa-alert) {
+  border: 2px solid var(--color-accent);
+  border-radius: 8px;
+  padding: var(--space-6);
+  margin-bottom: var(--space-8);
+}
+
 .ctaLink {
   font-size: var(--text-base);
   font-weight: 600;

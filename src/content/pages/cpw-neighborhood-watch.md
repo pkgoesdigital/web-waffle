@@ -7,20 +7,9 @@ status: "publish"
 featured: false
 ---
 
-## About This Group
+<div class="psa-alert">
 
-City Park West Neighborhood Watch is a community safety initiative connecting residents of the City Park West neighborhood with the Denver Police Department District 2 and local community organizers.
-
-We track safety concerns, share information about local incidents, and coordinate with DPD to keep our block informed and engaged.
-
-## What We Do
-
-- Monitor neighborhood email threads and Nextdoor for safety-relevant activity
-- Attend and host community meetings with DPD District 2
-- Coordinate with The Gathering Place and other neighborhood organizations
-- Maintain a monthly summary shared with DPD liaison Christie M.
-
-## PSA — Garage Theft Alert
+## ⚠️ PSA — Garage Theft Alert
 
 *Source: DPD District 2 Command*
 
@@ -36,6 +25,21 @@ District 2 Command has flagged an **uptick in thefts from garages on the south e
 - **FREE** Shield 529 Garage decals ($12 value) with bike registrations
 - **FREE** AirTags/SmartTags ($20 value) with DenverTrack registrations
 - **FREE** The Club ($40 value) for those with vehicle registrations on hand — while supplies last
+
+</div>
+
+## About This Group
+
+City Park West Neighborhood Watch is a community safety initiative connecting residents of the City Park West neighborhood with the Denver Police Department District 2 and local community organizers.
+
+We track safety concerns, share information about local incidents, and coordinate with DPD to keep our block informed and engaged.
+
+## What We Do
+
+- Monitor neighborhood email threads and Nextdoor for safety-relevant activity
+- Attend and host community meetings with DPD District 2
+- Coordinate with The Gathering Place and other neighborhood organizations
+- Maintain a monthly summary shared with DPD liaison Christie M.
 
 ## DPD District 2 Contacts
 
