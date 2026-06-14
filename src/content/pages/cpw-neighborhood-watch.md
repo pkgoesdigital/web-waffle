@@ -22,7 +22,7 @@ We track safety concerns, share information about local incidents, and coordinat
 
 ## DPD District 2 Contact
 
-**Christie M.** — DPD District 2 Community Resource Officer
+**Christie M.** — DPD District 2 Community Engagement Program Manager
 For non-emergency concerns, contact the District 2 station directly.
 
 ## Get Involved
