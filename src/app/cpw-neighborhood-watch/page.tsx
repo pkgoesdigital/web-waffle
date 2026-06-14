@@ -18,18 +18,17 @@ export default async function NeighborhoodWatchPage() {
       <div className="page-header">
         <h1>{page.title}</h1>
         <p>City Park West &mdash; community safety &amp; coordination</p>
+        <div className={styles.ctaRow}>
+          <Link href="/cpw-neighborhood-watch/calendar" className={styles.ctaLink}>
+            View the event calendar &rarr;
+          </Link>
+          <Link href="/cpw-neighborhood-watch/newsletter" className={styles.ctaLink}>
+            Read the newsletter &rarr;
+          </Link>
+        </div>
       </div>
 
       <div className="prose" dangerouslySetInnerHTML={{ __html: html }} />
-
-      <div className={styles.ctaRow}>
-        <Link href="/cpw-neighborhood-watch/calendar" className={styles.ctaLink}>
-          View the event calendar &rarr;
-        </Link>
-        <Link href="/cpw-neighborhood-watch/newsletter" className={styles.ctaLink}>
-          Read the newsletter &rarr;
-        </Link>
-      </div>
     </div>
   )
 }
