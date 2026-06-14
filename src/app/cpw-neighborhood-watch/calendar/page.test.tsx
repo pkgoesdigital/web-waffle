@@ -51,6 +51,28 @@ describe('CalendarPage', () => {
     expect(screen.getByRole('heading', { name: 'Event Details' })).toBeInTheDocument()
   })
 
+  it('renders the Upcoming sub-section heading', async () => {
+    await renderPage()
+    expect(screen.getByRole('heading', { name: 'Upcoming' })).toBeInTheDocument()
+  })
+
+  it('shows upcoming event (April 28) when today is April 22', async () => {
+    await renderPage()
+    // System time is April 22; event is April 28 → upcoming
+    // 'Test Meeting' also appears in the calendar grid dot, so scope to the section
+    const upcomingHeading = screen.getByRole('heading', { name: 'Upcoming' })
+    expect(upcomingHeading.closest('div')).toHaveTextContent('Test Meeting')
+    expect(screen.queryByRole('heading', { name: 'Past Events' })).not.toBeInTheDocument()
+  })
+
+  it('shows past event in Past Events section when today is after the event', async () => {
+    jest.setSystemTime(new Date('2026-04-30').getTime())
+    await renderPage()
+    // System time is April 30; event is April 28 → past
+    const pastHeading = screen.getByRole('heading', { name: 'Past Events' })
+    expect(pastHeading.closest('div')).toHaveTextContent('Test Meeting')
+  })
+
   it('includes a link back to the landing page', async () => {
     await renderPage()
     expect(screen.getByRole('link', { name: /About this group/ })).toHaveAttribute(

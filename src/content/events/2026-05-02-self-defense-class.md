@@ -7,6 +7,6 @@ time: "10:00 AM – 2:00 PM"
 location: "Johnson Rec Center, 4809 Race St"
 type: "dpd"
 status: "confirmed"
-description: "DPD District 2 self defense class hosted by Christie Mochoruk. Registration required — email christie.mochoruk@denvergov.org."
+description: "DPD District 2 self defense class hosted by Christie M. Registration required — email christie.mochoruk@denvergov.org."
 source: "CPW daily summary, May 1 2026"
 ---

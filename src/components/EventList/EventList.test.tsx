@@ -59,8 +59,13 @@ describe('EventList', () => {
     expect(screen.getByText('DPD Briefing')).toBeInTheDocument()
   })
 
-  it('shows empty state message when no events', () => {
+  it('shows default empty state message when no events', () => {
     render(<EventList events={[]} />)
-    expect(screen.getByText(/No upcoming events/)).toBeInTheDocument()
+    expect(screen.getByText(/No upcoming events at this time/)).toBeInTheDocument()
+  })
+
+  it('shows custom empty state message when provided', () => {
+    render(<EventList events={[]} emptyMessage="No upcoming events this month." />)
+    expect(screen.getByText('No upcoming events this month.')).toBeInTheDocument()
   })
 })

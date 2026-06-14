@@ -21,11 +21,12 @@ function formatDate(dateStr: string): string {
 
 type Props = {
   events: EventMeta[]
+  emptyMessage?: string
 }
 
-export default function EventList({ events }: Props) {
+export default function EventList({ events, emptyMessage = 'No upcoming events at this time.' }: Props) {
   if (events.length === 0) {
-    return <p className={styles.empty}>No upcoming events at this time.</p>
+    return <p className={styles.empty}>{emptyMessage}</p>
   }
 
   return (

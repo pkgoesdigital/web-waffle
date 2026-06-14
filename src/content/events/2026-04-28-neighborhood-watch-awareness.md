@@ -8,5 +8,5 @@ location: "Carla Madison Recreation Center"
 type: "meeting"
 status: "confirmed"
 description: "DPD District 2 Neighborhood Watch Action and Awareness event."
-source: "Christie Mochoruk, DPD D2, Apr 13 2026"
+source: "Christie M., DPD D2, Apr 13 2026"
 ---

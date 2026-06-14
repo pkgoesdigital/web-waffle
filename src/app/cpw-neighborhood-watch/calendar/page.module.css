@@ -46,3 +46,16 @@
   margin: 0 0 var(--space-6);
   color: var(--color-text);
 }
+
+.subSection {
+  margin-bottom: var(--space-12);
+}
+
+.subHeading {
+  font-size: var(--text-base);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-4);
+}
