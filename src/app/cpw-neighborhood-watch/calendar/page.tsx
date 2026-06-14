@@ -54,6 +54,21 @@ export default async function CalendarPage({
 
   const events = getEventsForMonth(displayYear, displayMonth)
 
+  // Compare dates at day granularity in local time to avoid UTC midnight off-by-one
+  const todayMs = new Date(now.getFullYear(), now.getMonth(), now.getDate()).getTime()
+  function toLocalDayMs(dateStr: string): number {
+    const [y, m, d] = dateStr.split('-').map(Number)
+    return new Date(y, m - 1, d).getTime()
+  }
+
+  const upcoming = events
+    .filter((e) => toLocalDayMs(e.date) >= todayMs)
+    .sort((a, b) => toLocalDayMs(a.date) - toLocalDayMs(b.date))
+
+  const past = events
+    .filter((e) => toLocalDayMs(e.date) < todayMs)
+    .sort((a, b) => toLocalDayMs(b.date) - toLocalDayMs(a.date))
+
   return (
     <div className={styles.container}>
       <div className="page-header">
@@ -92,7 +107,18 @@ export default async function CalendarPage({
 
       <section className={styles.listSection}>
         <h2 className={styles.listHeading}>Event Details</h2>
-        <EventList events={events} />
+
+        <div className={styles.subSection}>
+          <h3 className={styles.subHeading}>Upcoming</h3>
+          <EventList events={upcoming} emptyMessage="No upcoming events this month." />
+        </div>
+
+        {past.length > 0 && (
+          <div className={styles.subSection}>
+            <h3 className={styles.subHeading}>Past Events</h3>
+            <EventList events={past} />
+          </div>
+        )}
       </section>
     </div>
   )
