@@ -240,3 +240,9 @@ These are the prompts that shaped this codebase during development sessions with
 **Adding the CPW Newsletter section:**
 
 > I'd like to add a newsletter page, which publishes a post, including the content from each file written and saved monthly [...] Users should be able to see both "Calendar" and a new "Newsletter" landing page, in the navigation under "CPW". Then, draft the first newsletter post based on the content found here /Users/paulaklimas/Documents/Claude/city-park-west-neighborhood-watch/newsletters.
+
+---
+
+**Setting up ESLint flat config for ESLint 10 + Next.js 16:**
+
+> In the web-waffle repo, `npm run lint` (which runs `next lint`) drops into an interactive "How would you like to configure ESLint?" prompt instead of linting, because no ESLint config file exists at the repo root [...] Create the appropriate flat ESLint config (eslint.config.mjs) wiring up eslint-config-next's core-web-vitals + typescript presets per current Next.js 16 docs, verify `npm run lint` runs non-interactively and passes (or fix any violations it surfaces), and follow the repo's CLAUDE.md branching rules.
