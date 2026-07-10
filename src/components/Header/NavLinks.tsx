@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import ThemeToggle from '@/components/ThemeToggle/ThemeToggle'
@@ -44,10 +44,12 @@ const links: NavLink[] = [
 export default function NavLinks() {
   const pathname = usePathname()
   const [isOpen, setIsOpen] = useState(true)
+  const [prevPathname, setPrevPathname] = useState(pathname)
 
-  useEffect(() => {
+  if (pathname !== prevPathname) {
+    setPrevPathname(pathname)
     setIsOpen(true)
-  }, [pathname])
+  }
 
   const close = () => setIsOpen(true)
 
