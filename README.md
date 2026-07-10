@@ -250,3 +250,13 @@ These are the prompts that shaped this codebase during development sessions with
 (After Claude asked how song data should be sourced:)
 
 > is there another way to connect to the actual listening data? For example, could we still achieve the goal, if I create a public playlist under my personal user with my recently "Liked Songs"?
+
+---
+
+**Adding the guestbook (Neon Postgres, pre-moderation, proof-of-work bot gate):**
+
+> ok, next I'd like to create a "guestbook" feature which allows users to leave a note that they visited the site. the guestbook should be on the "Contact" page and anywhere additional you recommend.
+
+(After Claude asked how submissions should be moderated:)
+
+> Is there a feature we can add here which checks for potential spam or abuse? Things like monitoring for keystrokes, or introducing a CAPCHA to confirm human-usage and not bot-usage?
