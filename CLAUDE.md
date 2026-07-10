@@ -40,6 +40,7 @@ src/content/posts/*.md      → /writing/[slug]
 src/content/pages/*.md      → /writing/[slug]  (featured pages also appear on home)
 src/data/social-links.json  → Footer social icons
 src/data/viz/*.json         → /api/viz?dataset=<name>
+src/data/music.json         → About page "What I've been listening to" player
 ```
 
 **`src/lib/content.ts`** is the single entry point for all content reads:
@@ -67,7 +68,8 @@ src/data/viz/*.json         → /api/viz?dataset=<name>
 
 All components use CSS Modules co-located in the component folder (`ComponentName/ComponentName.tsx` + `ComponentName/ComponentName.module.css`).
 
-- **`PostList`** — only `'use client'` component; handles search filtering (`useMemo` over title/subtitle/tags) and load-more pagination (`PAGE_SIZE = 12`). Receives pre-fetched `PostMeta[]` and `PageMeta[]` as props from the server page.
+- **`PostList`** — `'use client'` component; handles search filtering (`useMemo` over title/subtitle/tags) and load-more pagination (`PAGE_SIZE = 12`). Receives pre-fetched `PostMeta[]` and `PageMeta[]` as props from the server page.
+- **`MusicPlayer`** — client component on the About page. Renders the static song snapshot grouped by genre (with an artist-sort toggle) and click-to-load `youtube-nocookie.com` embeds. Never contacts YouTube until a visitor presses play; video IDs are allowlist-validated (`^[A-Za-z0-9_-]{11}$`) before touching the iframe URL.
 - **`D3Visualization`** — client component wrapping a D3 chart fetched from `/api/viz`.
 - **`WatchmakerClock`** — client component (canvas-based animated clock).
 - **`ContentCard`** / **`CardGrid`** — pure presentational server-compatible components. `ContentCard` accepts a `color` prop (not an index) — the parent is responsible for generating shuffled colors.
@@ -143,6 +145,26 @@ Create `src/content/pages/<slug>.md` and set `featured: true` in frontmatter. Fe
 ### Adding a viz dataset
 
 Drop a JSON file at `src/data/viz/<name>.json`. It will be served at `/api/viz?dataset=<name>` with a 1-hour cache.
+
+### Refreshing the music snapshot (About page player)
+
+Song data is a static snapshot in `src/data/music.json` — the site never calls
+YouTube for data at runtime. To refresh it from the YouTube Music playlist:
+
+```bash
+cp .env.example .env.local   # once; fill in YOUTUBE_API_KEY + YOUTUBE_PLAYLIST_ID
+npm run sync:music           # rewrites src/data/music.json
+```
+
+- The API key lives only in gitignored `.env.local` and is used offline by the
+  script; it must never be committed or referenced by site code.
+- YouTube exposes no genre metadata, so genres come from the hand-maintained
+  `src/data/music-genres.json` (artist → genre). The script warns about
+  unmapped artists (tagged "Uncategorized"); add them to the map and re-run.
+- All sync logic is in `src/lib/music-sync.ts` (tested); the script's output is
+  validated by the same `parseMusicData` gate the build uses, so a bad sync
+  fails loudly instead of deploying.
+- Review the `music.json` diff like any other change, then test/build/commit.
 
 ## Branching & Git Rules
 
