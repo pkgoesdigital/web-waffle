@@ -1,0 +1,89 @@
+{
+  "updatedAt": "2026-07-09",
+  "songs": [
+    {
+      "videoId": "DJCB1ZlseJ8",
+      "title": "Show Me How",
+      "artist": "Men I Trust",
+      "genre": "Dream Pop",
+      "addedAt": "2026-07-08"
+    },
+    {
+      "videoId": "mEveOIoiHg4",
+      "title": "Here With Me",
+      "artist": "d4vd",
+      "genre": "Bedroom Pop",
+      "addedAt": "2026-07-05"
+    },
+    {
+      "videoId": "PvM79DJ2PmM",
+      "title": "The Less I Know The Better",
+      "artist": "Tame Impala",
+      "genre": "Psychedelic Rock",
+      "addedAt": "2026-07-01"
+    },
+    {
+      "videoId": "FJX0JPXD2nM",
+      "title": "we fell in love in october",
+      "artist": "girl in red",
+      "genre": "Indie Pop",
+      "addedAt": "2026-06-27"
+    },
+    {
+      "videoId": "826mxiKjoP0",
+      "title": "The Adults Are Talking",
+      "artist": "The Strokes",
+      "genre": "Indie Rock",
+      "addedAt": "2026-06-24"
+    },
+    {
+      "videoId": "qOif_ni_9zc",
+      "title": "just friends",
+      "artist": "potsu",
+      "genre": "Lo-fi Hip-Hop",
+      "addedAt": "2026-06-20"
+    },
+    {
+      "videoId": "hh1WeQxfCX0",
+      "title": "Can I Call You Tonight?",
+      "artist": "Dayglow",
+      "genre": "Indie Pop",
+      "addedAt": "2026-06-15"
+    },
+    {
+      "videoId": "a24EUd0zeqI",
+      "title": "Shut up My Moms Calling",
+      "artist": "Hotel Ugly",
+      "genre": "Bedroom Pop",
+      "addedAt": "2026-06-11"
+    },
+    {
+      "videoId": "4u7kNELI76A",
+      "title": "Homage",
+      "artist": "Mild High Club",
+      "genre": "Psychedelic Rock",
+      "addedAt": "2026-06-06"
+    },
+    {
+      "videoId": "T0Ry1m0Blug",
+      "title": "Harvey",
+      "artist": "Her's",
+      "genre": "Indie Pop",
+      "addedAt": "2026-05-30"
+    },
+    {
+      "videoId": "khnokW3Mw24",
+      "title": "Instant Crush (feat. Julian Casablancas)",
+      "artist": "Daft Punk",
+      "genre": "Electronic",
+      "addedAt": "2026-05-24"
+    },
+    {
+      "videoId": "f8_EpxhNEsA",
+      "title": "Feels Like We Only Go Backwards",
+      "artist": "Tame Impala",
+      "genre": "Psychedelic Rock",
+      "addedAt": "2026-05-18"
+    }
+  ]
+}

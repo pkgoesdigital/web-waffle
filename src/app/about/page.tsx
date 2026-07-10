@@ -1,9 +1,14 @@
 import type { Metadata } from "next";
+import MusicPlayer from "@/components/MusicPlayer/MusicPlayer";
+import { getMusicData } from "@/lib/music";
+import { formatDate } from "@/lib/format";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = { title: "About" };
 
 export default function AboutPage() {
+  const { updatedAt, songs } = getMusicData();
+
   return (
     <div className={styles.container}>
       <div className="page-header">
@@ -68,6 +73,17 @@ export default function AboutPage() {
           If something here resonates, I&rsquo;d love to connect. Find me at one of the links below.
         </p>
       </div>
+
+      <section className={styles.musicSection} aria-labelledby="listening-heading">
+        <h2 id="listening-heading" className={styles.musicTitle}>
+          What I&rsquo;ve been listening to
+        </h2>
+        <p className={styles.musicNote}>
+          My recent rotation as of {formatDate(updatedAt)} — grouped by genre, or
+          sorted by artist. Nothing loads from YouTube until you press play.
+        </p>
+        <MusicPlayer songs={songs} />
+      </section>
     </div>
   );
 }
