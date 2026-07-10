@@ -27,9 +27,12 @@ export default function ThemeProvider({
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    // Read the theme that the inline FOIT script already applied
+    // Read the theme that the inline FOIT script already applied.
+    // Intentional one-time post-hydration sync from the DOM — the state can
+    // only be known on the client, so it cannot move to the initial render.
     const current = document.documentElement.getAttribute('data-theme') as Theme
     if (current === 'dark' || current === 'light') {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setTheme(current)
     }
     setMounted(true)

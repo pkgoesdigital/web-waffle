@@ -19,8 +19,8 @@ export default function ServicesPage() {
       <div className="page-header">
         <h1>Services</h1>
         <p>
-          I help teams adopt AI <i>without</i> having the "we've lost the plot" moment. I&rsquo;m a product
-          manager and engineer in practice — so the work you'll receive will always be grounded in how products
+          I help teams adopt AI <i>without</i> having the &ldquo;we&rsquo;ve lost the plot&rdquo; moment. I&rsquo;m a product
+          manager and engineer in practice — so the work you&rsquo;ll receive will always be grounded in how products
           actually get built, what teams actually do, and what your users will
           actually use.
         </p>
@@ -73,7 +73,7 @@ export default function ServicesPage() {
             <p className={styles.decisionLabel}>Feeling Overwhelmed</p>
             <p className={styles.decisionText}>
               You know AI matters and you want to get ahead of it in your organization, but don&rsquo;t know where to start. Or
-              you&rsquo;ve been talking about it for months, but haven't had the time to act on your ideas.
+              you&rsquo;ve been talking about it for months, but haven&rsquo;t had the time to act on your ideas.
             </p>
             <Link
               href="/services/ai-starter-pack"
@@ -85,7 +85,7 @@ export default function ServicesPage() {
           <div className={styles.decisionCard}>
             <p className={styles.decisionLabel}>We have a plan, but need help building it</p>
             <p className={styles.decisionText}>
-              You know what you want to build, but you don't have a strategy for building it. Or maybe you don&rsquo;t have the
+              You know what you want to build, but you don&rsquo;t have a strategy for building it. Or maybe you don&rsquo;t have the
               in-house technical engineering skills, product skills, or resources to implement it yourself.
             </p>
             <Link
@@ -96,7 +96,7 @@ export default function ServicesPage() {
             </Link>
           </div>
           <div className={styles.decisionCard}>
-            <p className={styles.decisionLabel}>We've already deployed AI in our organization</p>
+            <p className={styles.decisionLabel}>We&rsquo;ve already deployed AI in our organization</p>
             <p className={styles.decisionText}>
               You have AI in the hands of your team. Now you need someone
               watching for drift, auditing how it&rsquo;s used, and stepping in
