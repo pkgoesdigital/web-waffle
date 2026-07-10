@@ -63,6 +63,8 @@ src/data/music.json         → About page "What I've been listening to" player
 | `/about` | `src/app/about/page.tsx` | Server component; reads `about.md` |
 | `/api/posts` | `src/app/api/posts/route.ts` | Returns `PaginatedResult<PostMeta>`; supports `?page`, `?limit`, `?category`, `?status` |
 | `/api/viz` | `src/app/api/viz/route.ts` | Returns JSON from `src/data/viz/<dataset>.json`; 1-hour `unstable_cache` |
+| `/api/guestbook` | `src/app/api/guestbook/route.ts` | GET approved entries / POST submissions (Neon Postgres); `force-dynamic`, no-store |
+| `/api/guestbook/challenge` | `src/app/api/guestbook/challenge/route.ts` | Issues single-use proof-of-work challenges for guestbook submissions |
 
 ### Components
 
@@ -70,6 +72,7 @@ All components use CSS Modules co-located in the component folder (`ComponentNam
 
 - **`PostList`** — `'use client'` component; handles search filtering (`useMemo` over title/subtitle/tags) and load-more pagination (`PAGE_SIZE = 12`). Receives pre-fetched `PostMeta[]` and `PageMeta[]` as props from the server page.
 - **`MusicPlayer`** — client component on the About page. Renders the static song snapshot grouped by genre (with an artist-sort toggle) and click-to-load `youtube-nocookie.com` embeds. Never contacts YouTube until a visitor presses play; video IDs are allowlist-validated (`^[A-Za-z0-9_-]{11}$`) before touching the iframe URL.
+- **`Guestbook`** — client component on the Contact page. Fetches approved entries from `/api/guestbook` and submits new notes through the anti-abuse pipeline (honeypot, server-side time trap, proof-of-work, rate limits). Degrades gracefully when `DATABASE_URL` is unset.
 - **`D3Visualization`** — client component wrapping a D3 chart fetched from `/api/viz`.
 - **`WatchmakerClock`** — client component (canvas-based animated clock).
 - **`ContentCard`** / **`CardGrid`** — pure presentational server-compatible components. `ContentCard` accepts a `color` prop (not an index) — the parent is responsible for generating shuffled colors.
@@ -165,6 +168,33 @@ npm run sync:music           # rewrites src/data/music.json
   validated by the same `parseMusicData` gate the build uses, so a bad sync
   fails loudly instead of deploying.
 - Review the `music.json` diff like any other change, then test/build/commit.
+
+### Guestbook (Contact page)
+
+The guestbook is the site's only write path. Entries live in Neon Postgres
+(provisioned via the Vercel Marketplace; `DATABASE_URL` is injected in
+production and copied to `.env.local` for local work).
+
+- **Pre-moderation:** every submission is stored as `pending` and is invisible
+  until approved. There is deliberately **no admin UI on the site** — moderate
+  locally:
+
+  ```bash
+  npm run guestbook:setup            # one-time idempotent schema creation
+  npm run guestbook:moderate         # list pending entries
+  npm run guestbook:moderate -- --approve 3,7
+  npm run guestbook:moderate -- --reject 5
+  ```
+
+- **Anti-abuse layers** (all in `/api/guestbook` POST): hidden honeypot field
+  (silent discard), server-side time trap keyed to challenge creation,
+  self-hosted proof-of-work (`src/lib/proof-of-work.ts`, WebCrypto, no third
+  parties), per-IP (3/hr, salted-hash `GUESTBOOK_IP_SALT`, raw IPs never
+  stored) + global (30/hr) rate limits, URL rejection, and length caps.
+- **Validation** is in `src/lib/guestbook.ts`; error messages are fixed
+  strings that never echo visitor content. All SQL goes through the neon()
+  tagged template (parameterized).
+- The Contact page section has anchor `#guestbook` (linked from the footer).
 
 ## Branching & Git Rules
 

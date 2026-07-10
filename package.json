@@ -11,9 +11,12 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:ci": "jest --ci --coverage",
-    "sync:music": "node --experimental-strip-types --disable-warning=ExperimentalWarning --env-file-if-exists=.env.local scripts/sync-music.ts"
+    "sync:music": "node --experimental-strip-types --disable-warning=ExperimentalWarning --env-file-if-exists=.env.local scripts/sync-music.ts",
+    "guestbook:setup": "node --experimental-strip-types --disable-warning=ExperimentalWarning --env-file-if-exists=.env.local scripts/guestbook-setup.ts",
+    "guestbook:moderate": "node --experimental-strip-types --disable-warning=ExperimentalWarning --env-file-if-exists=.env.local scripts/guestbook-moderate.ts"
   },
   "dependencies": {
+    "@neondatabase/serverless": "^1.1.0",
     "@vercel/analytics": "^2.0.1",
     "d3": "^7.9.0",
     "gray-matter": "^4.0.3",

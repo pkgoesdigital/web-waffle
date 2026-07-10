@@ -11,6 +11,9 @@ export default function Footer() {
         <div className={styles.section}>
           <h3 className={styles.heading}>Connect</h3>
           <SocialLinks links={socialLinks} />
+          <a href="/contact#guestbook" className={styles.guestbookLink}>
+            Sign the guestbook
+          </a>
         </div>
         <div className={styles.bottom}>
           <p className={styles.copyright}>
