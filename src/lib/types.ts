@@ -107,6 +107,32 @@ export type GenreGroup = {
   songs: Song[]
 }
 
+// ── Guestbook types ──────────────────────────────────────────────────────────
+
+/** Public shape of an approved guestbook entry — the only shape the API may
+ *  return. Never includes moderation state or the rate-limiting ip hash. */
+export type GuestbookEntry = {
+  id: number
+  name: string
+  message: string
+  visitingFrom?: string
+  createdAt: string
+}
+
+/** A validated visitor submission before persistence. */
+export type GuestbookSubmission = {
+  name: string
+  message: string
+  visitingFrom?: string
+}
+
+/** A proof-of-work challenge issued to the browser before it may submit. */
+export type PowChallenge = {
+  id: string
+  salt: string
+  difficulty: number
+}
+
 // ── Pagination ───────────────────────────────────────────────────────────────
 
 export type PaginatedResult<T> = {

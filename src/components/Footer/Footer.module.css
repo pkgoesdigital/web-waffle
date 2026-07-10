@@ -24,6 +24,15 @@
   margin-bottom: var(--space-4);
 }
 
+.guestbookLink {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin-top: var(--space-2);
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+
 .bottom {
   padding-top: var(--space-6);
   border-top: 3px solid var(--color-border);
