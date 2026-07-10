@@ -240,3 +240,13 @@ These are the prompts that shaped this codebase during development sessions with
 **Adding the CPW Newsletter section:**
 
 > I'd like to add a newsletter page, which publishes a post, including the content from each file written and saved monthly [...] Users should be able to see both "Calendar" and a new "Newsletter" landing page, in the navigation under "CPW". Then, draft the first newsletter post based on the content found here /Users/paulaklimas/Documents/Claude/city-park-west-neighborhood-watch/newsletters.
+
+---
+
+**Adding the About-page music player (static YouTube Music snapshot):**
+
+> hi claude, I want to update my personal website to be more interactive. My tool preferences are .NET, React.js, and the current stack. The first feature I want to add is a Youtube Music player which lists a playlist, organized by genre, of the most recent songs I've been listening to. Allow the user to sort by artist as well. I do not want this feature directly accessible via a live connection - the data needs to be stored off, securely. Pay particular attention to security vulnerabilities while building. Stop and ask for questions and directions when unclear. I will share the next feature request, after we complete this one.
+
+(After Claude asked how song data should be sourced:)
+
+> is there another way to connect to the actual listening data? For example, could we still achieve the goal, if I create a public playlist under my personal user with my recently "Liked Songs"?
