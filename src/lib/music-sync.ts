@@ -20,8 +20,9 @@ export function isValidVideoId(id: string): boolean {
 }
 
 /** Strip C0/C1 control characters and cap length. Applied to every text field
- *  that originates outside the repo (the YouTube API, or hand-edited JSON). */
-export function sanitizeText(value: string): string {
+ *  that originates outside the repo (the YouTube API, hand-edited JSON, or
+ *  guestbook visitors). */
+export function sanitizeText(value: string, maxLength = MAX_TEXT_LENGTH): string {
   return Array.from(value)
     .filter((ch) => {
       const code = ch.codePointAt(0) ?? 0
@@ -29,7 +30,7 @@ export function sanitizeText(value: string): string {
     })
     .join('')
     .trim()
-    .slice(0, MAX_TEXT_LENGTH)
+    .slice(0, maxLength)
 }
 
 function parseRequiredText(value: unknown, field: string, index: number): string {

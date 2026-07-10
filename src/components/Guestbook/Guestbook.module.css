@@ -1,0 +1,143 @@
+.form {
+  margin-bottom: var(--space-8);
+}
+
+.fieldRow {
+  display: flex;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  margin-bottom: var(--space-4);
+  flex: 1 1 240px;
+  position: relative;
+}
+
+.fieldLabel {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.optional {
+  font-weight: 400;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--text-base);
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 3px solid var(--color-border);
+  border-radius: 8px;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 88px;
+}
+
+.input:focus-visible,
+.textarea:focus-visible {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(20, 133, 123, 0.25);
+}
+
+.counter {
+  align-self: flex-end;
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+/* Honeypot: moved far offscreen rather than display:none so naive bots still
+   treat it as a fillable field. Hidden from AT and the tab order. */
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.submitRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.submitButton {
+  padding: var(--space-3) var(--space-8);
+  min-height: 44px;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 3px solid var(--color-border);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background var(--transition-fast), border-color var(--transition-fast), filter var(--transition-fast);
+}
+
+.submitButton:hover:not(:disabled) {
+  background: var(--color-bg);
+  border-color: var(--color-accent);
+  filter: brightness(0.95);
+}
+
+.submitButton:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.status {
+  min-height: 1.5em;
+  margin-top: var(--space-3);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.entries {
+  margin-top: var(--space-6);
+}
+
+.muted {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+.entryList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.entry {
+  border: 3px solid var(--color-border);
+  border-radius: 8px;
+  padding: var(--space-4);
+  background: var(--color-surface);
+}
+
+.entryMessage {
+  margin-bottom: var(--space-2);
+  overflow-wrap: anywhere;
+}
+
+.entryMeta {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.entryName {
+  font-weight: 600;
+}
