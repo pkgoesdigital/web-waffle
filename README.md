@@ -246,3 +246,6 @@ These are the prompts that shaped this codebase during development sessions with
 **Setting up ESLint flat config for ESLint 10 + Next.js 16:**
 
 > In the web-waffle repo, `npm run lint` (which runs `next lint`) drops into an interactive "How would you like to configure ESLint?" prompt instead of linting, because no ESLint config file exists at the repo root [...] Create the appropriate flat ESLint config (eslint.config.mjs) wiring up eslint-config-next's core-web-vitals + typescript presets per current Next.js 16 docs, verify `npm run lint` runs non-interactively and passes (or fix any violations it surfaces), and follow the repo's CLAUDE.md branching rules.
+**Fixing the formatDate timezone off-by-one:**
+
+> In the web-waffle repo, src/lib/format.ts formatDate() parses date-only strings like "2026-07-09" via new Date(), which interprets them as UTC midnight; toLocaleDateString then renders them in the local timezone, so all dates west of UTC display one day early (e.g. "Jul 8, 2026" for a 2026-07-09 frontmatter date). [...] Fix by parsing date-only strings as local dates (e.g. append 'T00:00:00' instead of relying on bare date parsing [...]), update/extend src/lib/format tests if present (create formatDate coverage if missing per the repo's spec-file rule), and follow CLAUDE.md branching rules (claude/* branch, tests+build green, PR to master).
