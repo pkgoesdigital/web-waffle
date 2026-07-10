@@ -17,7 +17,7 @@ export default function AboutPage() {
 
       <div className="prose">
         <p>
-          I've spent my career sitting at the intersection of engineering and product. This portfolio is a record of that: code I've written and shipped, and writing that attempts to make sense of how products get built, how teams stay aligned, and how to stay honest about what the data is actually telling you.
+          I&rsquo;ve spent my career sitting at the intersection of engineering and product. This portfolio is a record of that: code I&rsquo;ve written and shipped, and writing that attempts to make sense of how products get built, how teams stay aligned, and how to stay honest about what the data is actually telling you.
         </p>
 
         <p>
@@ -46,10 +46,10 @@ export default function AboutPage() {
         </p>
 
         <p>
-          Career aside, I'm also a reader and a writer. I think
+          Career aside, I&rsquo;m also a reader and a writer. I think
           the discipline of writing is one of the most underrated tools in
           any technical person&rsquo;s toolkit.{" "} I believe
-          <em>"Show, don&rsquo;t tell"</em> applies to products as much as it
+          <em>&ldquo;Show, don&rsquo;t tell&rdquo;</em> applies to products as much as it
           does to prose.
         </p>
 
