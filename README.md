@@ -240,3 +240,9 @@ These are the prompts that shaped this codebase during development sessions with
 **Adding the CPW Newsletter section:**
 
 > I'd like to add a newsletter page, which publishes a post, including the content from each file written and saved monthly [...] Users should be able to see both "Calendar" and a new "Newsletter" landing page, in the navigation under "CPW". Then, draft the first newsletter post based on the content found here /Users/paulaklimas/Documents/Claude/city-park-west-neighborhood-watch/newsletters.
+
+---
+
+**Fixing the formatDate timezone off-by-one:**
+
+> In the web-waffle repo, src/lib/format.ts formatDate() parses date-only strings like "2026-07-09" via new Date(), which interprets them as UTC midnight; toLocaleDateString then renders them in the local timezone, so all dates west of UTC display one day early (e.g. "Jul 8, 2026" for a 2026-07-09 frontmatter date). [...] Fix by parsing date-only strings as local dates (e.g. append 'T00:00:00' instead of relying on bare date parsing [...]), update/extend src/lib/format tests if present (create formatDate coverage if missing per the repo's spec-file rule), and follow CLAUDE.md branching rules (claude/* branch, tests+build green, PR to master).
