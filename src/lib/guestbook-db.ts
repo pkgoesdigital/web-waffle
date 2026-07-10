@@ -14,15 +14,27 @@ type SqlClient = ReturnType<typeof neon>
 
 let cachedSql: SqlClient | null = null
 
+/** Plain DATABASE_URL wins; otherwise accept a single Marketplace-prefixed
+ *  variant (Vercel's Neon integration injects e.g. neon_web_waffle_DATABASE_URL
+ *  when a resource prefix is configured). Two candidates is ambiguous — fail
+ *  closed rather than guess which database to write to. */
+export function resolveDatabaseUrl(): string | null {
+  if (process.env.DATABASE_URL) return process.env.DATABASE_URL
+  const candidates = Object.entries(process.env).filter(
+    ([key, value]) => key !== 'DATABASE_URL' && /_DATABASE_URL$/.test(key) && value
+  )
+  return candidates.length === 1 ? (candidates[0][1] as string) : null
+}
+
 export function isGuestbookConfigured(): boolean {
-  return Boolean(process.env.DATABASE_URL)
+  return resolveDatabaseUrl() !== null
 }
 
 function getSql(): SqlClient {
   if (!cachedSql) {
-    const url = process.env.DATABASE_URL
+    const url = resolveDatabaseUrl()
     if (!url) {
-      throw new Error('DATABASE_URL is not configured')
+      throw new Error('DATABASE_URL is not configured (directly or via an integration prefix)')
     }
     cachedSql = neon(url)
   }

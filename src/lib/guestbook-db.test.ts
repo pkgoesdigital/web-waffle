@@ -12,6 +12,7 @@ import {
   hashIp,
   isGuestbookConfigured,
   resetGuestbookDbForTests,
+  resolveDatabaseUrl,
   updateEntryStatus,
 } from './guestbook-db'
 
@@ -32,6 +33,43 @@ describe('isGuestbookConfigured', () => {
     expect(isGuestbookConfigured()).toBe(true)
     delete process.env.DATABASE_URL
     expect(isGuestbookConfigured()).toBe(false)
+  })
+})
+
+describe('resolveDatabaseUrl', () => {
+  beforeEach(() => {
+    delete process.env.DATABASE_URL
+    for (const key of Object.keys(process.env)) {
+      if (key.endsWith('_DATABASE_URL')) delete process.env[key]
+    }
+  })
+
+  it('prefers the plain DATABASE_URL', () => {
+    process.env.DATABASE_URL = 'postgres://plain'
+    process.env.neon_web_waffle_DATABASE_URL = 'postgres://prefixed'
+    expect(resolveDatabaseUrl()).toBe('postgres://plain')
+  })
+
+  it('falls back to a single marketplace-prefixed variant', () => {
+    process.env.neon_web_waffle_DATABASE_URL = 'postgres://prefixed'
+    expect(resolveDatabaseUrl()).toBe('postgres://prefixed')
+  })
+
+  it('ignores unpooled and unrelated variants', () => {
+    process.env.neon_web_waffle_DATABASE_URL = 'postgres://prefixed'
+    process.env.neon_web_waffle_DATABASE_URL_UNPOOLED = 'postgres://unpooled'
+    expect(resolveDatabaseUrl()).toBe('postgres://prefixed')
+  })
+
+  it('fails closed when two prefixed candidates exist', () => {
+    process.env.neon_web_waffle_DATABASE_URL = 'postgres://one'
+    process.env.WW_DATABASE_URL = 'postgres://two'
+    expect(resolveDatabaseUrl()).toBeNull()
+    expect(isGuestbookConfigured()).toBe(false)
+  })
+
+  it('returns null when nothing is set', () => {
+    expect(resolveDatabaseUrl()).toBeNull()
   })
 })
 

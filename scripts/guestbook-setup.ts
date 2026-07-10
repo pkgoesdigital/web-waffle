@@ -1,11 +1,13 @@
 // One-time (idempotent) schema setup for the guestbook. Run with
 // `npm run guestbook:setup`; needs DATABASE_URL in .env.local.
 import { neon } from '@neondatabase/serverless'
-import { GUESTBOOK_SCHEMA_STATEMENTS } from '../src/lib/guestbook-db.ts'
+import { GUESTBOOK_SCHEMA_STATEMENTS, resolveDatabaseUrl } from '../src/lib/guestbook-db.ts'
 
-const url = process.env.DATABASE_URL
+const url = resolveDatabaseUrl()
 if (!url) {
-  console.error('guestbook:setup failed: DATABASE_URL is not set (see .env.example)')
+  console.error(
+    'guestbook:setup failed: no DATABASE_URL (or single *_DATABASE_URL) is set — see .env.example'
+  )
   process.exit(1)
 }
 

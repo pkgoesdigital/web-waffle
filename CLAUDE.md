@@ -172,8 +172,12 @@ npm run sync:music           # rewrites src/data/music.json
 ### Guestbook (Contact page)
 
 The guestbook is the site's only write path. Entries live in Neon Postgres
-(provisioned via the Vercel Marketplace; `DATABASE_URL` is injected in
-production and copied to `.env.local` for local work).
+(provisioned via the Vercel Marketplace). Connection resolution
+(`resolveDatabaseUrl` in `src/lib/guestbook-db.ts`): plain `DATABASE_URL`
+first, else a single Marketplace-prefixed `*_DATABASE_URL` (the integration
+prefixes injected vars with the resource name, e.g.
+`neon_web_waffle_DATABASE_URL`); two candidates fail closed. Locally, run
+`vercel env pull .env.local` and add `GUESTBOOK_IP_SALT`.
 
 - **Pre-moderation:** every submission is stored as `pending` and is invisible
   until approved. There is deliberately **no admin UI on the site** — moderate

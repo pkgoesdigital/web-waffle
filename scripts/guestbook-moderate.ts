@@ -5,7 +5,11 @@
 //   npm run guestbook:moderate                    list pending entries
 //   npm run guestbook:moderate -- --approve 3,7   approve by id
 //   npm run guestbook:moderate -- --reject 5      reject by id
-import { listPendingEntries, updateEntryStatus } from '../src/lib/guestbook-db.ts'
+import {
+  listPendingEntries,
+  resolveDatabaseUrl,
+  updateEntryStatus,
+} from '../src/lib/guestbook-db.ts'
 
 function parseIds(value: string | undefined): number[] {
   if (!value) return []
@@ -22,8 +26,10 @@ function argValue(flag: string): string | undefined {
   return index >= 0 ? args[index + 1] : undefined
 }
 
-if (!process.env.DATABASE_URL) {
-  console.error('guestbook:moderate failed: DATABASE_URL is not set (see .env.example)')
+if (!resolveDatabaseUrl()) {
+  console.error(
+    'guestbook:moderate failed: no DATABASE_URL (or single *_DATABASE_URL) is set — see .env.example'
+  )
   process.exit(1)
 }
 
