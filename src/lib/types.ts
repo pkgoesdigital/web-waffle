@@ -82,6 +82,31 @@ export type Newsletter = NewsletterMeta & {
   content: string
 }
 
+// ── Music types ──────────────────────────────────────────────────────────────
+
+/** A single song in the listening rotation. `videoId` must be a valid
+ *  11-character YouTube video ID — it is interpolated into the embed URL. */
+export type Song = {
+  videoId: string
+  title: string
+  artist: string
+  genre: string
+  addedAt: string
+}
+
+/** The committed music snapshot in src/data/music.json — the site's only
+ *  source of song data. Refreshed offline via `npm run sync:music`. */
+export type MusicData = {
+  updatedAt: string
+  songs: Song[]
+}
+
+/** Songs grouped under a genre heading, for the genre view. */
+export type GenreGroup = {
+  genre: string
+  songs: Song[]
+}
+
 // ── Pagination ───────────────────────────────────────────────────────────────
 
 export type PaginatedResult<T> = {

@@ -243,6 +243,13 @@ These are the prompts that shaped this codebase during development sessions with
 
 ---
 
+**Adding the About-page music player (static YouTube Music snapshot):**
+
+> hi claude, I want to update my personal website to be more interactive. My tool preferences are .NET, React.js, and the current stack. The first feature I want to add is a Youtube Music player which lists a playlist, organized by genre, of the most recent songs I've been listening to. Allow the user to sort by artist as well. I do not want this feature directly accessible via a live connection - the data needs to be stored off, securely. Pay particular attention to security vulnerabilities while building. Stop and ask for questions and directions when unclear. I will share the next feature request, after we complete this one.
+
+(After Claude asked how song data should be sourced:)
+
+> is there another way to connect to the actual listening data? For example, could we still achieve the goal, if I create a public playlist under my personal user with my recently "Liked Songs"?
 **Setting up ESLint flat config for ESLint 10 + Next.js 16:**
 
 > In the web-waffle repo, `npm run lint` (which runs `next lint`) drops into an interactive "How would you like to configure ESLint?" prompt instead of linting, because no ESLint config file exists at the repo root [...] Create the appropriate flat ESLint config (eslint.config.mjs) wiring up eslint-config-next's core-web-vitals + typescript presets per current Next.js 16 docs, verify `npm run lint` runs non-interactively and passes (or fix any violations it surfaces), and follow the repo's CLAUDE.md branching rules.
