@@ -1,4 +1,4 @@
-import type { EventMeta } from './types'
+import type { CPWEvent } from './types'
 
 function makeEventFile(overrides: Record<string, unknown> = {}): string {
   const fields = {
@@ -180,7 +180,7 @@ describe('getEventsForMonth', () => {
 
 describe('getEventBySlug', () => {
   it('returns full event with content for a known slug', async () => {
-    let event: EventMeta | undefined
+    let event: CPWEvent | undefined
     await new Promise<void>((resolve) => {
       jest.isolateModules(async () => {
         jest.mock('fs', () => ({
@@ -201,7 +201,7 @@ describe('getEventBySlug', () => {
   })
 
   it('returns undefined for an unknown slug', async () => {
-    let event: EventMeta | undefined
+    let event: CPWEvent | undefined
     await new Promise<void>((resolve) => {
       jest.isolateModules(async () => {
         jest.mock('fs', () => ({
