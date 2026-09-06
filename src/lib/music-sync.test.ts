@@ -157,7 +157,7 @@ describe('syncPlaylist', () => {
     ({ ok: true, status: 200, json: async () => body }) as Response
 
   it('fetches the playlist and returns a validated snapshot', async () => {
-    const fetchImpl = jest.fn(async () => okResponse({ items: [apiItem()] }))
+    const fetchImpl = jest.fn(async (_input: RequestInfo | URL) => okResponse({ items: [apiItem()] }))
 
     const result = await syncPlaylist({
       apiKey: API_KEY,
