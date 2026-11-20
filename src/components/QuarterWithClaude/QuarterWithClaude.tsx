@@ -1,46 +1,72 @@
 'use client'
 
 /**
- * QuarterWithClaude — Phase 1 skeleton.
+ * QuarterWithClaude — orchestrator.
  *
- * Fetches a quarter dataset via `/api/viz?dataset=<slug>`, renders the prose
- * scaffolding, and leaves a `<VizPlaceholder />` where each real D3 viz will
- * land in Phase 3. The intent is: this file compiles, the page is readable,
- * and dark/light themes already work — before any D3 is written.
+ * Fetches a quarter dataset via `/api/viz?dataset=<slug>`, then renders the
+ * six prose beats and their corresponding visualizations. Each viz component
+ * owns its own D3 rendering and is a `'use client'` module.
+ *
+ * To ship a new quarter: write a new prose module (see data/quarter-prose/)
+ * and a new page that passes it in. Components stay as-is.
  */
 
 import { useEffect, useState } from 'react'
 import styles from './QuarterWithClaude.module.css'
 import type { QuarterProse } from '@/data/quarter-prose/q2-2026'
-
-type QuarterDataset = {
-  quarter: string
-  start: string
-  end: string
-  totals: {
-    sessions: number
-    automated: number
-    interactive: number
-    tool_count: number
-    active_days: number
-    quiet_days: number
-    days_in_quarter: number
-    [key: string]: number
-  }
-  by_month: Record<string, Record<string, number>>
-  // other fields present but not consumed by this skeleton
-}
+import type { QuarterDataset } from './types'
+import { TASK_COLOR_VAR, TASK_LABEL } from './types'
+import HeroConstellation from './HeroConstellation'
+import RitualRibbon from './RitualRibbon'
+import ToolRampChart from './ToolRampChart'
+import MomentCards from './MomentCards'
+import CalendarHeatmap from './CalendarHeatmap'
+import TallyGrid from './TallyGrid'
+import TopToolsBars from './TopToolsBars'
 
 type Props = {
   dataset: string
   prose: QuarterProse
+  /** Optional per-quarter date ranges for the two ribbon beats. */
+  ribbonRanges?: {
+    first: [string, string]
+    second: [string, string]
+  }
 }
 
-function VizPlaceholder({ label }: { label: string }) {
-  return <div className={styles.vizPlaceholder}>Viz placeholder — {label} — lands in Phase 3</div>
+const DEFAULT_RIBBON_RANGES = {
+  first: ['2026-04-09', '2026-04-13'] as [string, string],
+  second: ['2026-04-09', '2026-04-21'] as [string, string],
 }
 
-export default function QuarterWithClaude({ dataset, prose }: Props) {
+function Legend({ streams }: { streams: QuarterDataset['streams'] }) {
+  return (
+    <div className={styles.legend}>
+      {streams.map((s) => (
+        <span key={s.task} className={styles.legendItem}>
+          <span
+            className={styles.legendSwatch}
+            style={{ background: TASK_COLOR_VAR[s.task] ?? 'var(--viz-adhoc)' }}
+          />
+          {TASK_LABEL[s.task] ?? s.task}
+        </span>
+      ))}
+      <span className={styles.legendItem}>
+        <span
+          className={`${styles.legendSwatch} ${styles.legendInteractive}`}
+          style={{ background: 'var(--viz-adhoc)' }}
+        />
+        You were in the room
+      </span>
+    </div>
+  )
+}
+
+export default function QuarterWithClaude({
+  dataset,
+  prose,
+  ribbonRanges = DEFAULT_RIBBON_RANGES,
+}: Props) {
   const [data, setData] = useState<QuarterDataset | null>(null)
   const [error, setError] = useState<string | null>(null)
 
@@ -61,14 +87,49 @@ export default function QuarterWithClaude({ dataset, prose }: Props) {
     return <p className={styles.error}>Could not load quarter data: {error}</p>
   }
 
-  const beatLabels = [
-    'Ritual ribbon · one stream',
-    'Ritual ribbon · two streams',
-    'Tool-call ramp line chart',
-    'Interactive moment cards',
-    'Calendar heatmap · 3 months',
-    'Tally grid + top-tool bars',
-  ]
+  // Beat-slot mapping — assumes prose.beats has 6 entries in the canonical order:
+  //   0: Start small            → RitualRibbon (first range)
+  //   1: Layer, don't stack     → RitualRibbon (second range)
+  //   2: Self-documenting       → ToolRampChart
+  //   3: Human in the loop      → MomentCards
+  //   4: Plan for drift         → CalendarHeatmap
+  //   5: The bottom line        → TallyGrid + TopToolsBars
+  const renderBeatViz = (i: number) => {
+    if (!data) return null
+    switch (i) {
+      case 0:
+        return (
+          <RitualRibbon
+            days={data.days}
+            sessions={data.sessions}
+            range={ribbonRanges.first}
+          />
+        )
+      case 1:
+        return (
+          <RitualRibbon
+            days={data.days}
+            sessions={data.sessions}
+            range={ribbonRanges.second}
+          />
+        )
+      case 2:
+        return <ToolRampChart days={data.days} />
+      case 3:
+        return <MomentCards sessions={data.interactive_sessions} />
+      case 4:
+        return <CalendarHeatmap days={data.days} />
+      case 5:
+        return (
+          <>
+            <TallyGrid totals={data.totals} />
+            <TopToolsBars tools={data.top_tools} />
+          </>
+        )
+      default:
+        return null
+    }
+  }
 
   return (
     <div className={styles.container}>
@@ -77,8 +138,14 @@ export default function QuarterWithClaude({ dataset, prose }: Props) {
         <h1 className={styles.heroTitle}>{prose.hero.title}</h1>
         <p className={styles.heroDeck}>{prose.hero.deck}</p>
         <div className={styles.heroByline}>{prose.hero.byline}</div>
-        <VizPlaceholder label="Hero constellation" />
-        {!data && <p className={styles.loading}>Loading quarter data…</p>}
+        {data ? (
+          <>
+            <HeroConstellation sessions={data.sessions} />
+            <Legend streams={data.streams} />
+          </>
+        ) : (
+          <p className={styles.loading}>Loading quarter data…</p>
+        )}
       </header>
 
       {prose.beats.map((beat, i) => (
@@ -86,7 +153,7 @@ export default function QuarterWithClaude({ dataset, prose }: Props) {
           <div className={styles.beatEyebrow}>{beat.eyebrow}</div>
           <h2 className={styles.beatTitle}>{beat.title}</h2>
           <p className={styles.beatLede}>{beat.lede}</p>
-          <VizPlaceholder label={beatLabels[i] ?? `Beat ${i + 1}`} />
+          {renderBeatViz(i)}
           {beat.caption && <div className={styles.caption}>{beat.caption}</div>}
         </section>
       ))}

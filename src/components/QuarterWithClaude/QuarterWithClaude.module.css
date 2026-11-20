@@ -79,19 +79,20 @@
   margin: 0;
 }
 
-/* Viz placeholder — Phase 3 replaces each one with real D3 */
-.vizPlaceholder {
-  margin-top: var(--space-6);
-  padding: var(--space-8);
-  background: var(--viz-empty);
-  border: 1px dashed var(--viz-grid);
+/* Viz frame — wraps every real D3 viz */
+.vizFrame {
+  margin: var(--space-6) 0 0;
+  padding: var(--space-6);
+  background: var(--color-surface);
+  border: 1px solid var(--viz-grid);
   border-radius: 4px;
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--color-text-muted);
-  text-align: center;
+  color: var(--color-text);
+}
+
+.svg {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .caption {
@@ -100,6 +101,204 @@
   font-size: var(--text-xs);
   letter-spacing: 0.12em;
   text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+/* Hero constellation sits above the deck/byline, no frame */
+.constellation {
+  margin: var(--space-8) 0 var(--space-4);
+  width: 100%;
+  color: var(--color-text);
+}
+
+.constellation svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4) var(--space-6);
+  margin-top: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.legendItem {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.legendSwatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.legendInteractive {
+  outline: 3px solid var(--viz-interactive);
+  outline-offset: 1px;
+}
+
+/* Tally grid */
+.tallyGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-6);
+  margin-top: var(--space-6);
+}
+
+@media (max-width: 760px) {
+  .tallyGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.tallyItem {
+  display: flex;
+  flex-direction: column;
+}
+
+.tallyNum {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+}
+
+.tallyLabel {
+  margin-top: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+/* Horizontal bar chart */
+.bars {
+  margin-top: var(--space-12);
+}
+
+.barsHeading {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: var(--text-xl);
+  margin: 0 0 var(--space-4);
+}
+
+.barsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.barRow {
+  display: grid;
+  grid-template-columns: minmax(140px, 220px) 1fr auto;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-2) 0;
+}
+
+.barLabel {
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  text-align: right;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.barTrack {
+  background: var(--viz-empty);
+  border-radius: 2px;
+  height: 18px;
+  position: relative;
+  overflow: hidden;
+}
+
+.barFill {
+  background: var(--viz-briefing);
+  height: 100%;
+  transition: width 600ms ease-out;
+}
+
+.barValue {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  min-width: 2.5rem;
+  text-align: right;
+}
+
+/* Moment cards */
+.moments {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+  margin-top: var(--space-6);
+}
+
+@media (max-width: 720px) {
+  .moments {
+    grid-template-columns: 1fr;
+  }
+}
+
+.moment {
+  background: var(--color-surface);
+  border: 1px solid var(--viz-grid);
+  border-radius: 4px;
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+}
+
+.momentWhen {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--viz-interactive);
+  margin-bottom: var(--space-2);
+}
+
+.momentTitle {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: var(--text-lg);
+  line-height: 1.25;
+  margin: 0 0 var(--space-3);
+  color: var(--color-text);
+}
+
+.momentNotes {
+  font-size: var(--text-sm);
+  line-height: 1.55;
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-4);
+  flex: 1;
+}
+
+.momentMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-4);
+  padding-top: var(--space-3);
+  border-top: 1px dotted var(--viz-grid);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.06em;
   color: var(--color-text-muted);
 }
 
