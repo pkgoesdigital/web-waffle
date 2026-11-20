@@ -1,0 +1,215 @@
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* Hero */
+.hero {
+  padding: var(--space-16) 0 var(--space-12);
+  text-align: left;
+}
+
+.kicker {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-4);
+}
+
+.heroTitle {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  margin: 0 0 var(--space-4);
+  color: var(--color-text);
+}
+
+.heroDeck {
+  font-size: var(--text-xl);
+  line-height: 1.5;
+  color: var(--color-text-muted);
+  max-width: 44rem;
+  margin: 0 0 var(--space-6);
+}
+
+.heroByline {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+/* Beats */
+.beat {
+  padding: var(--space-16) 0;
+  border-top: 1px solid var(--viz-grid);
+}
+
+.beatEyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-3);
+}
+
+.beatTitle {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: clamp(1.75rem, 3.6vw, 2.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  margin: 0 0 var(--space-4);
+  color: var(--color-text);
+  max-width: 44rem;
+}
+
+.beatLede {
+  font-size: var(--text-lg);
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  max-width: 42rem;
+  margin: 0;
+}
+
+/* Viz placeholder — Phase 3 replaces each one with real D3 */
+.vizPlaceholder {
+  margin-top: var(--space-6);
+  padding: var(--space-8);
+  background: var(--viz-empty);
+  border: 1px dashed var(--viz-grid);
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+.caption {
+  margin-top: var(--space-3);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+/* CTA section */
+.cta {
+  padding: var(--space-16) 0;
+  border-top: 1px solid var(--viz-grid);
+}
+
+.ctaHeading {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: clamp(1.75rem, 3.6vw, 2.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  margin: 0 0 var(--space-8);
+  color: var(--color-text);
+}
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+
+@media (max-width: 760px) {
+  .services {
+    grid-template-columns: 1fr;
+  }
+}
+
+.service {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-6);
+  background: var(--color-surface);
+  border: 1px solid var(--viz-grid);
+  border-radius: 4px;
+  text-decoration: none;
+  color: inherit;
+  transition:
+    transform var(--transition-fast),
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.service:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-md);
+}
+
+.serviceMeta {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-3);
+}
+
+.serviceName {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: var(--text-xl);
+  margin: 0 0 var(--space-2);
+  color: var(--color-text);
+}
+
+.serviceHook {
+  font-size: var(--text-base);
+  line-height: 1.5;
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-4);
+  flex: 1;
+}
+
+.serviceCta {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  align-self: flex-start;
+}
+
+/* Closing */
+.closing {
+  padding: var(--space-16) 0;
+  border-top: 1px solid var(--viz-grid);
+  text-align: center;
+}
+
+.closingLine {
+  font-family: var(--font-sans);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  line-height: 1.4;
+  color: var(--color-text);
+  max-width: 44rem;
+  margin: 0 auto;
+}
+
+/* Loading / error */
+.loading,
+.error {
+  padding: var(--space-8);
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
