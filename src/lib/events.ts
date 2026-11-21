@@ -44,10 +44,43 @@ function buildEventIndex(): EventMeta[] {
     return parseEventFrontmatter(data as Record<string, unknown>, slug)
   })
 
-  // Sort chronologically ascending (soonest first)
-  return events.sort(
-    (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()
-  )
+  // Sort chronologically ascending (soonest first), then by start time
+  return events.sort(compareEventsAsc)
+}
+
+/**
+ * Minutes after midnight for the first clock time in an event's `time`
+ * string (e.g. "6:00 PM (doors open 5:00 PM)" → 1080). Returns -1 when no
+ * time can be parsed, so untimed events sort first, like all-day events.
+ */
+export function parseStartMinutes(time?: string): number {
+  if (!time) return -1
+  const match = time.match(/(\d{1,2})(?::(\d{2}))?\s*([AP])\.?M\.?/i)
+  if (!match) return -1
+  let hours = Number(match[1]) % 12
+  if (match[3].toUpperCase() === 'P') hours += 12
+  return hours * 60 + Number(match[2] ?? 0)
+}
+
+/** Compares YYYY-MM-DD date strings without timezone drift. */
+function compareDates(a: string, b: string): number {
+  return a < b ? -1 : a > b ? 1 : 0
+}
+
+/** Date ascending, then start time ascending. */
+export function compareEventsAsc(
+  a: Pick<EventMeta, 'date' | 'time'>,
+  b: Pick<EventMeta, 'date' | 'time'>
+): number {
+  return compareDates(a.date, b.date) || parseStartMinutes(a.time) - parseStartMinutes(b.time)
+}
+
+/** Date descending (most recent day first), then start time ascending within a day. */
+export function compareEventsDesc(
+  a: Pick<EventMeta, 'date' | 'time'>,
+  b: Pick<EventMeta, 'date' | 'time'>
+): number {
+  return compareDates(b.date, a.date) || parseStartMinutes(a.time) - parseStartMinutes(b.time)
 }
 
 function getEventIndex(): EventMeta[] {
@@ -57,6 +90,11 @@ function getEventIndex(): EventMeta[] {
 
 export function getEvents(): EventMeta[] {
   return getEventIndex().filter((e) => e.status !== 'cancelled')
+}
+
+/** Date (YYYY-MM-DD) of the earliest event on file, including cancelled ones. */
+export function getEarliestEventDate(): string | undefined {
+  return getEventIndex()[0]?.date || undefined
 }
 
 export function getEventsForMonth(year: number, month: number): EventMeta[] {
