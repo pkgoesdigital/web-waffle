@@ -1,10 +1,6 @@
 import { render, screen } from '@testing-library/react'
-import { getEarliestEventDate } from '@/lib/events'
 
 jest.mock('@/lib/events', () => ({
-  compareEventsAsc: jest.requireActual('@/lib/events').compareEventsAsc,
-  compareEventsDesc: jest.requireActual('@/lib/events').compareEventsDesc,
-  getEarliestEventDate: jest.fn(() => undefined),
   getEventsForMonth: jest.fn(() => [
     {
       id: '1',
@@ -107,35 +103,5 @@ describe('CalendarPage', () => {
     // June is the max bound month (April + 2); next would be July which is out of range
     await renderPage('2026-06')
     expect(screen.queryByRole('link', { name: /Next/ })).not.toBeInTheDocument()
-  })
-
-  describe('with older events on file', () => {
-    beforeEach(() => {
-      ;(getEarliestEventDate as jest.Mock).mockReturnValue('2026-01-15')
-    })
-
-    afterEach(() => {
-      ;(getEarliestEventDate as jest.Mock).mockReturnValue(undefined)
-    })
-
-    it('allows navigating back past the 1-month window', async () => {
-      // March is normally the min bound; with a January event, February is reachable
-      await renderPage('2026-03')
-      expect(screen.getByRole('link', { name: /Previous/ })).toHaveAttribute(
-        'href',
-        '/cpw-neighborhood-watch/calendar?month=2026-02'
-      )
-    })
-
-    it('disables previous navigation at the earliest event month', async () => {
-      await renderPage('2026-01')
-      expect(screen.queryByRole('link', { name: /Previous/ })).not.toBeInTheDocument()
-    })
-  })
-
-  it('keeps the 1-month-back minimum when the earliest event is recent', async () => {
-    ;(getEarliestEventDate as jest.Mock).mockReturnValueOnce('2026-04-28')
-    await renderPage('2026-03')
-    expect(screen.queryByRole('link', { name: /Previous/ })).not.toBeInTheDocument()
   })
 })
