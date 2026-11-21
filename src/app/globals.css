@@ -62,6 +62,18 @@
 
   /* Hover brightness for cards */
   --hover-brightness: brightness(0.95);
+
+  /* Viz palette — used by data visualizations (QuarterWithClaude, etc.).
+     Each task/ritual gets a stable color that works in both themes. */
+  --viz-briefing: #14857b;        /* daily-briefing — primary teal */
+  --viz-digest: #c48a2e;          /* neighborhood-digest — warm amber */
+  --viz-usage: #5a7a52;           /* usage-record — sage */
+  --viz-newsletter: #7a4a66;      /* monthly-newsletter — plum */
+  --viz-events: #a85042;          /* women-tech-events — terracotta */
+  --viz-adhoc: #732d67;           /* ad-hoc / one-off — deep plum */
+  --viz-interactive: #732d67;     /* ring color for sessions where the user was present */
+  --viz-empty: rgba(26, 26, 46, 0.06);
+  --viz-grid: rgba(26, 26, 46, 0.12);
 }
 
 /* Dark theme overrides */
@@ -81,6 +93,17 @@
 
   --card-lightness: 40%;
   --hover-brightness: brightness(1.15);
+
+  /* Viz palette — brighter chroma on dark backgrounds */
+  --viz-briefing: #1eb8ab;
+  --viz-digest: #e4b05e;
+  --viz-usage: #8aae7f;
+  --viz-newsletter: #c46fb3;
+  --viz-events: #d87a68;
+  --viz-adhoc: #c46fb3;
+  --viz-interactive: #c46fb3;
+  --viz-empty: rgba(255, 255, 255, 0.06);
+  --viz-grid: rgba(255, 255, 255, 0.10);
 }
 
 h1,
