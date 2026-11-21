@@ -1,6 +1,11 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { getEventsForMonth } from '@/lib/events'
+import {
+  getEventsForMonth,
+  getEarliestEventDate,
+  compareEventsAsc,
+  compareEventsDesc,
+} from '@/lib/events'
 import EventCalendarGrid from '@/components/EventCalendarGrid/EventCalendarGrid'
 import EventList from '@/components/EventList/EventList'
 import styles from './page.module.css'
@@ -38,8 +43,16 @@ export default async function CalendarPage({
     displayMonth = m - 1
   }
 
-  // Navigation bounded: 1 month back, 2 months forward (full calendar months)
-  const minBound = addMonths(now.getFullYear(), now.getMonth(), -1)
+  // Navigation bounded: back to the month of the earliest event on file (at
+  // least 1 month back), 2 months forward (full calendar months)
+  let minBound = addMonths(now.getFullYear(), now.getMonth(), -1)
+  const earliest = getEarliestEventDate()
+  if (earliest) {
+    const [ey, em] = earliest.split('-').map(Number)
+    if (ey * 12 + (em - 1) < minBound.year * 12 + minBound.month) {
+      minBound = { year: ey, month: em - 1 }
+    }
+  }
   const maxBound = addMonths(now.getFullYear(), now.getMonth(), 2)
 
   const prev = addMonths(displayYear, displayMonth, -1)
@@ -63,11 +76,11 @@ export default async function CalendarPage({
 
   const upcoming = events
     .filter((e) => toLocalDayMs(e.date) >= todayMs)
-    .sort((a, b) => toLocalDayMs(a.date) - toLocalDayMs(b.date))
+    .sort(compareEventsAsc)
 
   const past = events
     .filter((e) => toLocalDayMs(e.date) < todayMs)
-    .sort((a, b) => toLocalDayMs(b.date) - toLocalDayMs(a.date))
+    .sort(compareEventsDesc)
 
   return (
     <div className={styles.container}>
