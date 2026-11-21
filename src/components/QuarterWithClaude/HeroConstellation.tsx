@@ -26,8 +26,13 @@ export default function HeroConstellation({ sessions }: Props) {
 
     const render = () => {
       const width = container.clientWidth
-      const height = Math.max(200, Math.min(320, width * 0.3))
-      const padX = 24
+      const narrow = width < 560
+      const height = Math.max(200, Math.min(320, width * (narrow ? 0.5 : 0.3)))
+      const padX = narrow ? 12 : 24
+      // Scale dot sizes down a touch on narrow screens so stacks don't crowd
+      const baseR = narrow ? 2.5 : 3.5
+      const interactiveR = narrow ? 5 : 6
+      const rowSpacing = narrow ? 10 : 12
       const svg = d3.select(svgEl)
       svg.attr('width', width).attr('height', height).attr('viewBox', `0 0 ${width} ${height}`)
       svg.selectAll('*').remove()
@@ -44,7 +49,11 @@ export default function HeroConstellation({ sessions }: Props) {
       byDate.forEach((arr, date) => {
         const cx = x(date) ?? 0
         arr.forEach((s, i) => {
-          dots.push({ s, x: cx, y: height / 2 + (i - (arr.length - 1) / 2) * 12 })
+          dots.push({
+            s,
+            x: cx,
+            y: height / 2 + (i - (arr.length - 1) / 2) * rowSpacing,
+          })
         })
       })
 
@@ -56,7 +65,7 @@ export default function HeroConstellation({ sessions }: Props) {
         .join('circle')
         .attr('cx', (d) => (reduced ? d.x : Math.random() * width))
         .attr('cy', (d) => (reduced ? d.y : Math.random() * height))
-        .attr('r', (d) => (d.s.type === 'interactive' ? 6 : 3.5))
+        .attr('r', (d) => (d.s.type === 'interactive' ? interactiveR : baseR))
         .attr('fill', (d) => TASK_COLOR_VAR[d.s.task] ?? 'var(--viz-adhoc)')
         .attr('fill-opacity', (d) => (d.s.type === 'interactive' ? 1 : 0.78))
         .attr('stroke', (d) =>

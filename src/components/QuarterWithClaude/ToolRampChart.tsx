@@ -24,8 +24,16 @@ export default function ToolRampChart({ days }: Props) {
 
     const render = () => {
       const width = container.clientWidth
-      const height = Math.min(width * 0.42, 360)
-      const pad = { top: 24, right: 28, bottom: 36, left: 44 }
+      const narrow = width < 560
+      const height = narrow
+        ? Math.min(width * 0.6, 280)
+        : Math.min(width * 0.42, 360)
+      const pad = {
+        top: 24,
+        right: narrow ? 16 : 28,
+        bottom: narrow ? 30 : 36,
+        left: narrow ? 36 : 44,
+      }
 
       const svg = d3.select(svgEl)
       svg.attr('width', width).attr('height', height).attr('viewBox', `0 0 ${width} ${height}`)
@@ -57,9 +65,14 @@ export default function ToolRampChart({ days }: Props) {
         .attr('stroke', 'var(--viz-grid)')
         .attr('stroke-dasharray', '2,3')
 
-      // Axes
-      const xAxis = d3.axisBottom<Date>(x).ticks(6).tickFormat(d3.timeFormat('%b %-d') as (d: Date) => string)
-      const yAxis = d3.axisLeft(y).ticks(5)
+      // Axes — fewer ticks on narrow screens so labels don't collide
+      const xTickCount = narrow ? 3 : 6
+      const yTickCount = narrow ? 4 : 5
+      const xAxis = d3
+        .axisBottom<Date>(x)
+        .ticks(xTickCount)
+        .tickFormat(d3.timeFormat('%b %-d') as (d: Date) => string)
+      const yAxis = d3.axisLeft(y).ticks(yTickCount)
 
       const axisStyle = (sel: d3.Selection<SVGGElement, unknown, null, undefined>) => {
         sel.select('.domain').attr('stroke', 'var(--viz-grid)')
