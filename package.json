@@ -47,7 +47,9 @@
   },
   "overrides": {
     "postcss": "^8.5.10",
-    "sharp": "^0.35.5"
+    "sharp": "^0.35.5",
+    "glob": "^14.0.2",
+    "minimatch": "^11.0.1"
   },
   "jest": {
     "preset": "ts-jest",
@@ -59,7 +61,7 @@
       "^@/(.*)$": "<rootDir>/src/$1",
       "\\.module\\.css$": "<rootDir>/__mocks__/styleMock.js"
     },
-    "testPathPattern": "\\.(test|spec)\\.(ts|tsx)$",
+    "testRegex": "\\.(test|spec)\\.(ts|tsx)$",
     "transform": {
       "^.+\\.(ts|tsx)$": [
         "ts-jest",
