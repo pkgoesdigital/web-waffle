@@ -14,21 +14,6 @@ export type PortfolioSection = {
 
 export const portfolioSections: PortfolioSection[] = [
   {
-    slug: 'ai-enablement',
-    title: 'AI Enablement',
-    period: 'Apr 2026 – Present',
-    description:
-      'Field notes on building alongside Claude sustainably — quarterly case studies drawn from my own practice, instrumented and audited.',
-    children: [
-      {
-        slug: 'Q2-with-claude',
-        title: 'Q2 2026 — With Claude',
-        description:
-          'A quarter of coworking with Claude, instrumented end-to-end. Five principles for sustainable AI adoption, with three months of real evidence — setup, peak, and pullback.',
-      },
-    ],
-  },
-  {
     slug: 'tuff-shed',
     title: 'Tuff Shed',
     period: 'Apr 2024 – Present',
