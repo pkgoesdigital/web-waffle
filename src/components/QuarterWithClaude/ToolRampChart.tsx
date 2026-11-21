@@ -8,6 +8,10 @@
 
 import { useEffect, useRef } from 'react'
 import * as d3 from 'd3'
+// Side-effect import: registers .transition() on the Selection prototype.
+// Required because Next.js 16's Turbopack tree-shaking otherwise drops
+// d3-transition in production bundles, causing `.transition is not a function`.
+import 'd3-transition'
 import styles from './QuarterWithClaude.module.css'
 import type { Day } from './types'
 
